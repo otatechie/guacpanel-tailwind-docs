@@ -66,13 +66,13 @@ onUnmounted(() => {
         class="hidden xl:block w-64 fixed right-0 top-16 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-lg shadow-sm">
         <div class="max-h-[calc(100vh-5rem)] overflow-y-auto">
             <div
-                class="sticky top-0 px-4 py-3 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 z-10 backdrop-blur-sm">
+                class="sticky top-0 px-4 py-2 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 z-10 backdrop-blur-sm">
                 <h4 class="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wide">
                     On This Page
                 </h4>
             </div>
             <nav class="py-3 px-3">
-                <ul class="space-y-2">
+                <ul class="space-y-1">
                     <li v-for="section in items" :key="section.id" class="space-y-2">
                         <!-- Section Headers -->
                         <template v-if="section.isHeader">
