@@ -122,7 +122,7 @@ const tocItems = [
             <!-- Introduction Card -->
             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Introduction</h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
+              <p class="text-gray-600 dark:text-gray-300 text-base">
                 GuacPanel integrates <a href="https://pqina.nl/filepond/" target="_blank" class="text-emerald-600 hover:text-emerald-500">FilePond</a> to provide a modern, feature-rich file upload system. This integration offers a seamless user experience with drag-and-drop functionality, real-time previews, and robust validation. The system supports image and PDF previews, file type validation, size restrictions, and includes built-in security features like CSRF protection and server-side validation.
               </p>
             </div>
@@ -134,7 +134,7 @@ const tocItems = [
                 <!-- Magic Links -->
                 <div>
                   <h4 class="font-medium text-gray-900 dark:text-white mb-2">Magic Links</h4>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                  <p class="text-gray-600 dark:text-gray-300 text-base mb-4">
                     Secure authentication through time-limited email magic links.
                   </p>
                   <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>Route::middleware(['guest', 'web'])->group(function () {
@@ -156,7 +156,7 @@ const tocItems = [
                 <!-- Password Reset -->
                 <div>
                   <h4 class="font-medium text-gray-900 dark:text-white mb-2">Password Reset</h4>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                  <p class="text-gray-600 dark:text-gray-300 text-base mb-4">
                     Secure password recovery with time-limited reset tokens.
                   </p>
                   <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
@@ -169,7 +169,7 @@ Route::get('/reset-password/{token}', function ($token) {
                 <!-- Email Verification -->
                 <div>
                   <h4 class="font-medium text-gray-900 dark:text-white mb-2">Email Verification</h4>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                  <p class="text-gray-600 dark:text-gray-300 text-base mb-4">
                     Ensures user email authenticity through verification process.
                   </p>
                   <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>Fortify::verifyEmailView(function () {
@@ -200,11 +200,11 @@ Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke
             <!-- Introduction Card -->
             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Introduction</h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm mb-6">
+              <p class="text-gray-600 dark:text-gray-300 text-base mb-6">
                 GuacPanel's security middleware layer provides robust protection for your Laravel application. 
                 This middleware suite automatically handles critical security checks on every request, including:
               </p>
-              <ul class="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-300">
+              <ul class="list-disc list-inside space-y-2 text-base text-gray-600 dark:text-gray-300">
                 <li>Account status verification</li>
                 <li>Password policy enforcement</li>
                 <li>Two-factor authentication requirements</li>
@@ -219,7 +219,7 @@ Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke
                 <!-- Account Disabling -->
                 <div>
                   <h4 class="font-medium text-gray-900 dark:text-white mb-2">Account Disabling</h4>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                  <p class="text-gray-600 dark:text-gray-300 text-base mb-4">
                     Automatically prevents disabled accounts from accessing the application by checking account status on each request.
                   </p>
                   <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>public function handleRequest(Request $request, Closure $next): Response
@@ -237,7 +237,7 @@ Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke
                 <!-- Two-Factor Authentication -->
                 <div>
                   <h4 class="font-medium text-gray-900 dark:text-white mb-2">Two-Factor Authentication</h4>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                  <p class="text-gray-600 dark:text-gray-300 text-base mb-4">
                     Enforces 2FA requirements based on user settings and system policies.
                   </p>
                   <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>public function handleRequest(Request $request, Closure $next): Response
@@ -263,7 +263,7 @@ Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke
                 <!-- Password Expiry -->
                 <div>
                   <h4 class="font-medium text-gray-900 dark:text-white mb-2">Password Expiry</h4>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                  <p class="text-gray-600 dark:text-gray-300 text-base mb-4">
                     Enforces password rotation policies by tracking and checking password age.
                   </p>
                   <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>public function handleRequest(Request $request, Closure $next): Response
@@ -285,7 +285,7 @@ Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke
                 <!-- Force Password Change -->
                 <div>
                   <h4 class="font-medium text-gray-900 dark:text-white mb-2">Force Password Change</h4>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                  <p class="text-gray-600 dark:text-gray-300 text-base mb-4">
                     Enables administrators to require immediate password changes for security purposes.
                   </p>
                   <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>public function handleRequest(Request $request, Closure $next): Response
@@ -316,7 +316,7 @@ Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke
           </h2>
           <div class="space-y-6">
             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
+              <p class="text-gray-600 dark:text-gray-300 text-base">
                 GuacPanel automatically tracks all login activity, storing user details, timestamp, IP, device info,
                 and login status. The system uses Laravel events for logging and provides a dashboard view
                 where you can filter logs by user, date, success/failure, and IP address.
@@ -338,7 +338,7 @@ Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke
           </h2>
           <div class="space-y-6">
             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
+              <p class="text-gray-600 dark:text-gray-300 text-base">
                 GuacPanel uses <a href="https://laravel.com/docs/session" class="text-emerald-600 hover:text-emerald-500">Laravel Sessions</a> to let users monitor and control their active sessions, showing
                 device type, browser, and last activity. Users can log out from individual sessions or all devices at
                 once.
@@ -361,12 +361,12 @@ Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke
           <div class="space-y-6">
             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Introduction</h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm mb-6">
+              <p class="text-gray-600 dark:text-gray-300 text-base mb-6">
                 Built on <a href="https://spatie.be/docs/laravel-permission" class="text-emerald-600 hover:text-emerald-500">Spatie's Laravel-Permission</a>, GuacPanel offers fine-grained access control through an
                 easy-to-use roles and permissions system. Manage everything through a clean UI - for
                 managing users' roles, and permissions.
               </p>
-              <ul class="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-300">
+              <ul class="list-disc list-inside space-y-2 text-base text-gray-600 dark:text-gray-300">
                 <li>Create and assign roles visually</li>
                 <li>Set granular permissions for each role</li>
                 <li>View permission inheritance at a glance</li>
@@ -399,11 +399,11 @@ Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke
             <!-- Introduction Card -->
             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Introduction</h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm mb-6">
+              <p class="text-gray-600 dark:text-gray-300 text-base mb-6">
                 GuacPanel provides a powerful data table interface built on <a href="https://tanstack.com/table" class="text-emerald-600 hover:text-emerald-500">TanStack Table</a>. Our data tables offer 
                 a complete solution for data management, featuring:
               </p>
-              <ul class="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-300">
+              <ul class="list-disc list-inside space-y-2 text-base text-gray-600 dark:text-gray-300">
                 <li>Row selection with bulk actions</li>
                 <li>Server-side pagination and sorting</li>
                 <li>Built-in search with customizable filters</li>
@@ -416,7 +416,7 @@ Route::get('/email/verify/{id}/{hash}', [VerifyEmailController::class, '__invoke
             <!-- Table Configuration Card -->
             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Table Configuration</h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+              <p class="text-gray-600 dark:text-gray-300 text-base mb-4">
                 Set up your columns and table state with type-safe configurations.
               </p>
               <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>// Import required dependencies
@@ -473,7 +473,7 @@ const table = {
                 <!-- Action Buttons -->
                 <div>
                   <h4 class="font-medium text-gray-900 dark:text-white mb-2">Action Buttons</h4>
-                  <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                  <p class="text-gray-600 dark:text-gray-300 text-base mb-4">
                     Add custom action buttons to your table with event handlers.
                   </p>
                   <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>// Add to your columns array
@@ -512,7 +512,7 @@ const handleDelete = async (user) => {
             <!-- Backend Integration Card -->
             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Backend Integration</h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+              <p class="text-gray-600 dark:text-gray-300 text-base mb-4">
                 Set up your backend controller to provide paginated data.
               </p>
               <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>return Inertia::render('Table/User/IndexPage', [
@@ -539,7 +539,7 @@ const handleDelete = async (user) => {
             <!-- Introduction -->
             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Introduction</h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
+              <p class="text-gray-600 dark:text-gray-300 text-base">
                 GuacPanel integrates <a href="https://pqina.nl/filepond/" target="_blank" class="text-emerald-600 hover:text-emerald-500">FilePond</a> to provide a modern, feature-rich file upload system. This integration offers a seamless user experience with drag-and-drop functionality, real-time previews, and robust validation. The system supports image and PDF previews, file type validation, size restrictions, and includes built-in security features like CSRF protection and server-side validation.
               </p>
             </div>
@@ -658,10 +658,10 @@ const serverConfig = {
             <!-- Introduction -->
             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Introduction</h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+              <p class="text-gray-600 dark:text-gray-300 text-base mb-4">
                 GuacPanel integrates <a href="https://typesense.org" target="_blank" class="text-emerald-600 hover:text-emerald-500">Typesense</a>, a lightning-fast, open-source search engine that provides typo-tolerant search functionality. Before proceeding, ensure you have set up <a href="https://github.com/typesense/scout-laravel" target="_blank" class="text-emerald-600 hover:text-emerald-500">Typesense with Laravel Scout</a> and your Typesense server is running. With Typesense, you can implement powerful search features with minimal configuration.
               </p>
-              <ul class="list-disc list-inside space-y-2 text-sm text-gray-600 dark:text-gray-300">
+              <ul class="list-disc list-inside space-y-2 text-base text-gray-600 dark:text-gray-300">
                 <li>Typo-tolerant search with configurable tolerance levels</li>
                 <li>Real-time search with instant results</li>
                 <li>Faceted search and filtering capabilities</li>
@@ -677,7 +677,7 @@ const serverConfig = {
               <!-- API Key Security -->
               <div class="mb-8">
                 <h4 class="font-medium text-gray-900 dark:text-white mb-3">API Key Security</h4>
-                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                <p class="text-gray-600 dark:text-gray-300 text-base mb-4">
                   Protect your Typesense API key by generating scoped search-only API keys. Never expose your admin API key in frontend code. For detailed information about API key management, visit the <a href="https://typesense.org/docs/0.24.0/api/api-keys.html" target="_blank" class="text-emerald-600 hover:text-emerald-500">Typesense API Keys Documentation</a>.
                 </p>
                 <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>php artisan typesense:generate-search-key</code></pre>
@@ -686,7 +686,7 @@ const serverConfig = {
               <!-- Frontend Implementation -->
               <div>
                 <h4 class="font-medium text-gray-900 dark:text-white mb-3">Frontend Implementation</h4>
-                <p class="text-gray-600 dark:text-gray-300 text-sm mb-4">
+                <p class="text-gray-600 dark:text-gray-300 text-base mb-4">
                   Use the generated search-only API key from the script in your frontend code to safely perform searches. Make sure to set <code class="text-emerald-600 dark:text-emerald-400">TYPESENSE_SEARCH_ONLY_KEY</code> in your <code class="text-emerald-600 dark:text-emerald-400">.env</code> file:
                 </p>
                 <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code># .env
@@ -712,7 +712,7 @@ TYPESENSE_PROTOCOL=http</code></pre>
           </h2>
           <div class="space-y-6">
             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
-              <p class="text-gray-600 dark:text-gray-300 text-sm">
+              <p class="text-gray-600 dark:text-gray-300 text-base">
                 GuacPanel uses <a href="https://github.com/owen-it/laravel-auditing" class="text-emerald-600 hover:text-emerald-500">Laravel Auditing</a> to track model changes, providing a clean interface to view,
                 search, and filter all user activity logs.
               </p>
@@ -735,7 +735,7 @@ TYPESENSE_PROTOCOL=http</code></pre>
             <!-- Introduction -->
             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Introduction</h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm mb-6">
+              <p class="text-gray-600 dark:text-gray-300 text-base mb-6">
                 GuacPanel provides a clean interface for <a href="https://github.com/spatie/laravel-backup" class="text-emerald-600 hover:text-emerald-500">Spatie's Laravel Backup</a>. Create, download, and manage
                 backups through the UI - no command line needed. Monitor backup health and delete old
                 backups with ease.
@@ -745,11 +745,11 @@ TYPESENSE_PROTOCOL=http</code></pre>
             <!-- Backup UI -->
             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Backup UI</h3>
-              <p class="text-gray-600 dark:text-gray-300 text-sm mb-6">
+              <p class="text-gray-600 dark:text-gray-300 text-base mb-6">
                 All backup functionality is available through an intuitive interface integrated into the
                 admin panel, letting you create, download, and manage backups with ease.
               </p>
-              <ul class="space-y-4 text-sm text-gray-600 dark:text-gray-300">
+              <ul class="space-y-4 text-base text-gray-600 dark:text-gray-300">
                 <li>
                   <strong class="text-gray-900 dark:text-white">Backup Dashboard:</strong> View backup history, disk usage statistics, and system health
                   indicators at a glance.

@@ -140,7 +140,7 @@ const tocItems = [
                 </h3>
               </div>
               <p class="text-gray-600 dark:text-gray-300 mb-3">{{ step.description }}</p>
-              <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto"><code>{{ step.code }}</code></pre>
+              <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>{{ step.code }}</code></pre>
             </div>
           </div>
         </section>
@@ -161,7 +161,7 @@ const tocItems = [
               <ol class="list-decimal list-inside space-y-4">
                 <li class="text-gray-600 dark:text-gray-300">
                   Update your database credentials in .env file:
-                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 mt-2 overflow-x-auto"><code>DB_CONNECT=pgsql
+                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 mt-2 overflow-x-auto text-sm"><code>DB_CONNECT=pgsql
 DB_HOST=127.0.0.1
 DB_PORT=5432
 DB_DATABASE=your_database
@@ -170,15 +170,15 @@ DB_PASSWORD=your_password</code></pre>
                 </li>
                 <li class="text-gray-600 dark:text-gray-300">
                   Run migrations:
-                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 mt-2 overflow-x-auto"><code>php artisan migrate</code></pre>
+                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 mt-2 overflow-x-auto text-sm"><code>php artisan migrate</code></pre>
                 </li>
                 <li class="text-gray-600 dark:text-gray-300">
                   Seed the database:
-                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 mt-2 overflow-x-auto"><code>php artisan db:seed</code></pre>
+                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 mt-2 overflow-x-auto text-sm"><code>php artisan db:seed</code></pre>
                 </li>
                 <li class="text-gray-600 dark:text-gray-300">
                   Default superuser credentials:
-                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 mt-2 overflow-x-auto"><code>Email: admin@example.com
+                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 mt-2 overflow-x-auto text-sm"><code>Email: admin@example.com
 Password: password</code></pre>
                 </li>
               </ol>
@@ -202,26 +202,26 @@ Password: password</code></pre>
               <div class="space-y-6">
                 <div class="text-gray-600 dark:text-gray-300">
                   <h4 class="font-medium mb-2">Permission Issues</h4>
-                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto"><code>chmod -R 777 storage bootstrap/cache</code></pre>
+                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>chmod -R 777 storage bootstrap/cache</code></pre>
                 </div>
 
                 <div class="text-gray-600 dark:text-gray-300">
                   <h4 class="font-medium mb-2">Composer Dependencies</h4>
-                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto"><code>composer install --ignore-platform-reqs</code></pre>
+                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>composer install --ignore-platform-reqs</code></pre>
                 </div>
 
                 <div class="text-gray-600 dark:text-gray-300">
                   <h4 class="font-medium mb-2">NPM Issues</h4>
-                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto"><code>npm cache clean --force
+                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>npm cache clean --force
 npm install</code></pre>
                 </div>
 
                 <div class="text-gray-600 dark:text-gray-300">
                   <h4 class="font-medium mb-2">MySQL Database Backup Configuration</h4>
                   <p class="mb-2">Configure mysqldump path in your .env file:</p>
-                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto"><code>DB_DUMP_PATH=your path</code></pre>
+                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>DB_DUMP_PATH=your path</code></pre>
                   <p class="mt-2 mb-2">Alternatively, set the path in config/database.php:</p>
-                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto"><code>'mysql' => [
+                  <pre class="bg-gray-900 text-gray-100 rounded-md p-4 overflow-x-auto text-sm"><code>'mysql' => [
     // ...other mysql configuration
     'dump' => [
         'dump_binary_path' => '/usr/bin/mysqldump', // Adjust your path
