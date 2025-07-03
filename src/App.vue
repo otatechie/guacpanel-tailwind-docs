@@ -9,6 +9,7 @@ const isMobile = () => window.innerWidth < 768
 const isSidebarOpen = ref(false)
 const isDark = ref(document.documentElement.classList.contains('dark'))
 const themeState = ref(getCurrentThemeState())
+const searchQuery = ref('')
 
 const toggleSidebar = () => {
     isSidebarOpen.value = !isSidebarOpen.value
@@ -44,7 +45,7 @@ const handleKeyDown = (event) => {
     }
 }
 
-const toggleDarkMode = () => {
+const toggleTheme = () => {
     themeState.value = cycleTheme()
 }
 
@@ -99,9 +100,11 @@ onMounted(() => {
             <header role="banner"
                 class="fixed w-full top-0 bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 z-40">
                 <nav class="flex h-16 items-center px-4 gap-4" role="navigation" aria-label="Primary navigation">
-                    <section class="flex items-center gap-4" aria-label="Site logo and menu controls">
+                    <!-- Left Section: Logo and Menu -->
+                    <section class="flex items-center gap-4 w-64" aria-label="Site logo and menu controls">
                         <!-- Logo -->
-                        <img src="/images/logo.png" alt="GuacPanel logo" class="w-16 mr-3" />
+                        <img :src="isDark ? '/images/logo-dark.png' : '/images/logo.png'" alt="GuacPanel logo"
+                            class="w-16 mr-3" />
                         <!-- Mobile Menu Toggle -->
                         <button type="button" data-menu-button
                             class="rounded-lg p-2 text-gray-500 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer"
@@ -114,26 +117,52 @@ onMounted(() => {
                         </button>
                     </section>
 
-                    <section class="flex flex-1 items-center justify-end gap-4" aria-label="Site controls">
+                    <!-- Center Section: Search Bar -->
+                    <div class="flex-1 flex justify-center">
+                        <div class="w-full max-w-lg hidden md:block">
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400 dark:text-gray-500" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <input type="search" v-model="searchQuery" placeholder="Search docs..."
+                                    class="block w-full pl-10 pr-3 py-2 border border-gray-200 dark:border-gray-700 rounded-md bg-gray-50 dark:bg-gray-800 text-sm placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500 dark:focus:ring-emerald-400 focus:border-transparent" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Section: Theme and Demo -->
+                    <section class="flex items-center gap-4 w-64 justify-end" aria-label="Site controls">
                         <!-- Theme Toggle Button -->
                         <button type="button"
-                            class="rounded-lg p-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 transition-all cursor-pointer"
-                            @click="toggleDarkMode" aria-label="Toggle color theme">
+                            class="rounded-lg p-2 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:focus:ring-gray-700 transition-all cursor-pointer group relative"
+                            @click="toggleTheme" :aria-label="themeState.nextThemeText">
+                            <!-- Sun icon -->
                             <svg v-if="themeState.nextThemeIcon === 'sun'" class="w-5 h-5" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
                             </svg>
+                            <!-- Moon icon -->
                             <svg v-else-if="themeState.nextThemeIcon === 'moon'" class="w-5 h-5" fill="none"
                                 viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
                             </svg>
+                            <!-- System icon -->
                             <svg v-else class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
                             </svg>
+                            <!-- Tooltip -->
+                            <span
+                                class="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 text-xs text-white bg-gray-900 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                                {{ themeState.nextThemeText }}
+                            </span>
                         </button>
 
                         <a href="/login"
