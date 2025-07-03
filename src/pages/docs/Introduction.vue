@@ -43,7 +43,7 @@ const tocItems = [
                     <div class="flex flex-wrap gap-4">
                         <a href="/docs/installation"
                             class="group inline-flex items-center px-6 py-3 bg-white text-emerald-700 rounded-xl font-medium shadow-sm hover:bg-emerald-50 transition-all duration-200 hover:scale-105">
-                            <svg class="w-5 h-5 mr-2 transition-transform group-hover:translate-y-0.5" viewBox="0 0 24 24" fill="none">
+                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none">
                                 <path d="M12 4v16m0-16l-4 4m4-4l4 4" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
@@ -51,11 +51,11 @@ const tocItems = [
                         </a>
                         <a href="https://github.com/yourusername/guacpanel"
                             class="group inline-flex items-center px-6 py-3 bg-emerald-500 text-white rounded-xl font-medium shadow-sm hover:bg-emerald-400 transition-all duration-200 hover:scale-105">
-                            <svg class="w-5 h-5 mr-2 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none">
-                                <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round" />
+                            <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="none">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" 
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
-                            Explore source code
+                            View on GitHub
                         </a>
                     </div>
                 </div>
@@ -70,7 +70,7 @@ const tocItems = [
 
                     <!-- Authentication Section -->
                     <div class="mb-12" id="authentication">
-                        <h3 class="flex items-center text-xl font-semibold text-gray-900 dark:text-white mb-6 group">
+                        <h3 class="flex items-center text-xl font-semibold text-gray-900 dark:text-white mb-6">
                             <span class="flex items-center justify-center w-10 h-10 bg-emerald-100 dark:bg-emerald-900 rounded-lg mr-3">
                                 <svg class="w-6 h-6 text-emerald-600 dark:text-emerald-400" viewBox="0 0 24 24" fill="none">
                                     <path
@@ -83,28 +83,28 @@ const tocItems = [
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
                                 <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Laravel Fortify</h4>
-                                <p class="text-gray-600 dark:text-gray-300">Secure authentication scaffolding with 2FA support
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Secure authentication scaffolding with 2FA support
                                 </p>
                             </div>
                             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
                                 <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Passwordless Login</h4>
-                                <p class="text-gray-600 dark:text-gray-300">Streamlined authentication without password</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Streamlined authentication without password</p>
                             </div>
                             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
                                 <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Spatie Permissions</h4>
-                                <p class="text-gray-600 dark:text-gray-300">Role-based access control with visual management</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Role-based access control with visual management</p>
                             </div>
                             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
                                 <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Password Security</h4>
-                                <p class="text-gray-600 dark:text-gray-300">Configure password expiry and changes</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Configure password expiry and changes</p>
                             </div>
                             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
                                 <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Authentication Logs</h4>
-                                <p class="text-gray-600 dark:text-gray-300">Track login attempts and sessions</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Track login attempts and sessions</p>
                             </div>
                             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
                                 <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Activity Logs</h4>
-                                <p class="text-gray-600 dark:text-gray-300">Monitor user actions and system changes</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Monitor user actions and system changes</p>
                             </div>
                         </div>
                     </div>
@@ -124,15 +124,15 @@ const tocItems = [
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
                                 <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Responsive Layout</h4>
-                                <p class="text-gray-600 dark:text-gray-300">Mobile-friendly interface with Tailwind</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Mobile-friendly interface with Tailwind</p>
                             </div>
                             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
                                 <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Dark/Light Mode</h4>
-                                <p class="text-gray-600 dark:text-gray-300">Switch between themes for viewing</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Switch between themes for viewing</p>
                             </div>
                             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
                                 <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Color Themes</h4>
-                                <p class="text-gray-600 dark:text-gray-300">Customize your UI with different themes</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Customize your UI with different themes</p>
                             </div>
                         </div>
                     </div>
@@ -152,15 +152,15 @@ const tocItems = [
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
                                 <h4 class="font-semibold text-gray-900 dark:text-white mb-3">TanStack Table</h4>
-                                <p class="text-gray-600 dark:text-gray-300">Advanced data tables with sorting and filtering</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Advanced data tables with sorting and filtering</p>
                             </div>
                             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
                                 <h4 class="font-semibold text-gray-900 dark:text-white mb-3">FilePond Upload</h4>
-                                <p class="text-gray-600 dark:text-gray-300">Drag and drop file uploads</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Drag and drop file uploads</p>
                             </div>
                             <div class="group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-200 hover:shadow-lg">
                                 <h4 class="font-semibold text-gray-900 dark:text-white mb-3">Spatie Backup</h4>
-                                <p class="text-gray-600 dark:text-gray-300">Database & file backups with UI management</p>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm">Database & file backups with UI management</p>
                             </div>
                         </div>
                     </div>
@@ -186,7 +186,7 @@ const tocItems = [
                                     <div>
                                         <h5 class="font-semibold text-gray-900 dark:text-white flex items-center">
                                             Laravel
-                                            <span class="ml-2 px-2 py-0.5 text-xs bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full">v10.x</span>
+                                            <span class="ml-2 px-2 py-0.5 text-xs bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full">v11.x</span>
                                         </h5>
                                         <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">PHP framework providing the backend
                                             foundation</p>
@@ -210,7 +210,7 @@ const tocItems = [
                                     <div>
                                         <h5 class="font-semibold text-gray-900 dark:text-white flex items-center">
                                             Inertia.js
-                                            <span class="ml-2 px-2 py-0.5 text-xs bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full">v1.x</span>
+                                            <span class="ml-2 px-2 py-0.5 text-xs bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 rounded-full">v2.x</span>
                                         </h5>
                                         <p class="text-sm text-gray-600 dark:text-gray-300 mt-1">The glue between Laravel and Vue for
                                             modern SPAs</p>

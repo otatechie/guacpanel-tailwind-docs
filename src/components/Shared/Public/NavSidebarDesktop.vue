@@ -22,14 +22,6 @@ const isActive = computed(() => path => route.path.startsWith(path))
 <template>
     <aside class="overflow-y-auto w-64 border-r border-gray-200 dark:border-gray-800" data-sidebar-content>
         <nav class="flex flex-col h-full">
-            <!-- Logo and title section -->
-            <div class="px-6 py-6 border-b border-gray-100 dark:border-gray-800">
-                <a href="/" class="flex items-center">
-                    <img src="/vite.svg" alt="Logo" class="h-8 w-8 mr-3" />
-                    <span class="text-xl font-semibold text-gray-900 dark:text-white">GuacPanel</span>
-                </a>
-            </div>
-            
             <!-- Main Navigation -->
             <div class="flex-1 px-3 py-4 space-y-6">
                 <!-- Getting Started Section -->

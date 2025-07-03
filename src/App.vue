@@ -101,11 +101,7 @@ onMounted(() => {
                 <nav class="flex h-16 items-center px-4 gap-4" role="navigation" aria-label="Primary navigation">
                     <section class="flex items-center gap-4" aria-label="Site logo and menu controls">
                         <!-- Logo -->
-                        <a href="/" class="text-xl font-semibold text-gray-900 dark:text-white flex items-center"
-                            aria-label="Go to homepage">
-                            <span class="text-teal-600">GuacPanel</span>
-                        </a>
-
+                        <img src="/images/logo.png" alt="GuacPanel logo" class="w-16 mr-3" />
                         <!-- Mobile Menu Toggle -->
                         <button type="button" data-menu-button
                             class="rounded-lg p-2 text-gray-500 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-200 cursor-pointer"
