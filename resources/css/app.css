@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@source '../views';
+@import '@css/partials/base.css';
+@import '@css/partials/theme.css';
+@import '@css/partials/buttons.css';
+@import '~/nprogress/nprogress.css';

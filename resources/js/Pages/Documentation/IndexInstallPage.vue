@@ -1,0 +1,512 @@
+<script setup>
+import { Head } from '@inertiajs/vue3'
+import { ref, computed, onMounted, nextTick, watch, onUnmounted } from 'vue'
+import Public from '@/Layouts/Public.vue'
+import ArticleNavigation from '@/Shared/Public/ArticleNavigation.vue'
+import CodeBlock from '@/Components/CodeBlock.vue'
+import 'highlight.js/styles/atom-one-dark.css'
+
+defineOptions({
+  layout: Public,
+})
+
+const searchQuery = ref('')
+const showBackToTop = ref(false)
+
+const codeExamples = {
+  cloneRepo: `git clone https://github.com/otatechie/guacpanel-tailwind.git
+cd guacpanel-tailwind`,
+
+  installDeps: `composer install
+npm install`,
+
+  setupEnv: `cp .env.example .env`,
+
+  runServer: `npm run dev
+php artisan serve`,
+
+  installAssets: `npm install
+npm run dev`,
+
+  databaseEnv: `DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database
+DB_USERNAME=your_username
+DB_PASSWORD=your_password`,
+
+  runMigrations: `php artisan migrate`,
+
+  seedDatabase: `php artisan db:seed`,
+
+  defaultCredentials: `Email: ota@example.com
+Password: password`,
+
+  permissionFix: `chmod -R 777 storage bootstrap/cache`,
+
+  composerFix: `composer install --ignore-platform-reqs`,
+
+  npmFix: `npm cache clean --force
+npm install`,
+
+  mysqlDumpEnv: `DB_DUMP_PATH=your path`,
+
+  mysqlDumpConfig: `'mysql' => [
+    // ...other mysql configuration
+    'dump' => [
+        'dump_binary_path' => '/usr/bin/mysqldump',  // Adjust your path
+    ],
+],`,
+}
+
+const articleLinks = [
+  { text: 'Prerequisites', href: '#prerequisites' },
+  { text: 'Installation', href: '#installation' },
+  { text: 'Database Setup', href: '#database-setup' },
+  { text: 'Common Issues', href: '#common-issues' },
+]
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
+
+const handleScroll = () => {
+  showBackToTop.value = window.scrollY > 500
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+</script>
+
+<template>
+  <Head title="Installation - GuacPanel" />
+
+  <div id="prerequisites" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <!-- Hero Section -->
+    <div class="mb-12 border bg-white p-8 md:p-12 dark:bg-[#252525]">
+      <div class="text-center">
+        <div class="mb-4 flex items-center justify-center">
+          <h1 class="text-3xl font-bold md:text-4xl">Installation Guide</h1>
+        </div>
+
+        <div class="mx-auto mb-8 max-w-2xl">
+          <p class="text-lg text-zinc-600 dark:text-zinc-400">
+            Set up GuacPanel in minutes with this step-by-step guide. Build your Laravel admin
+            interface with authentication, permissions, and modern UI components ready to go.
+          </p>
+        </div>
+
+        <div class="flex flex-col justify-center gap-4 sm:flex-row">
+          <a
+            href="#installation"
+            class="inline-flex items-center border border-gray-300 bg-teal-500/20 px-6 py-3 font-mono text-sm tracking-wider text-teal-400 uppercase transition-all hover:bg-teal-500/30 dark:text-teal-400">
+            <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            [Installation_Guide]
+          </a>
+          <a
+            href="https://github.com/otatechie/guacpanel-tailwind"
+            target="_blank"
+            class="inline-flex items-center border border-gray-300 bg-teal-500/20 px-6 py-3 font-mono text-sm tracking-wider text-teal-400 uppercase transition-all hover:bg-teal-500/30 dark:text-teal-400">
+            <svg class="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                fill-rule="evenodd"
+                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                clip-rule="evenodd" />
+            </svg>
+            [Source_Code]
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <section class="space-y-10">
+      <!-- Prerequisites Section -->
+      <section id="prerequisites" class="mb-12 scroll-mt-16">
+        <div class="mb-8 text-center">
+          <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Prerequisites</h2>
+          <p class="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400">
+            Ensure you have the following requirements before installing GuacPanel
+          </p>
+        </div>
+        <div class="space-y-0">
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">PHP >= 8.2</h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                Required PHP extensions: BCMath, Ctype, JSON, Mbstring, OpenSSL, PDO, Tokenizer,
+                XML, cURL, GD/Imagick
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">Node.js >= 18.0.0</h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                Required for Vite build tool, Tailwind CSS v4, and Vue.js development
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">Composer >= 2.0</h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                Required for Laravel 11, Spatie packages, and PHP dependencies
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">Database</h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                MySQL/PostgreSQL for Laravel, Spatie Backup, and application data storage
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">Git</h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                For cloning the repository and version control
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">System Resources</h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                Sufficient disk space for dependencies and internet connection
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Installation Section -->
+      <section id="installation" class="mb-12 scroll-mt-16">
+        <div class="mb-8 text-center">
+          <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Installation Steps</h2>
+          <p class="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400">
+            Follow these steps to get GuacPanel up and running on your system
+          </p>
+        </div>
+        <div class="space-y-6">
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">1. Clone the Repository</h4>
+            </div>
+            <div class="mb-2">
+              <div class="rounded-lg bg-gray-800">
+                <CodeBlock :code="codeExamples.cloneRepo" language="bash" />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">2. Install Dependencies</h4>
+            </div>
+            <div class="mb-2">
+              <div class="rounded-md bg-gray-800">
+                <CodeBlock :code="codeExamples.installDeps" language="bash" />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">3. Set Up Environment</h4>
+            </div>
+            <div class="mb-2">
+              <div class="rounded-md bg-gray-800">
+                <CodeBlock :code="codeExamples.setupEnv" language="bash" />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">
+                4. Start Development Server
+              </h4>
+            </div>
+            <div class="mb-2">
+              <div class="rounded-md bg-gray-800">
+                <CodeBlock :code="codeExamples.runServer" language="bash" />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">
+                5. Install and compile frontend assets
+              </h4>
+            </div>
+            <div class="mb-2">
+              <div class="rounded-md bg-gray-800">
+                <CodeBlock :code="codeExamples.installAssets" language="bash" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Database Setup Section -->
+      <section id="database-setup" class="mb-12 scroll-mt-16">
+        <div class="mb-8 text-center">
+          <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Database Setup</h2>
+          <p class="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400">
+            Configure your database and initialize the application data
+          </p>
+        </div>
+        <div class="space-y-6">
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">
+                1. Update Database Credentials
+              </h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                Update your database credentials in .env file:
+              </p>
+              <div class="rounded-md bg-gray-800">
+                <CodeBlock :code="codeExamples.databaseEnv" language="bash" />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">2. Run Migrations</h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                Create the database tables:
+              </p>
+              <div class="rounded-md bg-gray-800">
+                <CodeBlock :code="codeExamples.runMigrations" language="bash" />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">3. Seed Database</h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                Seed the database with initial data:
+              </p>
+              <div class="rounded-md bg-gray-800">
+                <CodeBlock :code="codeExamples.seedDatabase" language="bash" />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">4. Default Credentials</h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                Default superuser credentials:
+              </p>
+              <div class="rounded-md bg-gray-800">
+                <CodeBlock :code="codeExamples.defaultCredentials" language="bash" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Common Issues Section -->
+      <section id="common-issues" class="mb-12 scroll-mt-16">
+        <div class="mb-8 text-center">
+          <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Common Issues</h2>
+          <p class="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400">
+            Troubleshooting guide for common installation problems
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">Permission Issues</h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                If you encounter permission issues, run:
+              </p>
+              <div class="rounded-md bg-gray-800">
+                <CodeBlock :code="codeExamples.permissionFix" language="bash" />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">Composer Dependencies</h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                If you get dependency errors, try:
+              </p>
+              <div class="rounded-md bg-gray-800">
+                <CodeBlock :code="codeExamples.composerFix" language="bash" />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">NPM Issues</h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                If you have npm issues, try clearing the cache:
+              </p>
+              <div class="rounded-md bg-gray-800">
+                <CodeBlock :code="codeExamples.npmFix" language="bash" />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="py-6">
+            <div class="mb-2 flex items-start">
+              
+              <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">MySQL Database Backup</h4>
+            </div>
+            <div class="mb-2">
+              <p class="mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                Configure mysqldump path in your .env file:
+              </p>
+              <div class="rounded-md bg-gray-800">
+                <CodeBlock :code="codeExamples.mysqlDumpEnv" language="bash" />
+              </div>
+              <p class="mt-2 mb-2 font-mono text-sm text-zinc-600 dark:text-zinc-400">
+                Alternatively, you can set the path in config/database.php:
+              </p>
+              <div class="rounded-md bg-gray-800">
+                <CodeBlock :code="codeExamples.mysqlDumpConfig" language="php" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <div class="flex flex-col justify-center gap-4 sm:flex-row">
+      <a
+        href="/documentation"
+        class="inline-flex items-center border border-[#3a3a3a] bg-white px-6 py-3 font-mono text-sm tracking-wider text-[#3a3a3a] uppercase transition-all hover:border-[#3a3a3a] dark:border-[#3a3a3a] dark:bg-[#252525] dark:text-white dark:hover:border-[#3a3a3a]">
+        <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7" />
+        </svg>
+        [Documentation]
+      </a>
+
+      <a
+        href="/documentation/features"
+        class="inline-flex items-center border border-gray-300 bg-teal-500/20 px-6 py-3 font-mono text-sm tracking-wider text-teal-400 uppercase transition-all hover:bg-teal-500/30 dark:text-teal-400">
+        [Features]
+        <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Back to Top Button -->
+  <button
+    v-show="showBackToTop"
+    class="fixed right-8 bottom-8 border-2 border-[#3a3a3a] bg-teal-500/20 p-3 font-mono text-sm text-teal-400 transition-all hover:bg-teal-500/30 dark:text-teal-400"
+    aria-label="Back to top"
+    @click="scrollToTop">
+    [^]
+  </button>
+
+  <ArticleNavigation :links="articleLinks" />
+</template>
+
+<style scoped>
+.scroll-mt-16 {
+  scroll-margin-top: 4rem;
+}
+
+@media (max-width: 640px) {
+  .scroll-mt-16 {
+    scroll-margin-top: 5rem;
+  }
+}
+</style>
