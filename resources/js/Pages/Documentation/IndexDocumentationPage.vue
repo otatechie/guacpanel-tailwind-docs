@@ -19,11 +19,15 @@ const articleLinks = [
 ]
 
 const showBackToTop = ref(false)
+const showCopied = ref(false)
 
 const copyToClipboard = async (text) => {
     try {
         await navigator.clipboard.writeText(text)
-        // You could add a toast notification here if you have one
+        showCopied.value = true
+        setTimeout(() => {
+            showCopied.value = false
+        }, 2000)
     } catch (err) {
         console.error('Failed to copy:', err)
     }
@@ -77,7 +81,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </div>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-700"></div>
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Why GuacPanel Section -->
         <section id="why-guacpanel" class="mb-12 scroll-mt-20">
@@ -134,7 +138,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-[#3a3a3a]/70/40"></div>
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Quick Start Section -->
         <section id="quick-start" class="mb-12 scroll-mt-20">
@@ -153,7 +157,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 cd guacpanel-tailwind && composer install
 php artisan migrate --seed
 npm install && npm run dev`)">
-                        Copy
+                        {{ showCopied ? 'Copied!' : 'Copy' }}
                     </button>
                 </div>
                 <pre class="block whitespace-pre overflow-x-auto font-mono text-sm text-zinc-900 dark:text-zinc-100">
@@ -200,19 +204,19 @@ npm install && npm run dev
                     </g>
                 </svg>
                 <div class="ml-4 flex-auto">
-                    <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">After installation</p>
+                    <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">Next steps</p>
                     <p class="mt-2.5 text-sm text-teal-800 dark:text-teal-100">
                         Follow the <a href="/documentation/installation"
                             class="font-semibold text-teal-900 underline hover:text-teal-700 dark:text-teal-100 dark:hover:text-teal-50">Installation
                             Guide</a>
-                        for database setup and configuration.
+                        for complete database setup, environment configuration, and troubleshooting.
                     </p>
                 </div>
             </div>
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-[#3a3a3a]/70/40"></div>
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- System Requirements Section -->
         <section id="system-requirements" class="mb-12 scroll-mt-20">
@@ -228,10 +232,29 @@ npm install && npm run dev
             <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
                 <div
                     class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 text-sm text-zinc-700 dark:bg-gray-900 dark:text-zinc-200">
+                    <h3 class="mb-3 text-base font-semibold text-zinc-900 dark:text-white">Backend</h3>
                     <ul class="space-y-2">
-                        <li><span class="text-teal-500">•</span> PHP 8.2+, Composer 2.x</li>
-                        <li><span class="text-teal-500">•</span> Node 18+</li>
-                        <li><span class="text-teal-500">•</span> DB: MySQL 8+</li>
+                        <li><span class="text-teal-500">•</span> PHP 8.2+</li>
+                        <li><span class="text-teal-500">•</span> Composer 2.x</li>
+                        <li><span class="text-teal-500">•</span> Laravel 12.x</li>
+                    </ul>
+                </div>
+                <div
+                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 text-sm text-zinc-700 dark:bg-gray-900 dark:text-zinc-200">
+                    <h3 class="mb-3 text-base font-semibold text-zinc-900 dark:text-white">Frontend</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-teal-500">•</span> Node.js 18+</li>
+                        <li><span class="text-teal-500">•</span> npm or yarn</li>
+                        <li><span class="text-teal-500">•</span> Vue.js 3.x</li>
+                    </ul>
+                </div>
+                <div
+                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 text-sm text-zinc-700 dark:bg-gray-900 dark:text-zinc-200">
+                    <h3 class="mb-3 text-base font-semibold text-zinc-900 dark:text-white">Database</h3>
+                    <ul class="space-y-2">
+                        <li><span class="text-teal-500">•</span> MySQL 8.0+</li>
+                        <li><span class="text-teal-500">•</span> PostgreSQL 13+</li>
+                        <li><span class="text-teal-500">•</span> SQLite 3.8+</li>
                     </ul>
                 </div>
             </div>
@@ -284,7 +307,7 @@ npm install && npm run dev
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-[#3a3a3a]/70/40"></div>
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Core Features Section -->
         <section id="core-features" class="scroll-mt-20">
@@ -297,7 +320,7 @@ npm install && npm run dev
                 <!-- Feature Card -->
                 <div
                     class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
-                    <h4 class="mb-2 text-base font-semibold text-zinc-900 dark:text-white">Laravel Fortify</h4>
+                    <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">Laravel Fortify</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Secure authentication scaffolding with 2FA support
                     </p>
@@ -403,7 +426,7 @@ npm install && npm run dev
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-[#3a3a3a]/70/40"></div>
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Technologies Section -->
         <section id="technologies" class="scroll-mt-16">
@@ -416,8 +439,7 @@ npm install && npm run dev
                 <!-- Laravel Card -->
                 <div
                     class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
-                    <div
-                        class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
+                    <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
                         <svg class="h-6 w-6 text-zinc-700 dark:text-zinc-200" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.01.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.019.021.024.033.01.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.039-.01-.012-.021-.023-.028-.037h-.002c-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z" />
@@ -445,8 +467,7 @@ npm install && npm run dev
                 <!-- Vue.js Card -->
                 <div
                     class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
-                    <div
-                        class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
+                    <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
                         <svg class="h-6 w-6 text-zinc-700 dark:text-zinc-200" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M24,1.61H14.06L12,5.16,9.94,1.61H0L12,22.39ZM12,14.08,5.16,2.23H9.59L12,6.41l2.41-4.18h4.43Z" />
@@ -474,9 +495,9 @@ npm install && npm run dev
                 <!-- Inertia.js Card -->
                 <div
                     class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
-                    <div
-                        class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
-                        <svg class="h-6 w-6 text-zinc-700 dark:text-zinc-200" viewBox="0 0 500 500" fill="currentColor" aria-hidden="true">
+                    <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
+                        <svg class="h-6 w-6 text-zinc-700 dark:text-zinc-200" viewBox="0 0 500 500" fill="currentColor"
+                            aria-hidden="true">
                             <path d="M184 165H95L181 251L95 337H184L270 251L184 165Z" />
                             <path d="M318.5 165H229.5L315.5 251L229.5 337H318.5L404.5 251L318.5 165Z" />
                         </svg>
@@ -503,8 +524,7 @@ npm install && npm run dev
                 <!-- Tailwind CSS Card -->
                 <div
                     class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
-                    <div
-                        class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
+                    <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
                         <svg class="h-6 w-6 text-zinc-700 dark:text-zinc-200" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
@@ -532,7 +552,7 @@ npm install && npm run dev
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-[#3a3a3a]/70/40"></div>
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Community Section -->
         <section id="community" class="mb-12 scroll-mt-20">
@@ -603,7 +623,7 @@ npm install && npm run dev
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-200 dark:border-zinc-800"></div>
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Getting Started Section -->
         <section id="getting-started" class="mb-8 scroll-mt-16">
@@ -630,9 +650,22 @@ npm install && npm run dev
     <!-- Back to Top Button -->
     <button v-show="showBackToTop"
         class="fixed right-4 bottom-4 z-50 border border-zinc-400 dark:border-zinc-600 bg-white p-2 font-mono text-xs font-bold text-[#3a3a3a] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:right-8 sm:bottom-8 dark:bg-[#252525] dark:text-white dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]"
-        aria-label="Back to top" @click="scrollToTop">
+        aria-label="Scroll back to top of page" @click="scrollToTop">
         [^]
     </button>
+
+    <!-- Copy Success Toast -->
+    <Transition enter-active-class="transition ease-out duration-200" enter-from-class="opacity-0 translate-y-2"
+        enter-to-class="opacity-100 translate-y-0" leave-active-class="transition ease-in duration-150"
+        leave-from-class="opacity-100 translate-y-0" leave-to-class="opacity-0 translate-y-2">
+        <div v-show="showCopied"
+            class="fixed right-4 top-4 z-50 flex items-center gap-2 border border-zinc-400 dark:border-zinc-600 bg-white px-4 py-3 font-mono text-sm font-medium text-zinc-900 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:right-8 sm:top-8 dark:bg-[#252525] dark:text-white dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)]">
+            <svg class="h-5 w-5 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <span>Copied to clipboard!</span>
+        </div>
+    </Transition>
 
     <ArticleNavigation :links="articleLinks" />
 </template>
