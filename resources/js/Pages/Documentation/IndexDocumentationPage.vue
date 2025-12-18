@@ -84,7 +84,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Why GuacPanel Section -->
-        <section id="why-guacpanel" class="mb-12 scroll-mt-20">
+        <section id="why-guacpanel" class="mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Why GuacPanel?</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 GuacPanel is a production-ready Laravel admin panel starter kit that eliminates weeks of repetitive
@@ -101,7 +101,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
                                 d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
                     </div>
-                    <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">Ship faster</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Ship faster</h3>
                     <p class="text-sm text-zinc-600 dark:text-zinc-400">
                         Start from a complete admin and focus on product.
                     </p>
@@ -115,7 +115,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
                                 d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                     </div>
-                    <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">Security first</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Security first</h3>
                     <p class="text-sm text-zinc-600 dark:text-zinc-400">
                         Built-in: 2FA, passwordless, roles/permissions, audit logs.
                     </p>
@@ -129,7 +129,8 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
                                 d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                         </svg>
                     </div>
-                    <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">Fully customizable</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Fully customizable
+                    </h3>
                     <p class="text-sm text-zinc-600 dark:text-zinc-400">
                         Swap, extend, or remove any piece to fit your stack.
                     </p>
@@ -141,7 +142,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Quick Start Section -->
-        <section id="quick-start" class="mb-12 scroll-mt-20">
+        <section id="quick-start" class="mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Quick Start</h2>
             <p class="mb-4 text-base text-zinc-600 dark:text-zinc-400">
                 Get up and running with a single command. GuacPanel uses Composer to scaffold your new project.
@@ -168,9 +169,10 @@ npm install && npm run dev
                 </pre>
             </div>
 
-            <div class="my-6 flex rounded-3xl p-6 bg-teal-50 dark:bg-teal-900/40 dark:ring-1 dark:ring-teal-300/10">
+            <div
+                class="my-6 flex gap-2.5 rounded-2xl border border-teal-500/20 bg-teal-50/50 p-4 leading-6 text-teal-900 dark:border-teal-500/30 dark:bg-teal-500/5 dark:text-teal-200">
                 <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"
-                    class="h-8 w-8 flex-none [--icon-foreground:var(--color-slate-900)] [--icon-background:var(--color-white)]">
+                    class="mt-1 h-8 w-8 flex-none fill-teal-500 stroke-white dark:fill-teal-200/20 dark:stroke-teal-200">
                     <defs>
                         <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_QS_alert"
                             gradientTransform="matrix(0 21 -21 0 20 11)">
@@ -219,7 +221,7 @@ npm install && npm run dev
         <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- System Requirements Section -->
-        <section id="system-requirements" class="mb-12 scroll-mt-20">
+        <section id="system-requirements" class="mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">System Requirements</h2>
             <p class="mb-4 text-base text-zinc-600 dark:text-zinc-400">
                 Minimum stack to run GuacPanel. For the full checklist and troubleshooting, see the
@@ -232,7 +234,7 @@ npm install && npm run dev
             <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
                 <div
                     class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 text-sm text-zinc-700 dark:bg-gray-900 dark:text-zinc-200">
-                    <h3 class="mb-3 text-base font-semibold text-zinc-900 dark:text-white">Backend</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Backend</h3>
                     <ul class="space-y-2">
                         <li><span class="text-teal-500">•</span> PHP 8.2+</li>
                         <li><span class="text-teal-500">•</span> Composer 2.x</li>
@@ -241,7 +243,7 @@ npm install && npm run dev
                 </div>
                 <div
                     class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 text-sm text-zinc-700 dark:bg-gray-900 dark:text-zinc-200">
-                    <h3 class="mb-3 text-base font-semibold text-zinc-900 dark:text-white">Frontend</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Frontend</h3>
                     <ul class="space-y-2">
                         <li><span class="text-teal-500">•</span> Node.js 18+</li>
                         <li><span class="text-teal-500">•</span> npm or yarn</li>
@@ -250,7 +252,7 @@ npm install && npm run dev
                 </div>
                 <div
                     class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 text-sm text-zinc-700 dark:bg-gray-900 dark:text-zinc-200">
-                    <h3 class="mb-3 text-base font-semibold text-zinc-900 dark:text-white">Database</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Database</h3>
                     <ul class="space-y-2">
                         <li><span class="text-teal-500">•</span> MySQL 8.0+</li>
                         <li><span class="text-teal-500">•</span> PostgreSQL 13+</li>
@@ -258,59 +260,14 @@ npm install && npm run dev
                     </ul>
                 </div>
             </div>
-            <div class="my-8 flex rounded-3xl p-6 bg-teal-50 dark:bg-teal-900/40 dark:ring-1 dark:ring-teal-300/10">
-                <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"
-                    class="h-8 w-8 flex-none [--icon-foreground:var(--color-slate-900)] [--icon-background:var(--color-white)]">
-                    <defs>
-                        <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_S_6_-gradient"
-                            gradientTransform="matrix(0 21 -21 0 20 11)">
-                            <stop stop-color="#0EA5E9"></stop>
-                            <stop stop-color="#22D3EE" offset=".527"></stop>
-                            <stop stop-color="#818CF8" offset="1"></stop>
-                        </radialGradient>
-                        <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_S_6_-gradient-dark"
-                            gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
-                            <stop stop-color="#0EA5E9"></stop>
-                            <stop stop-color="#22D3EE" offset=".527"></stop>
-                            <stop stop-color="#818CF8" offset="1"></stop>
-                        </radialGradient>
-                    </defs>
-                    <g class="dark:hidden">
-                        <circle cx="20" cy="20" r="12" fill="url(#_S_6_-gradient)"></circle>
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M20 24.995c0-1.855 1.094-3.501 2.427-4.792C24.61 18.087 26 15.07 26 12.231 26 7.133 21.523 3 16 3S6 7.133 6 12.23c0 2.84 1.389 5.857 3.573 7.973C10.906 21.494 12 23.14 12 24.995V27a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.005Z"
-                            class="fill-(--icon-background)" fill-opacity="0.5"></path>
-                        <path
-                            d="M25 12.23c0 2.536-1.254 5.303-3.269 7.255l1.391 1.436c2.354-2.28 3.878-5.547 3.878-8.69h-2ZM16 4c5.047 0 9 3.759 9 8.23h2C27 6.508 21.998 2 16 2v2Zm-9 8.23C7 7.76 10.953 4 16 4V2C10.002 2 5 6.507 5 12.23h2Zm3.269 7.255C8.254 17.533 7 14.766 7 12.23H5c0 3.143 1.523 6.41 3.877 8.69l1.392-1.436ZM13 27v-2.005h-2V27h2Zm1 1a1 1 0 0 1-1-1h-2a3 3 0 0 0 3 3v-2Zm4 0h-4v2h4v-2Zm1-1a1 1 0 0 1-1 1v2a3 3 0 0 0 3-3h-2Zm0-2.005V27h2v-2.005h-2ZM8.877 20.921C10.132 22.136 11 23.538 11 24.995h2c0-2.253-1.32-4.143-2.731-5.51L8.877 20.92Zm12.854-1.436C20.32 20.852 19 22.742 19 24.995h2c0-1.457.869-2.859 2.122-4.074l-1.391-1.436Z"
-                            class="fill-(--icon-foreground)"></path>
-                        <path
-                            d="M20 26a1 1 0 1 0 0-2v2Zm-8-2a1 1 0 1 0 0 2v-2Zm2 0h-2v2h2v-2Zm1 1V13.5h-2V25h2Zm-5-11.5v1h2v-1h-2Zm3.5 4.5h5v-2h-5v2Zm8.5-3.5v-1h-2v1h2ZM20 24h-2v2h2v-2Zm-2 0h-4v2h4v-2Zm-1-10.5V25h2V13.5h-2Zm2.5-2.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2ZM18.5 18a3.5 3.5 0 0 0 3.5-3.5h-2a1.5 1.5 0 0 1-1.5 1.5v2ZM10 14.5a3.5 3.5 0 0 0 3.5 3.5v-2a1.5 1.5 0 0 1-1.5-1.5h-2Zm2.5-3.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2Z"
-                            class="fill-(--icon-foreground)"></path>
-                    </g>
-                    <g class="hidden dark:inline">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                            d="M16 2C10.002 2 5 6.507 5 12.23c0 3.144 1.523 6.411 3.877 8.691.75.727 1.363 1.52 1.734 2.353.185.415.574.726 1.028.726H12a1 1 0 0 0 1-1v-4.5a.5.5 0 0 0-.5-.5A3.5 3.5 0 0 1 9 14.5V14a3 3 0 1 1 6 0v9a1 1 0 1 0 2 0v-9a3 3 0 1 1 6 0v.5a3.5 3.5 0 0 1-3.5 3.5.5.5 0 0 0-.5.5V23a1 1 0 0 0 1 1h.36c.455 0 .844-.311 1.03-.726.37-.833.982-1.626 1.732-2.353 2.354-2.28 3.878-5.547 3.878-8.69C27 6.507 21.998 2 16 2Zm5 25a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1 3 3 0 0 0 3 3h4a3 3 0 0 0 3-3Zm-8-13v1.5a.5.5 0 0 1-.5.5 1.5 1.5 0 0 1-1.5-1.5V14a1 1 0 1 1 2 0Zm6.5 2a.5.5 0 0 1-.5-.5V14a1 1 0 1 1 2 0v.5a1.5 1.5 0 0 1-1.5 1.5Z"
-                            fill="url(#_S_6_-gradient-dark)"></path>
-                    </g>
-                </svg>
-                <div class="ml-4 flex-auto">
-                    <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">Need detailed steps?
-                    </p>
-                    <p class="mt-2.5 text-sm text-teal-800 dark:text-teal-100">
-                        Follow the <a href="/documentation/installation"
-                            class="font-semibold text-teal-900 underline hover:text-teal-700 dark:text-teal-100 dark:hover:text-teal-50">Installation
-                            Guide</a>
-                        for commands, env setup, and troubleshooting.
-                    </p>
-                </div>
-            </div>
+
         </section>
 
         <!-- Divider -->
         <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Core Features Section -->
-        <section id="core-features" class="scroll-mt-20">
+        <section id="core-features" class="mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Core Features</h2>
             <p class="mb-4 text-base text-zinc-600 dark:text-zinc-400">
                 Everything you need to build modern, secure, and scalable admin applications.
@@ -429,7 +386,7 @@ npm install && npm run dev
         <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Technologies Section -->
-        <section id="technologies" class="scroll-mt-16">
+        <section id="technologies" class="mb-16 scroll-mt-16">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Tech Stack</h2>
             <p class="mb-4 text-base text-zinc-600 dark:text-zinc-400">
                 Built with modern technologies for optimal performance and developer experience.
@@ -445,7 +402,8 @@ npm install && npm run dev
                                 d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.01.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.019.021.024.033.01.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.039-.01-.012-.021-.023-.028-.037h-.002c-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z" />
                         </svg>
                     </div>
-                    <h3 class="mb-2 flex items-center gap-1 text-lg font-semibold text-zinc-900 dark:text-white">
+                    <h3
+                        class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white flex items-center gap-1">
                         Laravel
                         <a href="https://laravel.com" target="_blank" rel="noreferrer"
                             class="inline-flex items-center text-cyan-600 transition hover:underline dark:text-cyan-400"
@@ -473,7 +431,8 @@ npm install && npm run dev
                                 d="M24,1.61H14.06L12,5.16,9.94,1.61H0L12,22.39ZM12,14.08,5.16,2.23H9.59L12,6.41l2.41-4.18h4.43Z" />
                         </svg>
                     </div>
-                    <h3 class="mb-2 flex items-center gap-1 text-lg font-semibold text-zinc-900 dark:text-white">
+                    <h3
+                        class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white flex items-center gap-1">
                         Vue.js
                         <a href="https://vuejs.org" target="_blank" rel="noreferrer"
                             class="inline-flex items-center text-cyan-600 transition hover:underline dark:text-cyan-400"
@@ -502,7 +461,8 @@ npm install && npm run dev
                             <path d="M318.5 165H229.5L315.5 251L229.5 337H318.5L404.5 251L318.5 165Z" />
                         </svg>
                     </div>
-                    <h3 class="mb-2 flex items-center gap-1 text-lg font-semibold text-zinc-900 dark:text-white">
+                    <h3
+                        class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white flex items-center gap-1">
                         Inertia.js
                         <a href="https://inertiajs.com" target="_blank" rel="noreferrer"
                             class="inline-flex items-center text-cyan-600 transition hover:underline dark:text-cyan-400"
@@ -530,7 +490,8 @@ npm install && npm run dev
                                 d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z" />
                         </svg>
                     </div>
-                    <h3 class="mb-2 flex items-center gap-1 text-lg font-semibold text-zinc-900 dark:text-white">
+                    <h3
+                        class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white flex items-center gap-1">
                         Tailwind CSS
                         <a href="https://tailwindcss.com" target="_blank" rel="noreferrer"
                             class="inline-flex items-center text-cyan-600 transition hover:underline dark:text-cyan-400"
@@ -555,7 +516,7 @@ npm install && npm run dev
         <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Community Section -->
-        <section id="community" class="mb-12 scroll-mt-20">
+        <section id="community" class="mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Community & Support</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Join our growing community and get help when you need it.
@@ -573,7 +534,8 @@ npm install && npm run dev
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-zinc-900 dark:text-white">GitHub Repository</h3>
+                            <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">GitHub
+                                Repository</h3>
                         </div>
                     </div>
                     <p class="text-sm text-zinc-600 dark:text-zinc-400">
@@ -592,7 +554,8 @@ npm install && npm run dev
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-zinc-900 dark:text-white">Documentation</h3>
+                            <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Documentation
+                            </h3>
                         </div>
                     </div>
                     <p class="text-sm text-zinc-600 dark:text-zinc-400">
@@ -612,7 +575,8 @@ npm install && npm run dev
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-zinc-900 dark:text-white">Contributing Guide</h3>
+                            <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Contributing
+                                Guide</h3>
                         </div>
                     </div>
                     <p class="text-sm text-zinc-600 dark:text-zinc-400">

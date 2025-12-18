@@ -6,11 +6,11 @@ import ArticleNavigation from '@/Shared/Public/ArticleNavigation.vue'
 import CodeBlock from '@/Components/CodeBlock.vue'
 
 defineOptions({
-  layout: Public,
+    layout: Public,
 })
 
 const codeExamples = {
-  routeConfig: `// Magic Link Authentication Routes
+    routeConfig: `// Magic Link Authentication Routes
 Route::middleware(['guest', 'web'])->group(function () {
     Route::controller(MagicLinkController::class)->group(function () {
         Route::get('/magic-link/register', 'create')->name('magic.register.create');
@@ -20,7 +20,7 @@ Route::middleware(['guest', 'web'])->group(function () {
     });
 });`,
 
-  magicLink: `protected function sendLoginLink(User $user)
+    magicLink: `protected function sendLoginLink(User $user)
 {
     $url = URL::temporarySignedRoute(
         'magic.login',
@@ -31,7 +31,7 @@ Route::middleware(['guest', 'web'])->group(function () {
     Mail::to($user)->send(new MagicLoginLink($url));
 }`,
 
-  authProcess: `public function authenticate(Request $request)
+    authProcess: `public function authenticate(Request $request)
 {
     if (!$request->hasValidSignature()) {
         return redirect()->route('login')
@@ -45,7 +45,7 @@ Route::middleware(['guest', 'web'])->group(function () {
     return redirect()->intended(config('fortify.home'));
 }`,
 
-  accountDisabling: `public function handle(Request $request, Closure $next): Response
+    accountDisabling: `public function handle(Request $request, Closure $next): Response
 {
     if (auth()->check() && auth()->user()->is_disabled) {
         auth()->logout();
@@ -56,7 +56,7 @@ Route::middleware(['guest', 'web'])->group(function () {
     return $next($request);
 }`,
 
-  passwordExpiry: `public function handle(Request $request, Closure $next): Response
+    passwordExpiry: `public function handle(Request $request, Closure $next): Response
 {
     if (auth()->check()) {
         $user = auth()->user();
@@ -71,7 +71,7 @@ Route::middleware(['guest', 'web'])->group(function () {
     return $next($request);
 }`,
 
-  forcePassword: `public function handle(Request $request, Closure $next): Response
+    forcePassword: `public function handle(Request $request, Closure $next): Response
 {
     if (auth()->check() && auth()->user()->force_password_change) {
         session()->flash('warning', 'You must change your password before continuing.');
@@ -81,7 +81,7 @@ Route::middleware(['guest', 'web'])->group(function () {
     return $next($request);
 }`,
 
-  twoFactor: `public function handle(Request $request, Closure $next): Response
+    twoFactor: `public function handle(Request $request, Closure $next): Response
 {
     if (!auth()->check()) {
         return $next($request);
@@ -101,7 +101,7 @@ Route::middleware(['guest', 'web'])->group(function () {
     return $next($request);
 }`,
 
-  socialConfig: `GOOGLE_ENABLED=false
+    socialConfig: `GOOGLE_ENABLED=false
 GOOGLE_CLIENT_ID=your-google-client-id
 GOOGLE_CLIENT_SECRET=your-google-client-secret
 GOOGLE_REDIRECT=\u0024{APP_URL}/auth/social/google/callback
@@ -121,7 +121,7 @@ LINKEDIN_CLIENT_ID=your-linkedin-client-id
 LINKEDIN_SECRET=your-linkedin-client-secret
 LINKEDIN_REDIRECT=\u0024{APP_URL}/auth/social/linkedin/callback`,
 
-  frontendSetup: `// resources/js/Pages/Admin/User/IndexUserPage.vue
+    frontendSetup: `// resources/js/Pages/Admin/User/IndexUserPage.vue
 import { Head, router } from '@inertiajs/vue3'
 import DataTable from '@/Components/Datatable.vue'
 import { createColumnHelper } from '@tanstack/vue-table'
@@ -157,7 +157,7 @@ const columns = [
     })
 ]`,
 
-  templateUsage: `<DataTable
+    templateUsage: `<DataTable
     :data="users.data"
     :columns="columns"
     :loading="loading"
@@ -168,7 +168,7 @@ const columns = [
     export-file-name="users"
     @update:pagination="pagination = $event" />`,
 
-  paginationWatcher: `// Watch for pagination changes and reload data
+    paginationWatcher: `// Watch for pagination changes and reload data
 import { watch } from 'vue'
 import { router } from '@inertiajs/vue3'
 
@@ -192,7 +192,7 @@ watch(
     { deep: true }
 )`,
 
-  backendService: `// app/Services/DataTablePaginationService.php
+    backendService: `// app/Services/DataTablePaginationService.php
 public function resolvePerPageWithDefaults(Request $request, string $resourceName, ?int $filteredTotal = null): int
 {
     return $this->resolvePerPage(
@@ -206,7 +206,7 @@ public function resolvePerPageWithDefaults(Request $request, string $resourceNam
     );
 }`,
 
-  backendController: `// app/Http/Controllers/AdminUserController.php
+    backendController: `// app/Http/Controllers/AdminUserController.php
 public function __construct(private DataTablePaginationService $pagination) {}
 
 public function index(Request $request)
@@ -234,7 +234,7 @@ public function index(Request $request)
     ]);
 }`,
 
-  actionButtons: `// Add to your columns array
+    actionButtons: `// Add to your columns array
 columnHelper.display({
     id: 'actions',
     header: 'Actions',
@@ -269,7 +269,7 @@ const handleDelete = async (user) => {
     })
 }`,
 
-  bulkDelete: `// Add bulk delete functionality to your Datatable
+    bulkDelete: `// Add bulk delete functionality to your Datatable
 <Datatable
     :bulk-delete-route="route('admin.login.history.bulk-destroy')"
     @bulk-delete="handleBulkDelete">
@@ -283,7 +283,7 @@ const handleBulkDelete = async ({ selectedRows }) => {
     await router.reload({ preserveScroll: true });
 };`,
 
-  configExample: `{
+    configExample: `{
     // Required props
     name: {
         type: String,
@@ -329,7 +329,7 @@ const handleBulkDelete = async ({ selectedRows }) => {
     }
 }`,
 
-  scriptExample: `import { defineComponent } from 'vue'
+    scriptExample: `import { defineComponent } from 'vue'
 import vueFilePond from 'vue-filepond'
 import 'filepond/dist/filepond.min.css'
 import 'filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css'
@@ -367,8 +367,8 @@ const handleFileRemove = (error, file) => {
     }
 }`,
 
-  // Health monitoring
-  healthChecksConfig: `// app/Providers/AppServiceProvider.php
+    // Health monitoring
+    healthChecksConfig: `// app/Providers/AppServiceProvider.php
 use Spatie\Health\Facades\Health;
 use Spatie\Health\Checks\Checks\CacheCheck;
 use Spatie\Health\Checks\Checks\QueueCheck;
@@ -390,7 +390,7 @@ public function register(): void {
     ]);
 }`,
 
-  healthController: `// app/Http/Controllers/AdminHealthStatusController.php
+    healthController: `// app/Http/Controllers/AdminHealthStatusController.php
 use Spatie\Health\ResultStores\ResultStore;
 
 public function index(ResultStore $resultStore)
@@ -418,7 +418,7 @@ public function runHealthChecks()
     return redirect()->back()->with('success', 'Health checks completed');
 }`,
 
-  healthFrontend: `// Monitoring/IndexPage.vue - Status grouping and rendering
+    healthFrontend: `// Monitoring/IndexPage.vue - Status grouping and rendering
 const groupedResults = computed(() => {
     return results.value.reduce((acc, result) => {
         const status = (result.status || 'default').toLowerCase()
@@ -435,16 +435,16 @@ const runHealthChecks = () => {
     })
 }`,
 
-  generateSearchKey: `php generate-search-key.php`,
+    generateSearchKey: `php generate-search-key.php`,
 
-  typesenseEnv: `# .env
+    typesenseEnv: `# .env
 TYPESENSE_SEARCH_ONLY_KEY=your_generated_search_key_here
 TYPESENSE_HOST=localhost
 TYPESENSE_PORT=8108
 TYPESENSE_PROTOCOL=http`,
 
-  // Search configuration
-  searchConfig: `{
+    // Search configuration
+    searchConfig: `{
     collection: "users",          // Collection name
     q: searchQuery,              // Search query
     query_by: "name,email",      // Fields to search
@@ -452,8 +452,8 @@ TYPESENSE_PROTOCOL=http`,
     per_page: 5                  // Results per page
 }`,
 
-  // Add new example for result structure
-  resultStructure: `{
+    // Add new example for result structure
+    resultStructure: `{
     collection_name: 'collection_name',  // Collection identifier
     url: '/path/to/item',               // URL for the result
     displayTitle: 'Title',              // Main display text
@@ -462,760 +462,795 @@ TYPESENSE_PROTOCOL=http`,
 }
 
 const articleLinks = [
-  { text: 'Authentication', href: '#authentication' },
-  { text: 'Permissions & Roles', href: '#permissions-roles' },
-  { text: 'Security Middleware', href: '#middleware' },
-  { text: 'Backup System', href: '#backup-system' },
-  { text: 'System Health', href: '#system-health' },
-  { text: 'Data Tables', href: '#data-tables' },
-  { text: 'Typesense Search', href: '#typesense-search' },
-  { text: 'File Uploads', href: '#file-uploads' },
+    { text: 'Authentication', href: '#authentication' },
+    { text: 'Permissions & Roles', href: '#permissions-roles' },
+    { text: 'Security Middleware', href: '#middleware' },
+    { text: 'Backup Management UI', href: '#backup-system' },
+    { text: 'System Health Monitoring', href: '#system-health' },
+    { text: 'Data Tables', href: '#data-tables' },
+    { text: 'Typesense Search', href: '#typesense-search' },
+    { text: 'File Uploads', href: '#file-uploads' },
 ]
 
 const showBackToTop = ref(false)
 
 const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
 const handleScroll = () => {
-  showBackToTop.value = window.scrollY > 500
+    showBackToTop.value = window.scrollY > 500
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
+    window.removeEventListener('scroll', handleScroll)
 })
 </script>
 
 <template>
-  <Head title="Features - GuacPanel" />
 
-  <div id="introduction" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <!-- Hero Section -->
-    <div class="mb-12 border bg-white p-8 md:p-12 dark:bg-[#252525]">
-      <div class="text-center">
-        <div class="mb-4 flex items-center justify-center">
-          <h1 class="text-3xl font-bold md:text-4xl">Core Features</h1>
+    <Head title="Features - GuacPanel" />
+
+    <div class="mx-auto max-w-4xl">
+        <!-- Intro Section -->
+        <div id="introduction" class="mb-8">
+            <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-teal-500 dark:text-teal-300">
+                Core Features
+            </p>
+            <h1 class="mb-4 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-white">
+                System Features
+            </h1>
+            <p class="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+                Build secure Laravel admin interfaces with GuacPanel's essential features:
+                authentication, permissions, health monitoring, backups, data tables, and search.
+                Everything you need, ready to use.
+            </p>
+
+            <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a href="https://github.com/otatechie/guacpanel-tailwind" target="_blank"
+                    class="inline-flex items-center justify-center gap-2 border border-zinc-400 dark:border-zinc-600 bg-[#3a3a3a] px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-white hover:text-[#3a3a3a] dark:bg-white dark:text-[#3a3a3a] dark:hover:bg-[#3a3a3a] dark:hover:text-white">
+                    <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    Source Code
+                </a>
+                <a href="/documentation/components"
+                    class="inline-flex items-center justify-center gap-2 border border-zinc-400 dark:border-zinc-600 bg-white px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white dark:bg-[#252525] dark:text-white dark:hover:bg-white dark:hover:text-[#3a3a3a]">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                    UI Components
+                </a>
+            </div>
+
+            <!-- Feature Overview Grid -->
+            <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <div
+                    class="rounded-xl border border-zinc-200 bg-zinc-50/50 p-4 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300">
+                    <div class="mb-2 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                </svg>
+                            </span>
+                            <p class="font-bold text-zinc-900 dark:text-white">Auth & Security</p>
+                        </div>
+                        <span
+                            class="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-bold text-teal-700 dark:bg-teal-900/30 dark:text-teal-300">4
+                            Features</span>
+                    </div>
+                    <p class="leading-relaxed text-zinc-600 dark:text-zinc-400">Fortify auth, magic links, social login,
+                        and
+                        security middleware.</p>
+                </div>
+
+                <div
+                    class="rounded-xl border border-zinc-200 bg-zinc-50/50 p-4 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300">
+                    <div class="mb-2 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                                </svg>
+                            </span>
+                            <p class="font-bold text-zinc-900 dark:text-white">Data & Search</p>
+                        </div>
+                        <span
+                            class="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-bold text-teal-700 dark:bg-teal-900/30 dark:text-teal-300">2
+                            Features</span>
+                    </div>
+                    <p class="leading-relaxed text-zinc-600 dark:text-zinc-400">Powerful TanStack data tables and
+                        lightning-fast
+                        typo-tolerant Typesense search.</p>
+                </div>
+
+                <div
+                    class="rounded-xl border border-zinc-200 bg-zinc-50/50 p-4 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300">
+                    <div class="mb-2 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                                </svg>
+                            </span>
+                            <p class="font-bold text-zinc-900 dark:text-white">Monitoring</p>
+                        </div>
+                        <span
+                            class="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-bold text-teal-700 dark:bg-teal-900/30 dark:text-teal-300">2
+                            Features</span>
+                    </div>
+                    <p class="leading-relaxed text-zinc-600 dark:text-zinc-400">Real-time system health dashboard and
+                        automated
+                        background Spatie backup system.</p>
+                </div>
+
+                <div
+                    class="rounded-xl border border-zinc-200 bg-zinc-50/50 p-4 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300">
+                    <div class="mb-2 flex items-center justify-between">
+                        <div class="flex items-center gap-3">
+                            <span
+                                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                    aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                                </svg>
+                            </span>
+                            <p class="font-bold text-zinc-900 dark:text-white">Files & UI</p>
+                        </div>
+                        <span
+                            class="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-bold text-teal-700 dark:bg-teal-900/30 dark:text-teal-300">Built-in</span>
+                    </div>
+                    <p class="leading-relaxed text-zinc-600 dark:text-zinc-400">Modern drag-and-drop FilePond uploads
+                        and premium UI components.</p>
+                </div>
+            </div>
         </div>
 
-        <div class="mx-auto mb-8 max-w-2xl">
-          <p class="text-lg text-zinc-600 dark:text-zinc-400">
-            Build secure Laravel admin interfaces with GuacPanel's essential features:
-            authentication, permissions, health monitoring, backups, data tables, and search.
-            Everything you need, ready to use.
-          </p>
-        </div>
+        <!-- Divider -->
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
-        <div class="flex flex-col justify-center gap-4 sm:flex-row">
-          <a
-            href="#authentication"
-            class="inline-flex items-center border border-gray-300 bg-teal-500/20 px-6 py-3 font-mono text-sm tracking-wider text-teal-400 uppercase transition-all hover:bg-teal-500/30 dark:text-teal-400">
-            <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-            [Authentication]
-          </a>
-          <a
-            href="#data-tables"
-            class="inline-flex items-center border border-gray-300 bg-teal-500/20 px-6 py-3 font-mono text-sm tracking-wider text-teal-400 uppercase transition-all hover:bg-teal-500/30 dark:text-teal-400">
-            <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-            </svg>
-            [Data_Tables]
-          </a>
-        </div>
-      </div>
+        <!-- Authentication Section -->
+        <section id="authentication" class="mb-16 scroll-mt-20">
+            <div class="mb-8">
+                <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Authentication</h2>
+                <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    GuacPanel provides a complete authentication system built on Laravel Fortify. Choose from
+                    traditional login, passwordless magic links, or social authentication with Google, Facebook, GitHub,
+                    and LinkedIn. All authentication methods include built-in security middleware for account
+                    management, password policies, and two-factor authentication.
+                </p>
+                <!-- Alert -->
+                <div
+                    class="my-6 flex gap-2.5 rounded-2xl border border-teal-500/20 bg-teal-50/50 p-4 leading-6 text-teal-900 dark:border-teal-500/30 dark:bg-teal-500/5 dark:text-teal-200 dark:[--tw-prose-links-hover:theme(colors.teal.300)] dark:[--tw-prose-links:theme(colors.white)]">
+                    <svg viewBox="0 0 32 32" aria-hidden="true"
+                        class="mt-1 h-8 w-8 flex-none fill-teal-500 stroke-white dark:fill-teal-200/20 dark:stroke-teal-200">
+                        <defs>
+                            <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_auth"
+                                gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+                                <stop stop-color="#0EA5E9"></stop>
+                                <stop stop-color="#22D3EE" offset=".527"></stop>
+                                <stop stop-color="#818CF8" offset="1"></stop>
+                            </radialGradient>
+                            <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_auth_dark"
+                                gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+                                <stop stop-color="#0EA5E9"></stop>
+                                <stop stop-color="#22D3EE" offset=".527"></stop>
+                                <stop stop-color="#818CF8" offset="1"></stop>
+                            </radialGradient>
+                        </defs>
+                        <g class="dark:hidden">
+                            <circle cx="20" cy="20" r="12" fill="url(#_alert_auth)"></circle>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20 24.995c0-1.855 1.094-3.501 2.427-4.792C24.61 18.087 26 15.07 26 12.231 26 7.133 21.523 3 16 3S6 7.133 6 12.23c0 2.84 1.389 5.857 3.573 7.973C10.906 21.494 12 23.14 12 24.995V27a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.005Z"
+                                class="fill-(--icon-background)" fill-opacity="0.5"></path>
+                            <path
+                                d="M25 12.23c0 2.536-1.254 5.303-3.269 7.255l1.391 1.436c2.354-2.28 3.878-5.547 3.878-8.69h-2ZM16 4c5.047 0 9 3.759 9 8.23h2C27 6.508 21.998 2 16 2v2Zm-9 8.23C7 7.76 10.953 4 16 4V2C10.002 2 5 6.507 5 12.23h2Zm3.269 7.255C8.254 17.533 7 14.766 7 12.23H5c0 3.143 1.523 6.41 3.877 8.69l1.392-1.436ZM13 27v-2.005h-2V27h2Zm1 1a1 1 0 0 1-1-1h-2a3 3 0 0 0 3 3v-2Zm4 0h-4v2h4v-2Zm1-1a1 1 0 0 1-1 1v2a3 3 0 0 0 3-3h-2Zm0-2.005V27h2v-2.005h-2ZM8.877 20.921C10.132 22.136 11 23.538 11 24.995h2c0-2.253-1.32-4.143-2.731-5.51L8.877 20.92Zm12.854-1.436C20.32 20.852 19 22.742 19 24.995h2c0-1.457.869-2.859 2.122-4.074l-1.391-1.436Z"
+                                class="fill-(--icon-foreground)"></path>
+                            <path
+                                d="M20 26a1 1 0 1 0 0-2v2Zm-8-2a1 1 0 1 0 0 2v-2Zm2 0h-2v2h2v-2Zm1 1V13.5h-2V25h2Zm-5-11.5v1h2v-1h-2Zm3.5 4.5h5v-2h-5v2Zm8.5-3.5v-1h-2v1h2ZM20 24h-2v2h2v-2Zm-2 0h-4v2h4v-2Zm-1-10.5V25h2V13.5h-2Zm2.5-2.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2ZM18.5 18a3.5 3.5 0 0 0 3.5-3.5h-2a1.5 1.5 0 0 1-1.5 1.5v2ZM10 14.5a3.5 3.5 0 0 0 3.5 3.5v-2a1.5 1.5 0 0 1-1.5-1.5h-2Zm2.5-3.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2Z"
+                                class="fill-(--icon-foreground)"></path>
+                        </g>
+                        <g class="hidden dark:inline">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16 2C10.002 2 5 6.507 5 12.23c0 3.144 1.523 6.411 3.877 8.691.75.727 1.363 1.52 1.734 2.353.185.415.574.726 1.028.726H12a1 1 0 0 0 1-1v-4.5a.5.5 0 0 0-.5-.5A3.5 3.5 0 0 1 9 14.5V14a3 3 0 1 1 6 0v9a1 1 0 1 0 2 0v-9a3 3 0 1 1 6 0v.5a3.5 3.5 0 0 1-3.5 3.5.5.5 0 0 0-.5.5V23a1 1 0 0 0 1 1h.36c.455 0 .844-.311 1.03-.726.37-.833.982-1.626 1.732-2.353 2.354-2.28 3.878-5.547 3.878-8.69C27 6.507 21.998 2 16 2Zm5 25a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1 3 3 0 0 0 3 3h4a3 3 0 0 0 3-3Zm-8-13v1.5a.5.5 0 0 1-.5.5 1.5 1.5 0 0 1-1.5-1.5V14a1 1 0 1 1 2 0Zm6.5 2a.5.5 0 0 1-.5-.5V14a1 1 0 1 1 2 0v.5a1.5 1.5 0 0 1-1.5 1.5Z"
+                                fill="url(#_alert_auth_dark)"></path>
+                        </g>
+                    </svg>
+                    <div class="ml-4 flex-auto">
+                        <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">Seamless
+                            Integration</p>
+                        <p class="mt-2.5 text-sm text-teal-800 dark:text-teal-100">
+                            All authentication methods work seamlessly together. Users can switch between traditional
+                            login, magic links, and social providers.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Laravel Fortify -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Laravel
+                        Fortify</h3>
+                    <p class="mb-3 text-zinc-600 dark:text-zinc-400">
+                        GuacPanel is built on
+                        <a href="https://laravel.com/docs/11.x/fortify" target="_blank"
+                            class="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300">
+                            Laravel Fortify
+                        </a>
+                        and provides a complete, production-ready authentication system with login, registration, email
+                        verification, two-factor authentication, password management, and session tracking—fully
+                        configured and ready to use.
+                    </p>
+                </div>
+
+                <!-- Passwordless Login -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Passwordless
+                        Login</h3>
+                    <p class="mb-3 text-zinc-600 dark:text-zinc-400">
+                        Supports email-based magic link authentication, eliminating passwords while maintaining strong
+                        security.
+                    </p>
+
+                    <!-- Alert -->
+                    <div
+                        class="my-6 flex gap-2.5 rounded-2xl border border-teal-500/20 bg-teal-50/50 p-4 leading-6 text-teal-900 dark:border-teal-500/30 dark:bg-teal-500/5 dark:text-teal-200">
+                        <svg viewBox="0 0 32 32" aria-hidden="true"
+                            class="mt-1 h-8 w-8 flex-none fill-teal-500 stroke-white dark:fill-teal-200/20 dark:stroke-teal-200">
+                            <defs>
+                                <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                    id="_alert_passwordless" gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+                                    <stop stop-color="#0EA5E9"></stop>
+                                    <stop stop-color="#22D3EE" offset=".527"></stop>
+                                    <stop stop-color="#818CF8" offset="1"></stop>
+                                </radialGradient>
+                                <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                    id="_alert_passwordless_dark"
+                                    gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+                                    <stop stop-color="#0EA5E9"></stop>
+                                    <stop stop-color="#22D3EE" offset=".527"></stop>
+                                    <stop stop-color="#818CF8" offset="1"></stop>
+                                </radialGradient>
+                            </defs>
+                            <g class="dark:hidden">
+                                <circle cx="20" cy="20" r="12" fill="url(#_alert_passwordless)"></circle>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M20 24.995c0-1.855 1.094-3.501 2.427-4.792C24.61 18.087 26 15.07 26 12.231 26 7.133 21.523 3 16 3S6 7.133 6 12.23c0 2.84 1.389 5.857 3.573 7.973C10.906 21.494 12 23.14 12 24.995V27a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.005Z"
+                                    class="fill-(--icon-background)" fill-opacity="0.5"></path>
+                                <path
+                                    d="M25 12.23c0 2.536-1.254 5.303-3.269 7.255l1.391 1.436c2.354-2.28 3.878-5.547 3.878-8.69h-2ZM16 4c5.047 0 9 3.759 9 8.23h2C27 6.508 21.998 2 16 2v2Zm-9 8.23C7 7.76 10.953 4 16 4V2C10.002 2 5 6.507 5 12.23h2Zm3.269 7.255C8.254 17.533 7 14.766 7 12.23H5c0 3.143 1.523 6.41 3.877 8.69l1.392-1.436ZM13 27v-2.005h-2V27h2Zm1 1a1 1 0 0 1-1-1h-2a3 3 0 0 0 3 3v-2Zm4 0h-4v2h4v-2Zm1-1a1 1 0 0 1-1 1v2a3 3 0 0 0 3-3h-2Zm0-2.005V27h2v-2.005h-2ZM8.877 20.921C10.132 22.136 11 23.538 11 24.995h2c0-2.253-1.32-4.143-2.731-5.51L8.877 20.92Zm12.854-1.436C20.32 20.852 19 22.742 19 24.995h2c0-1.457.869-2.859 2.122-4.074l-1.391-1.436Z"
+                                    class="fill-(--icon-foreground)"></path>
+                                <path
+                                    d="M20 26a1 1 0 1 0 0-2v2Zm-8-2a1 1 0 1 0 0 2v-2Zm2 0h-2v2h2v-2Zm1 1V13.5h-2V25h2Zm-5-11.5v1h2v-1h-2Zm3.5 4.5h5v-2h-5v2Zm8.5-3.5v-1h-2v1h2ZM20 24h-2v2h2v-2Zm-2 0h-4v2h4v-2Zm-1-10.5V25h2V13.5h-2Zm2.5-2.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2ZM18.5 18a3.5 3.5 0 0 0 3.5-3.5h-2a1.5 1.5 0 0 1-1.5 1.5v2ZM10 14.5a3.5 3.5 0 0 0 3.5 3.5v-2a1.5 1.5 0 0 1-1.5-1.5h-2Zm2.5-3.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2Z"
+                                    class="fill-(--icon-foreground)"></path>
+                            </g>
+                            <g class="hidden dark:inline">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16 2C10.002 2 5 6.507 5 12.23c0 3.144 1.523 6.411 3.877 8.691.75.727 1.363 1.52 1.734 2.353.185.415.574.726 1.028.726H12a1 1 0 0 0 1-1v-4.5a.5.5 0 0 0-.5-.5A3.5 3.5 0 0 1 9 14.5V14a3 3 0 1 1 6 0v9a1 1 0 1 0 2 0v-9a3 3 0 1 1 6 0v.5a3.5 3.5 0 0 1-3.5 3.5.5.5 0 0 0-.5.5V23a1 1 0 0 0 1 1h.36c.455 0 .844-.311 1.03-.726.37-.833.982-1.626 1.732-2.353 2.354-2.28 3.878-5.547 3.878-8.69C27 6.507 21.998 2 16 2Zm5 25a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1 3 3 0 0 0 3 3h4a3 3 0 0 0 3-3Zm-8-13v1.5a.5.5 0 0 1-.5.5 1.5 1.5 0 0 1-1.5-1.5V14a1 1 0 1 1 2 0Zm6.5 2a.5.5 0 0 1-.5-.5V14a1 1 0 1 1 2 0v.5a1.5 1.5 0 0 1-1.5 1.5Z"
+                                    fill="url(#_alert_passwordless_dark)"></path>
+                            </g>
+                        </svg>
+                        <div class="ml-4 flex-auto">
+                            <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">Configuration
+                                Required</p>
+                            <p class="mt-2.5 text-sm text-teal-800 dark:text-teal-100">
+                                Disabled by default. Enable in Security Settings to use this feature.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Login -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Social Login</h3>
+                    <p class="mb-3 text-zinc-600 dark:text-zinc-400">
+                        Let users sign in with their existing accounts for a faster, more convenient experience.
+                        Authenticate users with Google, Facebook, GitHub, and LinkedIn via
+                        <a href="https://laravel.com/docs/11.x/socialite" target="_blank"
+                            class="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300">
+                            Laravel Socialite
+                        </a>.
+                    </p>
+
+                    <h4 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Environment
+                        Setup</h4>
+                    <div class="mb-4">
+                        <CodeBlock :code="codeExamples.socialConfig" language="bash" :show-copy-button="true" />
+                    </div>
+
+                    <div
+                        class="my-6 flex gap-2.5 rounded-2xl border border-teal-500/20 bg-teal-50/50 p-4 leading-6 text-teal-900 dark:border-teal-500/30 dark:bg-teal-500/5 dark:text-teal-200">
+                        <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"
+                            class="mt-1 h-8 w-8 flex-none fill-teal-500 stroke-white dark:fill-teal-200/20 dark:stroke-teal-200">
+                            <defs>
+                                <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_provider"
+                                    gradientTransform="matrix(0 21 -21 0 20 11)">
+                                    <stop stop-color="#0EA5E9"></stop>
+                                    <stop stop-color="#22D3EE" offset=".527"></stop>
+                                    <stop stop-color="#818CF8" offset="1"></stop>
+                                </radialGradient>
+                                <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                    id="_alert_provider_dark" gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+                                    <stop stop-color="#0EA5E9"></stop>
+                                    <stop stop-color="#22D3EE" offset=".527"></stop>
+                                    <stop stop-color="#818CF8" offset="1"></stop>
+                                </radialGradient>
+                            </defs>
+                            <g class="dark:hidden">
+                                <circle cx="20" cy="20" r="12" fill="url(#_alert_provider)"></circle>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M20 24.995c0-1.855 1.094-3.501 2.427-4.792C24.61 18.087 26 15.07 26 12.231 26 7.133 21.523 3 16 3S6 7.133 6 12.23c0 2.84 1.389 5.857 3.573 7.973C10.906 21.494 12 23.14 12 24.995V27a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.005Z"
+                                    class="fill-(--icon-background)" fill-opacity="0.5"></path>
+                                <path
+                                    d="M25 12.23c0 2.536-1.254 5.303-3.269 7.255l1.391 1.436c2.354-2.28 3.878-5.547 3.878-8.69h-2ZM16 4c5.047 0 9 3.759 9 8.23h2C27 6.508 21.998 2 16 2v2Zm-9 8.23C7 7.76 10.953 4 16 4V2C10.002 2 5 6.507 5 12.23h2Zm3.269 7.255C8.254 17.533 7 14.766 7 12.23H5c0 3.143 1.523 6.41 3.877 8.69l1.392-1.436ZM13 27v-2.005h-2V27h2Zm1 1a1 1 0 0 1-1-1h-2a3 3 0 0 0 3 3v-2Zm4 0h-4v2h4v-2Zm1-1a1 1 0 0 1-1 1v2a3 3 0 0 0 3-3h-2Zm0-2.005V27h2v-2.005h-2ZM8.877 20.921C10.132 22.136 11 23.538 11 24.995h2c0-2.253-1.32-4.143-2.731-5.51L8.877 20.92Zm12.854-1.436C20.32 20.852 19 22.742 19 24.995h2c0-1.457.869-2.859 2.122-4.074l-1.391-1.436Z"
+                                    class="fill-(--icon-foreground)"></path>
+                                <path
+                                    d="M20 26a1 1 0 1 0 0-2v2Zm-8-2a1 1 0 1 0 0 2v-2Zm2 0h-2v2h2v-2Zm1 1V13.5h-2V25h2Zm-5-11.5v1h2v-1h-2Zm3.5 4.5h5v-2h-5v2Zm8.5-3.5v-1h-2v1h2ZM20 24h-2v2h2v-2Zm-2 0h-4v2h4v-2Zm-1-10.5V25h2V13.5h-2Zm2.5-2.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2ZM18.5 18a3.5 3.5 0 0 0 3.5-3.5h-2a1.5 1.5 0 0 1-1.5 1.5v2ZM10 14.5a3.5 3.5 0 0 0 3.5 3.5v-2a1.5 1.5 0 0 1-1.5-1.5h-2Zm2.5-3.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2Z"
+                                    class="fill-(--icon-foreground)"></path>
+                            </g>
+                            <g class="hidden dark:inline">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16 2C10.002 2 5 6.507 5 12.23c0 3.144 1.523 6.411 3.877 8.691.75.727 1.363 1.52 1.734 2.353.185.415.574.726 1.028.726H12a1 1 0 0 0 1-1v-4.5a.5.5 0 0 0-.5-.5A3.5 3.5 0 0 1 9 14.5V14a3 3 0 1 1 6 0v9a1 1 0 1 0 2 0v-9a3 3 0 1 1 6 0v.5a3.5 3.5 0 0 1-3.5 3.5.5.5 0 0 0-.5.5V23a1 1 0 0 0 1 1h.36c.455 0 .844-.311 1.03-.726.37-.833.982-1.626 1.732-2.353 2.354-2.28 3.878-5.547 3.878-8.69C27 6.507 21.998 2 16 2Zm5 25a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1 3 3 0 0 0 3 3h4a3 3 0 0 0 3-3Zm-8-13v1.5a.5.5 0 0 1-.5.5 1.5 1.5 0 0 1-1.5-1.5V14a1 1 0 1 1 2 0Zm6.5 2a.5.5 0 0 1-.5-.5V14a1 1 0 1 1 2 0v.5a1.5 1.5 0 0 1-1.5 1.5Z"
+                                    fill="url(#_alert_provider_dark)"></path>
+                            </g>
+                        </svg>
+                        <div class="ml-4 flex-auto">
+                            <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">Provider
+                                Visibility</p>
+                            <p class="mt-2.5 text-sm text-teal-800 dark:text-teal-100">
+                                Enabled providers automatically appear on login and registration pages.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+
+        <!-- Permissions & Roles Section -->
+        <section id="permissions-roles" class="mb-16 scroll-mt-20">
+            <div class="mb-8">
+                <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Permissions & Roles</h2>
+                <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    GuacPanel provides powerful role-based access control built on
+                    <a href="https://spatie.be/docs/laravel-permission" target="_blank"
+                        class="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300">
+                        Spatie Laravel-Permission
+                    </a>, featuring a clean UI for defining roles, assigning granular permissions, and managing user
+                    access with ease.
+                </p>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+
+        <!-- Security Middleware Section -->
+        <section id="middleware" class="mb-16 scroll-mt-20">
+            <div class="mb-8">
+                <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Security Middleware</h2>
+                <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    GuacPanel includes comprehensive security middleware to protect your application. Automatically
+                    enforce account status checks, password expiration policies, mandatory password changes, and
+                    two-factor authentication requirements across your entire application.
+                </p>
+                <!-- Alert -->
+                <div
+                    class="my-6 flex gap-2.5 rounded-2xl border border-teal-500/20 bg-teal-50/50 p-4 leading-6 text-teal-900 dark:border-teal-500/30 dark:bg-teal-500/5 dark:text-teal-200">
+                    <svg viewBox="0 0 32 32" aria-hidden="true"
+                        class="mt-1 h-8 w-8 flex-none fill-teal-500 stroke-white dark:fill-teal-200/20 dark:stroke-teal-200">
+                        <defs>
+                            <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_security"
+                                gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+                                <stop stop-color="#0EA5E9"></stop>
+                                <stop stop-color="#22D3EE" offset=".527"></stop>
+                                <stop stop-color="#818CF8" offset="1"></stop>
+                            </radialGradient>
+                            <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_security_dark"
+                                gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+                                <stop stop-color="#0EA5E9"></stop>
+                                <stop stop-color="#22D3EE" offset=".527"></stop>
+                                <stop stop-color="#818CF8" offset="1"></stop>
+                            </radialGradient>
+                        </defs>
+                        <g class="dark:hidden">
+                            <circle cx="20" cy="20" r="12" fill="url(#_alert_security)"></circle>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20 24.995c0-1.855 1.094-3.501 2.427-4.792C24.61 18.087 26 15.07 26 12.231 26 7.133 21.523 3 16 3S6 7.133 6 12.23c0 2.84 1.389 5.857 3.573 7.973C10.906 21.494 12 23.14 12 24.995V27a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.005Z"
+                                class="fill-(--icon-background)" fill-opacity="0.5"></path>
+                            <path
+                                d="M25 12.23c0 2.536-1.254 5.303-3.269 7.255l1.391 1.436c2.354-2.28 3.878-5.547 3.878-8.69h-2ZM16 4c5.047 0 9 3.759 9 8.23h2C27 6.508 21.998 2 16 2v2Zm-9 8.23C7 7.76 10.953 4 16 4V2C10.002 2 5 6.507 5 12.23h2Zm3.269 7.255C8.254 17.533 7 14.766 7 12.23H5c0 3.143 1.523 6.41 3.877 8.69l1.392-1.436ZM13 27v-2.005h-2V27h2Zm1 1a1 1 0 0 1-1-1h-2a3 3 0 0 0 3 3v-2Zm4 0h-4v2h4v-2Zm1-1a1 1 0 0 1-1 1v2a3 3 0 0 0 3-3h-2Zm0-2.005V27h2v-2.005h-2ZM8.877 20.921C10.132 22.136 11 23.538 11 24.995h2c0-2.253-1.32-4.143-2.731-5.51L8.877 20.92Zm12.854-1.436C20.32 20.852 19 22.742 19 24.995h2c0-1.457.869-2.859 2.122-4.074l-1.391-1.436Z"
+                                class="fill-(--icon-foreground)"></path>
+                            <path
+                                d="M20 26a1 1 0 1 0 0-2v2Zm-8-2a1 1 0 1 0 0 2v-2Zm2 0h-2v2h2v-2Zm1 1V13.5h-2V25h2Zm-5-11.5v1h2v-1h-2Zm3.5 4.5h5v-2h-5v2Zm8.5-3.5v-1h-2v1h2ZM20 24h-2v2h2v-2Zm-2 0h-4v2h4v-2Zm-1-10.5V25h2V13.5h-2Zm2.5-2.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2ZM18.5 18a3.5 3.5 0 0 0 3.5-3.5h-2a1.5 1.5 0 0 1-1.5 1.5v2ZM10 14.5a3.5 3.5 0 0 0 3.5 3.5v-2a1.5 1.5 0 0 1-1.5-1.5h-2Zm2.5-3.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2 Z"
+                                class="fill-(--icon-foreground)"></path>
+                        </g>
+                        <g class="hidden dark:inline">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16 2C10.002 2 5 6.507 5 12.23c0 3.144 1.523 6.411 3.877 8.691.75.727 1.363 1.52 1.734 2.353.185.415.574.726 1.028.726H12a1 1 0 0 0 1-1v-4.5a.5.5 0 0 0-.5-.5A3.5 3.5 0 0 1 9 14.5V14a3 3 0 1 1 6 0v9a1 1 0 1 0 2 0v-9a3 3 0 1 1 6 0v.5a3.5 3.5 0 0 1-3.5 3.5.5.5 0 0 0-.5.5V23a1 1 0 0 0 1 1h.36c.455 0 .844-.311 1.03-.726.37-.833.982-1.626 1.732-2.353 2.354-2.28 3.878-5.547 3.878-8.69C27 6.507 21.998 2 16 2Zm5 25a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1 3 3 0 0 0 3 3h4a3 3 0 0 0 3-3Zm-8-13v1.5a.5.5 0 0 1-.5.5 1.5 1.5 0 0 1-1.5-1.5V14a1 1 0 1 1 2 0Zm6.5 2a.5.5 0 0 1-.5-.5V14a1 1 0 1 1 2 0v.5a1.5 1.5 0 0 1-1.5 1.5Z"
+                                fill="url(#_alert_security_dark)"></path>
+                        </g>
+                    </svg>
+                    <div class="ml-4 flex-auto">
+                        <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">Enabled by
+                            Default</p>
+                        <p class="mt-2.5 text-sm text-teal-800 dark:text-teal-100">
+                            Security middleware is enabled by default. Disable specific checks in your configuration if
+                            needed.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Account Disabling -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Account Disabling
+                    </h3>
+                    <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+                        Immediately blocks access for disabled user accounts, logging them out automatically
+                    </p>
+                    <CodeBlock :code="codeExamples.accountDisabling" language="php" :show-copy-button="true" />
+                </div>
+
+                <!-- Password Expiry -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Password Expiry</h3>
+                    <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+                        Requires users to change passwords every 90 days (configurable)
+                    </p>
+                    <CodeBlock :code="codeExamples.passwordExpiry" language="php" :show-copy-button="true" />
+                </div>
+
+                <!-- Force Password Change -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Force Password Change
+                    </h3>
+                    <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+                        Requires immediate password change when flagged by an administrator
+                    </p>
+                    <CodeBlock :code="codeExamples.forcePassword" language="php" :show-copy-button="true" />
+                </div>
+
+                <!-- Two-Factor Authentication -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Two-Factor
+                        Authentication</h3>
+                    <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+                        Requires users to set up 2FA when enabled system-wide
+                    </p>
+                    <CodeBlock :code="codeExamples.twoFactor" language="php" :show-copy-button="true" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+
+        <!-- Backup System Section -->
+        <section id="backup-system" class="mb-16 scroll-mt-20">
+            <div class="mb-8">
+                <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Backup Management UI</h2>
+                <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    GuacPanel provides a visual interface for
+                    <a href="https://spatie.be/docs/laravel-backup" target="_blank"
+                        class="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300">
+                        Spatie Laravel Backup
+                    </a>, enabling automated database and file backups. Create, download, and restore backups through an
+                    intuitive UI, without the need for terminal commands.
+                </p>
+                <!-- Alert -->
+                <div
+                    class="my-6 flex gap-2.5 rounded-2xl border border-teal-500/20 bg-teal-50/50 p-4 leading-6 text-teal-900 dark:border-teal-500/30 dark:bg-teal-500/5 dark:text-teal-200">
+                    <svg viewBox="0 0 32 32" aria-hidden="true"
+                        class="mt-1 h-8 w-8 flex-none fill-teal-500 stroke-white dark:fill-teal-200/20 dark:stroke-teal-200">
+                        <defs>
+                            <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_backup"
+                                gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+                                <stop stop-color="#0EA5E9"></stop>
+                                <stop stop-color="#22D3EE" offset=".527"></stop>
+                                <stop stop-color="#818CF8" offset="1"></stop>
+                            </radialGradient>
+                            <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_backup_dark"
+                                gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+                                <stop stop-color="#0EA5E9"></stop>
+                                <stop stop-color="#22D3EE" offset=".527"></stop>
+                                <stop stop-color="#818CF8" offset="1"></stop>
+                            </radialGradient>
+                        </defs>
+                        <g class="dark:hidden">
+                            <circle cx="20" cy="20" r="12" fill="url(#_alert_backup)"></circle>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20 24.995c0-1.855 1.094-3.501 2.427-4.792C24.61 18.087 26 15.07 26 12.231 26 7.133 21.523 3 16 3S6 7.133 6 12.23c0 2.84 1.389 5.857 3.573 7.973C10.906 21.494 12 23.14 12 24.995V27a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.005Z"
+                                class="fill-(--icon-background)" fill-opacity="0.5"></path>
+                            <path
+                                d="M25 12.23c0 2.536-1.254 5.303-3.269 7.255l1.391 1.436c2.354-2.28 3.878-5.547 3.878-8.69h-2ZM16 4c5.047 0 9 3.759 9 8.23h2C27 6.508 21.998 2 16 2v2Zm-9 8.23C7 7.76 10.953 4 16 4V2C10.002 2 5 6.507 5 12.23h2Zm3.269 7.255C8.254 17.533 7 14.766 7 12.23H5c0 3.143 1.523 6.41 3.877 8.69l1.392-1.436ZM13 27v-2.005h-2V27h2Zm1 1a1 1 0 0 1-1-1h-2a3 3 0 0 0 3 3v-2Zm4 0h-4v2h4v-2Zm1-1a1 1 0 0 1-1 1v2a3 3 0 0 0 3-3h-2Zm0-2.005V27h2v-2.005h-2ZM8.877 20.921C10.132 22.136 11 23.538 11 24.995h2c0-2.253-1.32-4.143-2.731-5.51L8.877 20.92Zm12.854-1.436C20.32 20.852 19 22.742 19 24.995h2c0-1.457.869-2.859 2.122-4.074l-1.391-1.436Z"
+                                class="fill-(--icon-foreground)"></path>
+                            <path
+                                d="M20 26a1 1 0 1 0 0-2v2Zm-8-2a1 1 0 1 0 0 2v-2Zm2 0h-2v2h2v-2Zm1 1V13.5h-2V25h2Zm-5-11.5v1h2v-1h-2Zm3.5 4.5h5v-2h-5v2Zm8.5-3.5v-1h-2v1h2ZM20 24h-2v2h2v-2Zm-2 0h-4v2h4v-2Zm-1-10.5V25h2V13.5h-2Zm2.5-2.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2ZM18.5 18a3.5 3.5 0 0 0 3.5-3.5h-2a1.5 1.5 0 0 1-1.5 1.5v2ZM10 14.5a3.5 3.5 0 0 0 3.5 3.5v-2a1.5 1.5 0 0 1-1.5-1.5h-2Zm2.5-3.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2Z"
+                                class="fill-(--icon-foreground)"></path>
+                        </g>
+                        <g class="hidden dark:inline">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16 2C10.002 2 5 6.507 5 12.23c0 3.144 1.523 6.411 3.877 8.691.75.727 1.363 1.52 1.734 2.353.185.415.574.726 1.028.726H12a1 1 0 0 0 1-1v-4.5a.5.5 0 0 0-.5-.5A3.5 3.5 0 0 1 9 14.5V14a3 3 0 1 1 6 0v9a1 1 0 1 0 2 0v-9a3 3 0 1 1 6 0v.5a3.5 3.5 0 0 1-3.5 3.5.5.5 0 0 0-.5.5V23a1 1 0 0 0 1 1h.36c.455 0 .844-.311 1.03-.726.37-.833.982-1.626 1.732-2.353 2.354-2.28 3.878-5.547 3.878-8.69C27 6.507 21.998 2 16 2Zm5 25a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1 3 3 0 0 0 3 3h4a3 3 0 0 0 3-3Zm-8-13v1.5a.5.5 0 0 1-.5.5 1.5 1.5 0 0 1-1.5-1.5V14a1 1 0 1 1 2 0Zm6.5 2a.5.5 0 0 1-.5-.5V14a1 1 0 1 1 2 0v.5a1.5 1.5 0 0 1-1.5 1.5Z"
+                                fill="url(#_alert_backup_dark)"></path>
+                        </g>
+                    </svg>
+                    <div class="ml-4 flex-auto">
+                        <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">Configuration
+                            Required</p>
+                        <p class="mt-2.5 text-sm text-teal-800 dark:text-teal-100">
+                            Requires Spatie Laravel Backup to be configured. See the installation guide for setup
+                            instructions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+
+        <!-- System Health Monitoring Section -->
+        <section id="system-health" class="mb-16 scroll-mt-20">
+            <div class="mb-8">
+                <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">
+                    System Health Monitoring
+                </h2>
+                <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    GuacPanel monitors system health with automated checks powered by
+                    <a href="https://spatie.be/docs/laravel-health" target="_blank"
+                        class="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300">
+                        Spatie Laravel Health
+                    </a>. Track disk space, database connections, cache systems, queue status, environment settings,
+                    debug mode, and application optimization - all with real-time status monitoring and email
+                    notifications.
+                </p>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+
+        <!-- Data Tables Section -->
+        <section id="data-tables" class="mb-16 scroll-mt-20">
+            <div class="mb-8">
+                <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Data Tables</h2>
+                <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    GuacPanel provides powerful data tables built on
+                    <a href="https://tanstack.com/table/latest" target="_blank"
+                        class="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300">
+                        TanStack Table
+                    </a>
+                    with complete data management features. Includes row selection with bulk actions, server-side
+                    pagination and sorting, built-in search, CSV export, and dark mode support.
+                </p>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Frontend Setup -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Frontend Setup</h3>
+                    <CodeBlock :code="codeExamples.frontendSetup" language="javascript" :show-copy-button="true" />
+                </div>
+
+                <!-- Template Usage -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Template Usage</h3>
+                    <CodeBlock :code="codeExamples.templateUsage" language="vue" :show-copy-button="true" />
+                </div>
+
+                <!-- Backend Service -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Backend Service</h3>
+                    <CodeBlock :code="codeExamples.backendService" language="php" :show-copy-button="true" />
+                </div>
+
+                <!-- Backend Controller -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Backend Controller
+                    </h3>
+                    <CodeBlock :code="codeExamples.backendController" language="php" :show-copy-button="true" />
+                </div>
+
+                <!-- Action Buttons -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Action Buttons
+                        (Optional)</h3>
+                    <CodeBlock :code="codeExamples.actionButtons" language="javascript" :show-copy-button="true" />
+                </div>
+
+                <!-- Bulk Delete -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Bulk Delete
+                        (Optional)</h3>
+                    <CodeBlock :code="codeExamples.bulkDelete" language="javascript" :show-copy-button="true" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+
+        <!-- Typesense Search Section -->
+        <section id="typesense-search" class="mb-16 scroll-mt-20">
+            <div class="mb-8">
+                <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Typesense Search</h2>
+                <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    GuacPanel delivers instant search results that understand typos. Powered by
+                    <a href="https://typesense.org" target="_blank"
+                        class="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300">
+                        Typesense
+                    </a>
+                    and
+                    <a href="https://laravel.com/docs/12.x/scout#main-content" target="_blank"
+                        class="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300">
+                        Laravel Scout
+                    </a>
+                    with real-time results, faceted filtering, geo-search, and multi-language support.
+                </p>
+                <!-- Alert -->
+                <div
+                    class="my-6 flex gap-2.5 rounded-2xl border border-teal-500/20 bg-teal-50/50 p-4 leading-6 text-teal-900 dark:border-teal-500/30 dark:bg-teal-500/5 dark:text-teal-200">
+                    <svg viewBox="0 0 32 32" aria-hidden="true"
+                        class="mt-1 h-8 w-8 flex-none fill-teal-500 stroke-white dark:fill-teal-200/20 dark:stroke-teal-200">
+                        <defs>
+                            <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_typesense"
+                                gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+                                <stop stop-color="#0EA5E9"></stop>
+                                <stop stop-color="#22D3EE" offset=".527"></stop>
+                                <stop stop-color="#818CF8" offset="1"></stop>
+                            </radialGradient>
+                            <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                                id="_alert_typesense_dark" gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+                                <stop stop-color="#0EA5E9"></stop>
+                                <stop stop-color="#22D3EE" offset=".527"></stop>
+                                <stop stop-color="#818CF8" offset="1"></stop>
+                            </radialGradient>
+                        </defs>
+                        <g class="dark:hidden">
+                            <circle cx="20" cy="20" r="12" fill="url(#_alert_typesense)"></circle>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20 24.995c0-1.855 1.094-3.501 2.427-4.792C24.61 18.087 26 15.07 26 12.231 26 7.133 21.523 3 16 3S6 7.133 6 12.23c0 2.84 1.389 5.857 3.573 7.973C10.906 21.494 12 23.14 12 24.995V27a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.005Z"
+                                class="fill-(--icon-background)" fill-opacity="0.5"></path>
+                            <path
+                                d="M25 12.23c0 2.536-1.254 5.303-3.269 7.255l1.391 1.436c2.354-2.28 3.878-5.547 3.878-8.69h-2ZM16 4c5.047 0 9 3.759 9 8.23h2C27 6.508 21.998 2 16 2v2Zm-9 8.23C7 7.76 10.953 4 16 4V2C10.002 2 5 6.507 5 12.23h2Zm3.269 7.255C8.254 17.533 7 14.766 7 12.23H5c0 3.143 1.523 6.41 3.877 8.69l1.392-1.436ZM13 27v-2.005h-2V27h2Zm1 1a1 1 0 0 1-1-1h-2a3 3 0 0 0 3 3v-2Zm4 0h-4v2h4v-2Zm1-1a1 1 0 0 1-1 1v2a3 3 0 0 0 3-3h-2Zm0-2.005V27h2v-2.005h-2ZM8.877 20.921C10.132 22.136 11 23.538 11 24.995h2c0-2.253-1.32-4.143-2.731-5.51L8.877 20.92Zm12.854-1.436C20.32 20.852 19 22.742 19 24.995h2c0-1.457.869-2.859 2.122-4.074l-1.391-1.436Z"
+                                class="fill-(--icon-foreground)"></path>
+                            <path
+                                d="M20 26a1 1 0 1 0 0-2v2Zm-8-2a1 1 0 1 0 0 2v-2Zm2 0h-2v2h2v-2Zm1 1V13.5h-2V25h2Zm-5-11.5v1h2v-1h-2Zm3.5 4.5h5v-2h-5v2Zm8.5-3.5v-1h-2v1h2ZM20 24h-2v2h2v-2Zm-2 0h-4v2h4v-2Zm-1-10.5V25h2V13.5h-2Zm2.5-2.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2ZM18.5 18a3.5 3.5 0 0 0 3.5-3.5h-2a1.5 1.5 0 0 1-1.5 1.5v2ZM10 14.5a3.5 3.5 0 0 0 3.5 3.5v-2a1.5 1.5 0 0 1-1.5-1.5h-2Zm2.5-3.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2Z"
+                                class="fill-(--icon-foreground)"></path>
+                        </g>
+                        <g class="hidden dark:inline">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16 2C10.002 2 5 6.507 5 12.23c0 3.144 1.523 6.411 3.877 8.691.75.727 1.363 1.52 1.734 2.353.185.415.574.726 1.028.726H12a1 1 0 0 0 1-1v-4.5a.5.5 0 0 0-.5-.5A3.5 3.5 0 0 1 9 14.5V14a3 3 0 1 1 6 0v9a1 1 0 1 0 2 0v-9a3 3 0 1 1 6 0v.5a3.5 3.5 0 0 1-3.5 3.5.5.5 0 0 0-.5.5V23a1 1 0 0 0 1 1h.36c.455 0 .844-.311 1.03-.726.37-.833.982-1.626 1.732-2.353 2.354-2.28 3.878-5.547 3.878-8.69C27 6.507 21.998 2 16 2Zm5 25a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1 3 3 0 0 0 3 3h4a3 3 0 0 0 3-3Zm-8-13v1.5a.5.5 0 0 1-.5.5 1.5 1.5 0 0 1-1.5-1.5V14a1 1 0 1 1 2 0Zm6.5 2a.5.5 0 0 1-.5-.5V14a1 1 0 1 1 2 0v.5a1.5 1.5 0 0 1-1.5 1.5Z"
+                                fill="url(#_alert_typesense_dark)"></path>
+                        </g>
+                    </svg>
+                    <div class="ml-4 flex-auto">
+                        <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">Server Required</p>
+                        <p class="mt-2.5 text-sm text-teal-800 dark:text-teal-100">
+                            Requires a Typesense server instance. You can use Typesense Cloud or self-host.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-12">
+                <!-- API Key Setup -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">API Key Setup</h3>
+                    <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+                        Create a search-only API key for frontend use
+                    </p>
+                    <div class="mb-4">
+                        <CodeBlock :code="codeExamples.generateSearchKey" language="bash" :show-copy-button="true" />
+                    </div>
+                    <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+
+                    </p>
+                    <CodeBlock :code="codeExamples.typesenseEnv" language="bash" :show-copy-button="true" />
+                </div>
+
+                <!-- Search Configuration -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Search Configuration
+                    </h3>
+                    <CodeBlock :code="codeExamples.searchConfig" language="javascript" :show-copy-button="true" />
+                </div>
+
+                <!-- Federated Search -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Federated Search</h3>
+                    <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
+                        Search multiple collections at once with the FederatedSearch component
+                    </p>
+                    <CodeBlock :code="codeExamples.resultStructure" language="javascript" :show-copy-button="true" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+
+        <!-- File Uploads Section -->
+        <section id="file-uploads" class="mb-16 scroll-mt-20">
+            <div class="mb-8">
+                <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">File Uploads</h2>
+                <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    GuacPanel includes a modern drag-and-drop file upload interface powered by
+                    <a href="https://pqina.nl/filepond/" target="_blank"
+                        class="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300">
+                        FilePond
+                    </a>, with image and PDF previews, upload size limits, and file type validation built in.
+                </p>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Configuration -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Configuration</h3>
+                    <CodeBlock :code="codeExamples.configExample" language="javascript" :show-copy-button="true" />
+                </div>
+
+                <!-- Script Setup -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Script Setup</h3>
+                    <CodeBlock :code="codeExamples.scriptExample" language="javascript" :show-copy-button="true" />
+                </div>
+            </div>
+        </section>
+        <!-- Divider -->
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+
+        <!-- Next Steps -->
+        <section id="next-steps" class="mb-8 scroll-mt-16">
+            <div class="flex flex-col justify-center gap-4 sm:flex-row">
+                <a href="/documentation/installation"
+                    class="inline-flex items-center justify-center gap-2 border border-zinc-400 dark:border-zinc-600 bg-white px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white dark:bg-[#252525] dark:text-white dark:hover:bg-white dark:hover:text-[#3a3a3a]">
+                    <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    Installation
+                </a>
+
+                <a href="/documentation/components"
+                    class="inline-flex items-center justify-center gap-2 border border-zinc-400 dark:border-zinc-600 bg-[#3a3a3a] px-6 py-3 font-mono text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-white hover:text-[#3a3a3a] dark:bg-white dark:text-[#3a3a3a] dark:hover:bg-[#3a3a3a] dark:hover:text-white">
+                    Components
+                    <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </section>
     </div>
 
-    <section class="space-y-10">
-      <!-- Authentication Section -->
-      <section id="authentication" class="mb-12 scroll-mt-16">
-        <div class="mb-8 text-center">
-          <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Authentication</h2>
-          <p class="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400">
-            Secure authentication system with Laravel Fortify and advanced security features
-          </p>
-        </div>
+    <!-- Back to Top Button -->
+    <button v-show="showBackToTop"
+        class="fixed right-4 bottom-4 z-50 border border-zinc-400 dark:border-zinc-600 bg-white p-2 font-mono text-xs font-bold text-[#3a3a3a] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:right-8 sm:bottom-8 dark:bg-[#252525] dark:text-white dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]"
+        aria-label="Back to top" @click="scrollToTop">
+        [^]
+    </button>
 
-        <!-- Laravel Fortify -->
-        <div
-          class="mb-8 py-6">
-          <div class="mb-2 flex items-start">
-            
-            <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">Laravel Fortify</h4>
-          </div>
-          <div class="mb-2">
-            <p class="font-mono text-sm text-gray-600 dark:text-gray-400">
-              Secure authentication with login, registration, 2FA, password reset, and email
-              verification.
-            </p>
-          </div>
-        </div>
-
-        <!-- Passwordless Login -->
-        <div
-          class="mb-8 py-6">
-          <div class="mb-2 flex items-start">
-            
-            <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">Passwordless Login</h4>
-          </div>
-          <div class="mb-2">
-            <p class="mb-4 font-mono text-sm text-gray-600 dark:text-gray-400">
-              Email-based magic link authentication for secure, password-free login.
-            </p>
-
-            <h5 class="mb-3 text-sm font-semibold text-gray-900 dark:text-white">
-              Route Configuration
-            </h5>
-            <div class="mb-4 rounded-lg bg-gray-800">
-              <CodeBlock :code="codeExamples.routeConfig" language="php" />
-            </div>
-
-            <div
-              class="rounded-lg border border-teal-400 bg-gradient-to-br from-teal-50 to-teal-50 p-3 dark:border-teal-800/30 dark:from-teal-900/20 dark:to-teal-900/20">
-              <p class="flex items-start space-x-2 text-sm text-teal-800 dark:text-teal-300">
-                <span class="flex-shrink-0 text-xl">💡</span>
-                <span>
-                  <strong>Note:</strong>
-                  Enable passwordless login in Security Settings to use this feature.
-                </span>
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Magic Link Implementation -->
-        <div
-          class="mb-8 py-6">
-          <h3 class="mb-4 text-sm font-semibold text-gray-900 dark:text-white">
-            Magic Link Implementation
-          </h3>
-
-          <h5 class="mb-2 text-xs font-semibold text-gray-900 dark:text-white">
-            Sending Magic Links
-          </h5>
-          <div class="mb-4 rounded-lg bg-gray-800">
-            <CodeBlock :code="codeExamples.magicLink" language="php" />
-          </div>
-
-          <h5 class="mb-2 text-xs font-semibold text-gray-900 dark:text-white">
-            Authentication Process
-          </h5>
-          <div class="rounded-lg bg-gray-800">
-            <CodeBlock :code="codeExamples.authProcess" language="php" />
-          </div>
-        </div>
-
-        <!-- Socialite Logins -->
-        <div
-          class="mb-8 py-6">
-          <div class="mb-2 flex items-start">
-            
-            <h4 class="font-mono text-base font-semibold text-zinc-900 dark:text-white">Social Login</h4>
-          </div>
-          <div class="mb-2">
-            <p class="mb-4 font-mono text-sm text-gray-600 dark:text-gray-400">
-              Use third party authentication for your app using Laravel Socialite.
-            </p>
-
-            <h5 class="mb-3 text-sm font-semibold text-gray-900 dark:text-white">
-              .env Configuration
-            </h5>
-            <div class="mb-4 rounded-lg bg-gray-800">
-              <CodeBlock :code="codeExamples.socialConfig" language="bash" />
-            </div>
-
-            <div
-              class="mb-4 rounded-lg border border-teal-400 bg-gradient-to-br from-teal-50 to-teal-50 p-3 dark:border-teal-800/30 dark:from-teal-900/20 dark:to-teal-900/20">
-              <p class="flex items-start space-x-2 text-sm text-teal-800 dark:text-teal-300">
-                <span class="flex-shrink-0 text-xl">💡</span>
-                <span class="mt-0.5">
-                  <strong>Note:</strong>
-                  Enabling any provider show them on the login and register pages
-                </span>
-              </p>
-            </div>
-
-            <div
-              class="mb-2 border-b border-gray-200 p-6 font-mono dark:border-gray-800">
-              <p class="mb-4 text-zinc-600 dark:text-zinc-400">
-                Register your oauth2 app and obtain your credentials
-              </p>
-              <p class="mb-2 text-sm text-gray-600 dark:text-gray-400">
-                Providers that will work with local dev callback:
-              </p>
-              <ul
-                class="mb-4 ml-4 list-inside list-disc space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-                <li>
-                  <a href="https://developers.facebook.com/" target="_blank" class="link">
-                    Facebook Developer Portal
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://github.com/settings/applications/new"
-                    target="_blank"
-                    class="link">
-                    GitHub Developer Portal
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.linkedin.com/developers/apps/" target="_blank" class="link">
-                    LinkedIn Developer Portal
-                  </a>
-                </li>
-              </ul>
-
-              <p class="mb-2 text-sm text-gray-600 dark:text-gray-400">
-                Providers that will only work on a live URL:
-              </p>
-              <ul
-                class="mb-2 ml-4 list-inside list-disc space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-                <li>
-                  <a href="https://console.developers.google.com/" target="_blank" class="link">
-                    Google Developer Portal
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <!-- Additional Auth Features -->
-        <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <div
-            class="py-6">
-            <div class="mb-2 flex items-start">
-              <span class="mr-2 text-teal-600 dark:text-teal-400">⌾</span>
-              <h4 class="font-bold text-gray-900 dark:text-gray-100">Spatie Permissions</h4>
-            </div>
-            <p class="mb-2 text-sm text-gray-600 dark:text-gray-400">
-              Role-based access control with visual management
-            </p>
-            <a
-              href="#permissions-roles"
-              class="text-xs text-teal-400 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300">
-              Learn more →
-            </a>
-          </div>
-
-          <div
-            class="py-6">
-            <div class="mb-2 flex items-start">
-              <span class="mr-2 text-teal-600 dark:text-teal-400">⌾</span>
-              <h4 class="font-bold text-gray-900 dark:text-gray-100">Password Security</h4>
-            </div>
-            <p class="mb-2 text-sm text-gray-600 dark:text-gray-400">
-              Configure password expiry and enforce changes
-            </p>
-            <a
-              href="#middleware"
-              class="text-xs text-teal-400 hover:text-teal-600 dark:text-teal-400 dark:hover:text-teal-300">
-              Learn more →
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Permissions & Roles Section -->
-      <section id="permissions-roles" class="mb-12 scroll-mt-16">
-        <div class="mb-8 text-center">
-          <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Permissions & Roles</h2>
-          <p class="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400">
-            Fine-grained access control with Spatie Laravel-Permission
-          </p>
-        </div>
-        <div
-          class="border-b border-gray-200 p-6 font-mono dark:border-gray-800">
-          <p class="mb-4 text-zinc-600 dark:text-zinc-400">
-            Built on
-            <a
-              href="https://spatie.be/docs/laravel-permission"
-              target="_blank"
-              class="border-b-2 border-blue-500 dark:border-blue-400">
-              Spatie's Laravel-Permission
-            </a>
-            , providing role-based access control through a clean UI.
-          </p>
-          <ul class="ml-4 list-inside list-disc space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-            <li>Create and assign roles visually</li>
-            <li>Set granular permissions per role</li>
-            <li>View permission inheritance</li>
-            <li>Manage user roles and permissions</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Security Middleware Section -->
-      <section id="middleware" class="mb-12 scroll-mt-16">
-        <div class="mb-8 text-center">
-          <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Security Middleware</h2>
-          <p class="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400">
-            Built-in middleware for account status, password policies, and 2FA
-          </p>
-        </div>
-        <div
-          class="border-b border-gray-200 p-6 font-mono dark:border-gray-800">
-          <div class="space-y-6">
-            <!-- Account Disabling -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                1. Account Disabling
-              </h5>
-              <p class="mb-3 text-xs text-zinc-600 dark:text-zinc-400">
-                Prevents disabled users from accessing the application
-              </p>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.accountDisabling" language="php" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Password Expiry -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                2. Password Expiry
-              </h5>
-              <p class="mb-3 text-xs text-zinc-600 dark:text-zinc-400">
-                Enforces password expiration (default 90 days)
-              </p>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.passwordExpiry" language="php" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Force Password Change -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                3. Force Password Change
-              </h5>
-              <p class="mb-3 text-xs text-zinc-600 dark:text-zinc-400">
-                Forces mandatory password updates when required
-              </p>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.forcePassword" language="php" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Two-Factor Authentication -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                4. Two-Factor Authentication
-              </h5>
-              <p class="mb-3 text-xs text-zinc-600 dark:text-zinc-400">
-                Enforces 2FA when required by system settings
-              </p>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.twoFactor" language="php" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Backup System Section -->
-      <section id="backup-system" class="mb-12 scroll-mt-16">
-        <div class="mb-8 text-center">
-          <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Backup System</h2>
-          <p class="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400">
-            Manage backups through a clean UI powered by Spatie Laravel Backup
-          </p>
-        </div>
-        <div
-          class="border-b border-gray-200 p-6 font-mono dark:border-gray-800">
-          <p class="mb-4 text-zinc-600 dark:text-zinc-400">
-            Built on
-            <a
-              href="https://spatie.be/docs/laravel-backup"
-              target="_blank"
-              class="border-b-2 border-blue-500 dark:border-blue-400">
-              Spatie's Laravel Backup
-            </a>
-            . Create, download, and manage backups without command line.
-          </p>
-
-          <ul class="ml-4 list-inside list-disc space-y-2 text-sm text-zinc-600 dark:text-zinc-400">
-            <li>View backup history and disk usage</li>
-            <li>One-click manual backups</li>
-            <li>Download, delete, or restore backups</li>
-            <li>System health indicators</li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- System Health Monitoring Section -->
-      <section id="system-health" class="mb-12 scroll-mt-16">
-        <div class="mb-8 text-center">
-          <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">
-            System Health Monitoring
-          </h2>
-          <p class="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400">
-            Monitor system health with automated checks for database, cache, disk, and more
-          </p>
-        </div>
-        <div
-          class="border-b border-gray-200 p-6 font-mono dark:border-gray-800">
-          <p class="mb-4 text-zinc-600 dark:text-zinc-400">
-            Built on
-            <a
-              href="https://spatie.be/docs/laravel-health"
-              target="_blank"
-              class="border-b-2 border-blue-500 dark:border-blue-400">
-              Spatie Laravel Health
-            </a>
-            with real-time status monitoring and email notifications.
-          </p>
-
-          <ul
-            class="mb-6 ml-4 list-inside list-disc space-y-2 text-sm text-gray-600 dark:text-gray-400">
-            <li>Disk space usage monitoring</li>
-            <li>Database connection status</li>
-            <li>Cache system health</li>
-            <li>Queue system status</li>
-            <li>Environment verification</li>
-            <li>Debug mode detection</li>
-            <li>Application optimization checks</li>
-          </ul>
-
-          <div class="space-y-6">
-            <!-- Configuration -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                1. Health Checks Configuration
-              </h5>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.healthChecksConfig" language="php" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Controller -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                2. Controller Implementation
-              </h5>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.healthController" language="php" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Frontend -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                3. Frontend Integration
-              </h5>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.healthFrontend" language="javascript" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Data Tables Section -->
-      <section id="data-tables" class="mb-12 scroll-mt-16">
-        <div class="mb-8 text-center">
-          <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Data Tables</h2>
-          <p class="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400">
-            Powerful data tables built on TanStack Table with sorting, filtering, and export
-          </p>
-        </div>
-        <div
-          class="border-b border-gray-200 p-6 font-mono dark:border-gray-800">
-          <p class="mb-4 text-zinc-600 dark:text-zinc-400">
-            Built on
-            <a
-              href="https://tanstack.com/table/latest"
-              target="_blank"
-              class="border-b-2 border-blue-500 dark:border-blue-400">
-              TanStack Table
-            </a>
-            with complete data management features.
-          </p>
-          <ul
-            class="mb-6 ml-4 list-inside list-disc space-y-2 text-sm text-gray-600 dark:text-gray-400">
-            <li>Row selection with bulk actions</li>
-            <li>Server-side pagination and sorting</li>
-            <li>Built-in search</li>
-            <li>CSV export</li>
-            <li>Dark mode support</li>
-          </ul>
-
-          <div class="space-y-6">
-            <!-- Frontend Setup -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                1. Frontend Setup
-              </h5>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.frontendSetup" language="javascript" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Template Usage -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                2. Template Usage
-              </h5>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.templateUsage" language="vue" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Pagination Watcher -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                3. Pagination Watcher
-              </h5>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.paginationWatcher" language="javascript" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Backend Service -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                4. Backend Service
-              </h5>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.backendService" language="php" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Backend Controller -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                5. Backend Controller
-              </h5>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.backendController" language="php" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Action Buttons -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                6. Action Buttons (Optional)
-              </h5>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.actionButtons" language="javascript" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Bulk Delete -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                7. Bulk Delete (Optional)
-              </h5>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.bulkDelete" language="javascript" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Typesense Search Section -->
-      <section id="typesense-search" class="mb-12 scroll-mt-16">
-        <div class="mb-8 text-center">
-          <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Typesense Search</h2>
-          <p class="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400">
-            Lightning-fast typo-tolerant search powered by Typesense
-          </p>
-        </div>
-        <div
-          class="border-b border-gray-200 p-6 font-mono dark:border-gray-800">
-          <p class="mb-4 text-zinc-600 dark:text-zinc-400">
-            Built on
-            <a
-              href="https://typesense.org"
-              target="_blank"
-              class="border-b-2 border-blue-500 dark:border-blue-400">
-              Typesense
-            </a>
-            and
-            <a
-              href="https://laravel.com/docs/12.x/scout#main-content"
-              target="_blank"
-              class="border-b-2 border-blue-500 dark:border-blue-400">
-              Laravel Scout
-            </a>
-            for real-time search.
-          </p>
-          <ul
-            class="mb-6 ml-4 list-inside list-disc space-y-2 text-sm text-gray-600 dark:text-gray-400">
-            <li>Typo-tolerant search</li>
-            <li>Real-time results</li>
-            <li>Faceted search and filtering</li>
-            <li>Geo-search functionality</li>
-            <li>Multi-language support</li>
-          </ul>
-
-          <div class="space-y-6">
-            <!-- API Key Setup -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                1. API Key Setup
-              </h5>
-              <p class="mb-3 text-xs text-zinc-600 dark:text-zinc-400">
-                Generate search-only API key:
-              </p>
-              <div class="mb-3 rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.generateSearchKey" language="bash" />
-              </div>
-              <p class="mb-3 text-xs text-zinc-600 dark:text-zinc-400">
-                Configure environment variables:
-              </p>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.typesenseEnv" language="bash" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Search Configuration -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                2. Search Configuration
-              </h5>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.searchConfig" language="javascript" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Federated Search -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                3. Federated Search
-              </h5>
-              <p class="mb-3 text-xs text-zinc-600 dark:text-zinc-400">
-                Search across multiple collections simultaneously using FederatedSearch.vue
-              </p>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.resultStructure" language="javascript" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- File Uploads Section -->
-      <section id="file-uploads" class="mb-12 scroll-mt-16">
-        <div class="mb-8 text-center">
-          <h2 class="mb-4 text-2xl font-bold text-gray-900 dark:text-white">File Uploads</h2>
-          <p class="mx-auto max-w-2xl text-zinc-600 dark:text-zinc-400">
-            Modern file upload interface with drag-and-drop and previews
-          </p>
-        </div>
-        <div
-          class="border-b border-gray-200 p-6 font-mono dark:border-gray-800">
-          <p class="mb-6 text-sm text-gray-600 dark:text-gray-400">
-            Built on
-            <a
-              href="https://pqina.nl/filepond/"
-              target="_blank"
-              class="border-b-2 border-blue-500 dark:border-blue-400">
-              FilePond
-            </a>
-            with drag-and-drop, image/PDF previews, size limits, and type validation.
-          </p>
-
-          <div class="space-y-6">
-            <!-- Configuration -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                1. Configuration
-              </h5>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.configExample" language="javascript" />
-              </div>
-            </div>
-
-            <hr class="border-gray-200 dark:border-gray-700" />
-
-            <!-- Script Setup -->
-            <div>
-              <h5 class="mb-2 text-sm font-semibold text-gray-900 dark:text-white">
-                2. Script Setup
-              </h5>
-              <div class="rounded-lg bg-gray-800">
-                <CodeBlock :code="codeExamples.scriptExample" language="javascript" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-  </div>
-
-  <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-    <div class="flex flex-col justify-center gap-4 sm:flex-row">
-      <a
-        href="/documentation/installation"
-        class="inline-flex items-center border border-[#3a3a3a] bg-white px-6 py-3 font-mono text-sm tracking-wider text-[#3a3a3a] uppercase transition-all hover:border-[#3a3a3a] dark:border-[#3a3a3a] dark:bg-[#252525] dark:text-white dark:hover:border-[#3a3a3a]">
-        <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M15 19l-7-7 7-7" />
-        </svg>
-        [Installation]
-      </a>
-
-      <a
-        href="/documentation/components"
-        class="inline-flex items-center border border-gray-300 bg-teal-500/20 px-6 py-3 font-mono text-sm tracking-wider text-teal-400 uppercase transition-all hover:bg-teal-500/30 dark:text-teal-400">
-        [Components]
-        <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-        </svg>
-      </a>
-    </div>
-  </div>
-
-  <!-- Back to Top Button -->
-  <button
-    v-show="showBackToTop"
-    class="fixed right-8 bottom-8 z-50 border-2 border-[#3a3a3a] bg-teal-500/20 p-3 font-mono text-sm text-teal-400 transition-all hover:bg-teal-500/30 dark:text-teal-400"
-    aria-label="Back to top"
-    @click="scrollToTop">
-    [^]
-  </button>
-
-  <ArticleNavigation :links="articleLinks" />
+    <ArticleNavigation :links="articleLinks" />
 </template>

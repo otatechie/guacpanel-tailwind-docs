@@ -115,10 +115,10 @@ onUnmounted(() => {
         </div>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-700"></div>
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Prerequisites Section -->
-        <section id="prerequisites" class="mb-12 scroll-mt-20">
+        <section id="prerequisites" class="mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Prerequisites</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Ensure you have the following requirements before installing GuacPanel.
@@ -126,35 +126,35 @@ onUnmounted(() => {
 
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
                 <div class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 dark:bg-gray-900">
-                    <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">PHP 8.2+</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">PHP 8.2+</h3>
                     <p class="text-sm text-zinc-600 dark:text-zinc-400">
                         Extensions: BCMath, Ctype, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML, cURL, GD/Imagick
                     </p>
                 </div>
 
                 <div class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 dark:bg-gray-900">
-                    <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">Node.js 18+</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Node.js 18+</h3>
                     <p class="text-sm text-zinc-600 dark:text-zinc-400">
                         Required for Vite build tool, Tailwind CSS v4, and Vue.js development.
                     </p>
                 </div>
 
                 <div class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 dark:bg-gray-900">
-                    <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">Composer 2.0+</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Composer 2.0+</h3>
                     <p class="text-sm text-zinc-600 dark:text-zinc-400">
                         Required for Laravel 11, Spatie packages, and PHP dependencies.
                     </p>
                 </div>
 
                 <div class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 dark:bg-gray-900">
-                    <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">Database</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Database</h3>
                     <p class="text-sm text-zinc-600 dark:text-zinc-400">
                         MySQL 8+ or PostgreSQL for application data storage.
                     </p>
                 </div>
 
                 <div class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 dark:bg-gray-900">
-                    <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">Git</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Git</h3>
                     <p class="text-sm text-zinc-600 dark:text-zinc-400">
                         For cloning the repository and version control.
                     </p>
@@ -163,10 +163,10 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-700"></div>
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Installation Section -->
-        <section id="installation" class="mb-12 scroll-mt-20">
+        <section id="installation" class="mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Installation Steps</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Follow these steps to get GuacPanel up and running on your system.
@@ -174,28 +174,53 @@ onUnmounted(() => {
 
             <div class="space-y-8">
                 <div>
-                    <h3 class="mb-3 text-lg font-semibold text-zinc-900 dark:text-white">1. Clone the Repository</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">1. Clone the
+                        Repository</h3>
                     <CodeBlock :code="codeExamples.cloneRepo" language="bash" :show-copy-button="true" />
                 </div>
 
                 <div>
-                    <h3 class="mb-3 text-lg font-semibold text-zinc-900 dark:text-white">2. Install Dependencies</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">2. Install
+                        Dependencies</h3>
                     <CodeBlock :code="codeExamples.installDeps" language="bash" :show-copy-button="true" />
                 </div>
 
                 <div>
-                    <h3 class="mb-3 text-lg font-semibold text-zinc-900 dark:text-white">3. Set Up Environment</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">3. Set Up Environment
+                    </h3>
                     <CodeBlock :code="codeExamples.setupEnv" language="bash" :show-copy-button="true" />
+
+                    <div
+                        class="my-6 flex gap-2.5 rounded-2xl border border-teal-500/20 bg-teal-50/50 p-4 leading-6 text-teal-900 dark:border-teal-500/30 dark:bg-teal-500/5 dark:text-teal-200">
+                        <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"
+                            class="mt-1 h-8 w-8 flex-none fill-teal-500 stroke-white dark:fill-teal-200/20 dark:stroke-teal-200">
+                            <circle cx="20" cy="20" r="12" fill="currentColor" fill-opacity="0.2" />
+                            <path d="M12 20l4-4 4 4m-4-4V8" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <div class="ml-4 flex-auto">
+                            <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">Important: Env
+                                Config</p>
+                            <p class="mt-2.5 text-sm text-teal-800 dark:text-teal-100">
+                                Ensure you update your <code
+                                    class="rounded bg-teal-100 px-1.5 py-0.5 font-mono text-xs dark:bg-teal-900/50">.env</code>
+                                file with correct database credentials (DB_DATABASE, DB_USERNAME, etc.) before running
+                                migrations.
+                            </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div>
-                    <h3 class="mb-3 text-lg font-semibold text-zinc-900 dark:text-white">4. Start Development Server
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">4. Start Development
+                        Server
                     </h3>
                     <CodeBlock :code="codeExamples.runServer" language="bash" :show-copy-button="true" />
                 </div>
 
                 <div>
-                    <h3 class="mb-3 text-lg font-semibold text-zinc-900 dark:text-white">5. Install and compile frontend
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">5. Install and
+                        compile frontend
                         assets</h3>
                     <CodeBlock :code="codeExamples.installAssets" language="bash" :show-copy-button="true" />
                 </div>
@@ -203,26 +228,28 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-700"></div>
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Database Setup Section -->
-        <section id="database-setup" class="mb-12 scroll-mt-20">
+        <section id="database-setup" class="mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Database Setup</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Configure your database and initialize the application data.
             </p>
 
-            <div class="my-6 flex rounded-3xl p-6 bg-teal-50 dark:bg-teal-900/40 dark:ring-1 dark:ring-teal-300/10">
-                <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"
-                    class="h-8 w-8 flex-none [--icon-foreground:var(--color-slate-900)] [--icon-background:var(--color-white)]">
+            <!-- Alert -->
+            <div
+                class="my-6 flex gap-2.5 rounded-2xl border border-teal-500/20 bg-teal-50/50 p-4 leading-6 text-teal-900 dark:border-teal-500/30 dark:bg-teal-500/5 dark:text-teal-200">
+                <svg viewBox="0 0 32 32" aria-hidden="true"
+                    class="mt-1 h-8 w-8 flex-none fill-teal-500 stroke-white dark:fill-teal-200/20 dark:stroke-teal-200">
                     <defs>
-                        <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_QS_alert"
-                            gradientTransform="matrix(0 21 -21 0 20 11)">
+                        <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_database"
+                            gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
                             <stop stop-color="#0EA5E9"></stop>
                             <stop stop-color="#22D3EE" offset=".527"></stop>
                             <stop stop-color="#818CF8" offset="1"></stop>
                         </radialGradient>
-                        <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_QS_alert_dark"
+                        <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_database_dark"
                             gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
                             <stop stop-color="#0EA5E9"></stop>
                             <stop stop-color="#22D3EE" offset=".527"></stop>
@@ -230,7 +257,7 @@ onUnmounted(() => {
                         </radialGradient>
                     </defs>
                     <g class="dark:hidden">
-                        <circle cx="20" cy="20" r="12" fill="url(#_QS_alert)"></circle>
+                        <circle cx="20" cy="20" r="12" fill="url(#_alert_database)"></circle>
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M20 24.995c0-1.855 1.094-3.501 2.427-4.792C24.61 18.087 26 15.07 26 12.231 26 7.133 21.523 3 16 3S6 7.133 6 12.23c0 2.84 1.389 5.857 3.573 7.973C10.906 21.494 12 23.14 12 24.995V27a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.005Z"
                             class="fill-(--icon-background)" fill-opacity="0.5"></path>
@@ -244,7 +271,7 @@ onUnmounted(() => {
                     <g class="hidden dark:inline">
                         <path fill-rule="evenodd" clip-rule="evenodd"
                             d="M16 2C10.002 2 5 6.507 5 12.23c0 3.144 1.523 6.411 3.877 8.691.75.727 1.363 1.52 1.734 2.353.185.415.574.726 1.028.726H12a1 1 0 0 0 1-1v-4.5a.5.5 0 0 0-.5-.5A3.5 3.5 0 0 1 9 14.5V14a3 3 0 1 1 6 0v9a1 1 0 1 0 2 0v-9a3 3 0 1 1 6 0v.5a3.5 3.5 0 0 1-3.5 3.5.5.5 0 0 0-.5.5V23a1 1 0 0 0 1 1h.36c.455 0 .844-.311 1.03-.726.37-.833.982-1.626 1.732-2.353 2.354-2.28 3.878-5.547 3.878-8.69C27 6.507 21.998 2 16 2Zm5 25a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1 3 3 0 0 0 3 3h4a3 3 0 0 0 3-3Zm-8-13v1.5a.5.5 0 0 1-.5.5 1.5 1.5 0 0 1-1.5-1.5V14a1 1 0 1 1 2 0Zm6.5 2a.5.5 0 0 1-.5-.5V14a1 1 0 1 1 2 0v.5a1.5 1.5 0 0 1-1.5 1.5Z"
-                            fill="url(#_QS_alert_dark)"></path>
+                            fill="url(#_alert_database_dark)"></path>
                     </g>
                 </svg>
                 <div class="ml-4 flex-auto">
@@ -258,7 +285,8 @@ onUnmounted(() => {
 
             <div class="space-y-8">
                 <div>
-                    <h3 class="mb-3 text-lg font-semibold text-zinc-900 dark:text-white">1. Update Database Credentials
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">1. Update Database
+                        Credentials
                     </h3>
                     <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
                         Update your database credentials in <code
@@ -269,7 +297,8 @@ onUnmounted(() => {
                 </div>
 
                 <div>
-                    <h3 class="mb-3 text-lg font-semibold text-zinc-900 dark:text-white">2. Run Migrations</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">2. Run Migrations
+                    </h3>
                     <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
                         Create the database tables:
                     </p>
@@ -277,7 +306,7 @@ onUnmounted(() => {
                 </div>
 
                 <div>
-                    <h3 class="mb-3 text-lg font-semibold text-zinc-900 dark:text-white">3. Seed Database</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">3. Seed Database</h3>
                     <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
                         Seed the database with initial data:
                     </p>
@@ -285,7 +314,8 @@ onUnmounted(() => {
                 </div>
 
                 <div>
-                    <h3 class="mb-3 text-lg font-semibold text-zinc-900 dark:text-white">4. Default Credentials</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">4. Default
+                        Credentials</h3>
                     <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
                         Default superuser credentials:
                     </p>
@@ -295,10 +325,10 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-700"></div>
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Common Issues Section -->
-        <section id="common-issues" class="mb-12 scroll-mt-20">
+        <section id="common-issues" class="mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Common Issues</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Troubleshooting guide for common installation problems.
@@ -306,7 +336,8 @@ onUnmounted(() => {
 
             <div class="space-y-8">
                 <div>
-                    <h3 class="mb-3 text-lg font-semibold text-zinc-900 dark:text-white">Permission Issues</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Permission Issues
+                    </h3>
                     <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
                         If you encounter permission issues with storage or cache directories:
                     </p>
@@ -314,7 +345,8 @@ onUnmounted(() => {
                 </div>
 
                 <div>
-                    <h3 class="mb-3 text-lg font-semibold text-zinc-900 dark:text-white">Composer Dependencies</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Composer Dependencies
+                    </h3>
                     <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
                         If you get dependency errors or platform requirement mismatches:
                     </p>
@@ -322,7 +354,7 @@ onUnmounted(() => {
                 </div>
 
                 <div>
-                    <h3 class="mb-3 text-lg font-semibold text-zinc-900 dark:text-white">NPM Issues</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">NPM Issues</h3>
                     <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
                         If you have npm issues, try clearing the cache and reinstalling:
                     </p>
@@ -330,7 +362,8 @@ onUnmounted(() => {
                 </div>
 
                 <div>
-                    <h3 class="mb-3 text-lg font-semibold text-zinc-900 dark:text-white">MySQL Database Backup</h3>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">MySQL Database Backup
+                    </h3>
                     <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
                         Configure mysqldump path in your .env file:
                     </p>
@@ -344,7 +377,7 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-200 dark:border-zinc-800"></div>
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Next Steps -->
         <section id="next-steps" class="mb-8 scroll-mt-16">

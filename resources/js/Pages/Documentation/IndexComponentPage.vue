@@ -50,7 +50,7 @@ onUnmounted(() => {
       <h1 class="mb-4 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-white">
         Available Components
       </h1>
-      <p class="text-lg leading-8 text-zinc-600 sm:text-xl dark:text-zinc-400">
+      <p class="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
         A comprehensive collection of reusable Vue components. Each component is documented with props, usage examples,
         and best practices.
       </p>
@@ -80,9 +80,9 @@ onUnmounted(() => {
           class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
           <div class="mb-2 flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <span class="flex h-8 w-8 items-center justify-center rounded-md bg-teal-500/10">
-                <svg class="h-4 w-4 text-zinc-700 dark:text-zinc-200" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" aria-hidden="true">
+              <span
+                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -98,11 +98,11 @@ onUnmounted(() => {
           class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
           <div class="mb-2 flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <span class="flex h-8 w-8 items-center justify-center rounded-md bg-teal-500/10">
-                <svg class="h-4 w-4 text-zinc-700 dark:text-zinc-200" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" aria-hidden="true">
+              <span
+                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M15.232 5.232l3.536 3.536M9 11l6 6m3-10.5a2.121 2.121 0 10-3-3L5 13v3h3l10-10.5z" />
+                    d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                 </svg>
               </span>
               <p class="font-semibold text-zinc-900 dark:text-white">Forms</p>
@@ -116,9 +116,9 @@ onUnmounted(() => {
           class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
           <div class="mb-2 flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <span class="flex h-8 w-8 items-center justify-center rounded-md bg-teal-500/10">
-                <svg class="h-4 w-4 text-zinc-700 dark:text-zinc-200" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" aria-hidden="true">
+              <span
+                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" />
                 </svg>
               </span>
@@ -133,9 +133,9 @@ onUnmounted(() => {
           class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
           <div class="mb-2 flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <span class="flex h-8 w-8 items-center justify-center rounded-md bg-teal-500/10">
-                <svg class="h-4 w-4 text-zinc-700 dark:text-zinc-200" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" aria-hidden="true">
+              <span
+                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M3 3v18h18M7 14l3-3 4 4 4-4" />
                 </svg>
@@ -163,10 +163,57 @@ onUnmounted(() => {
         </p>
       </div>
 
+      <!-- Alert -->
+      <div
+        class="my-6 flex gap-2.5 rounded-2xl border border-teal-500/20 bg-teal-50/50 p-4 leading-6 text-teal-900 dark:border-teal-500/30 dark:bg-teal-500/5 dark:text-teal-200">
+        <svg viewBox="0 0 32 32" aria-hidden="true"
+          class="mt-1 h-8 w-8 flex-none fill-teal-500 stroke-white dark:fill-teal-200/20 dark:stroke-teal-200">
+          <defs>
+            <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_components"
+              gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+              <stop stop-color="#0EA5E9"></stop>
+              <stop stop-color="#22D3EE" offset=".527"></stop>
+              <stop stop-color="#818CF8" offset="1"></stop>
+            </radialGradient>
+            <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_components_dark"
+              gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+              <stop stop-color="#0EA5E9"></stop>
+              <stop stop-color="#22D3EE" offset=".527"></stop>
+              <stop stop-color="#818CF8" offset="1"></stop>
+            </radialGradient>
+          </defs>
+          <g class="dark:hidden">
+            <circle cx="20" cy="20" r="12" fill="url(#_alert_components)"></circle>
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M20 24.995c0-1.855 1.094-3.501 2.427-4.792C24.61 18.087 26 15.07 26 12.231 26 7.133 21.523 3 16 3S6 7.133 6 12.23c0 2.84 1.389 5.857 3.573 7.973C10.906 21.494 12 23.14 12 24.995V27a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.005Z"
+              class="fill-(--icon-background)" fill-opacity="0.5"></path>
+            <path
+              d="M25 12.23c0 2.536-1.254 5.303-3.269 7.255l1.391 1.436c2.354-2.28 3.878-5.547 3.878-8.69h-2ZM16 4c5.047 0 9 3.759 9 8.23h2C27 6.508 21.998 2 16 2v2Zm-9 8.23C7 7.76 10.953 4 16 4V2C10.002 2 5 6.507 5 12.23h2Zm3.269 7.255C8.254 17.533 7 14.766 7 12.23H5c0 3.143 1.523 6.41 3.877 8.69l1.392-1.436ZM13 27v-2.005h-2V27h2Zm1 1a1 1 0 0 1-1-1h-2a3 3 0 0 0 3 3v-2Zm4 0h-4v2h4v-2Zm1-1a1 1 0 0 1-1 1v2a3 3 0 0 0 3-3h-2Zm0-2.005V27h2v-2.005h-2ZM8.877 20.921C10.132 22.136 11 23.538 11 24.995h2c0-2.253-1.32-4.143-2.731-5.51L8.877 20.92Zm12.854-1.436C20.32 20.852 19 22.742 19 24.995h2c0-1.457.869-2.859 2.122-4.074l-1.391-1.436Z"
+              class="fill-(--icon-foreground)"></path>
+            <path
+              d="M20 26a1 1 0 1 0 0-2v2Zm-8-2a1 1 0 1 0 0 2v-2Zm2 0h-2v2h2v-2Zm1 1V13.5h-2V25h2Zm-5-11.5v1h2v-1h-2Zm3.5 4.5h5v-2h-5v2Zm8.5-3.5v-1h-2v1h2ZM20 24h-2v2h2v-2Zm-2 0h-4v2h4v-2Zm-1-10.5V25h2V13.5h-2Zm2.5-2.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2ZM18.5 18a3.5 3.5 0 0 0 3.5-3.5h-2a1.5 1.5 0 0 1-1.5 1.5v2ZM10 14.5a3.5 3.5 0 0 0 3.5 3.5v-2a1.5 1.5 0 0 1-1.5-1.5h-2Zm2.5-3.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2Z"
+              class="fill-(--icon-foreground)"></path>
+          </g>
+          <g class="hidden dark:inline">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M16 2C10.002 2 5 6.507 5 12.23c0 3.144 1.523 6.411 3.877 8.691.75.727 1.363 1.52 1.734 2.353.185.415.574.726 1.028.726H12a1 1 0 0 0 1-1v-4.5a.5.5 0 0 0-.5-.5A3.5 3.5 0 0 1 9 14.5V14a3 3 0 1 1 6 0v9a1 1 0 1 0 2 0v-9a3 3 0 1 1 6 0v.5a3.5 3.5 0 0 1-3.5 3.5.5.5 0 0 0-.5.5V23a1 1 0 0 0 1 1h.36c.455 0 .844-.311 1.03-.726.37-.833.982-1.626 1.732-2.353 2.354-2.28 3.878-5.547 3.878-8.69C27 6.507 21.998 2 16 2Zm5 25a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1 3 3 0 0 0 3 3h4a3 3 0 0 0 3-3Zm-8-13v1.5a.5.5 0 0 1-.5.5 1.5 1.5 0 0 1-1.5-1.5V14a1 1 0 1 1 2 0Zm6.5 2a.5.5 0 0 1-.5-.5V14a1 1 0 1 1 2 0v.5a1.5 1.5 0 0 1-1.5 1.5Z"
+              fill="url(#_alert_components_dark)"></path>
+          </g>
+        </svg>
+        <div class="ml-4 flex-auto">
+          <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">Component Imports</p>
+          <p class="mt-2.5 text-sm text-teal-800 dark:text-teal-100">
+            All components are located in <code
+              class="rounded bg-teal-100 px-1.5 py-0.5 font-mono text-xs dark:bg-teal-900/50">resources/js/Components/</code>
+            Import them in your Vue files to use.
+          </p>
+        </div>
+      </div>
+
       <div class="space-y-12">
         <!-- CodeBlock -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">CodeBlock</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">CodeBlock</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Display syntax-highlighted code snippets with an optional copy-to-clipboard button.
           </p>
@@ -214,7 +261,7 @@ onUnmounted(() => {
 
         <!-- Modal -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">Modal</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Modal</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Accessible dialog overlay with focus management, keyboard navigation (ESC to close), and multiple size
             options.
@@ -289,7 +336,7 @@ const showModal = ref(false)
 
         <!-- Tabs -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">Tabs</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Tabs</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Responsive tab navigation that displays as tabs on desktop and a select dropdown on mobile.
           </p>
@@ -331,7 +378,7 @@ const showModal = ref(false)
 
         <!-- PageHeader -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">PageHeader</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">PageHeader</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Standard page header with title, description, breadcrumb navigation, and customizable action buttons.
           </p>
@@ -389,7 +436,7 @@ const showModal = ref(false)
 
         <!-- FeatureCard -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">FeatureCard</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">FeatureCard</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Showcase features or benefits with an icon, title, description, and optional link.
           </p>
@@ -450,7 +497,7 @@ const showModal = ref(false)
 
         <!-- Datatable -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">Datatable</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Datatable</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Full-featured data table with sorting, filtering, pagination, bulk actions, export, and expandable rows.
           </p>
@@ -530,7 +577,7 @@ const showModal = ref(false)
       <div class="space-y-12">
         <!-- NavSidebarDesktop -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">NavSidebarDesktop</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">NavSidebarDesktop</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Collapsible sidebar navigation with nested menus, permission-based visibility, and active route
             highlighting. Supports parent-child relationships, dividers, and custom icons.
@@ -604,7 +651,7 @@ const showModal = ref(false)
           </div>
 
           <CodeBlock :code="`<script setup>
-import NavSidebarDesktop from '@/Components/NavSidebarDesktop.vue'
+import NavSidebarDesktop from '@/Shared/Public/NavSidebarDesktop.vue'
 
 const navigationSections = [
   {
@@ -664,7 +711,7 @@ const navigationSections = [
       <div class="space-y-12">
         <!-- FormInput -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">FormInput</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">FormInput</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Versatile text input with floating labels, validation error display, and optional password visibility
             toggle.
@@ -723,7 +770,7 @@ const navigationSections = [
 
         <!-- FormTextarea -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">FormTextarea</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">FormTextarea</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Multi-line text input with floating labels, auto-resize option, and validation support.
           </p>
@@ -778,7 +825,7 @@ const navigationSections = [
 
         <!-- FormSelect -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">FormSelect</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">FormSelect</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Searchable dropdown with keyboard navigation, clear button, and loading state support.
           </p>
@@ -867,7 +914,7 @@ const form = reactive({ country: 'US' })
       <div class="space-y-12">
         <!-- ChartWidget -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">ChartWidget</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">ChartWidget</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Compact metric card with sparkline chart and percentage change indicator.
           </p>
@@ -925,7 +972,7 @@ const form = reactive({ country: 'US' })
 
         <!-- MetricWidget -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">MetricWidget</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">MetricWidget</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Bold metric display with icon, trend direction, and percentage change.
           </p>
@@ -989,7 +1036,7 @@ const form = reactive({ country: 'US' })
 
         <!-- ProgressWidget -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">ProgressWidget</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">ProgressWidget</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Visual progress indicator with percentage display and descriptive text.
           </p>
@@ -1047,7 +1094,7 @@ const form = reactive({ country: 'US' })
 
         <!-- StatWidget -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">StatWidget</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">StatWidget</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Statistical card with icon, value, description, and optional trend indicator.
           </p>
@@ -1111,7 +1158,7 @@ const form = reactive({ country: 'US' })
 
         <!-- StockWidget -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">StockWidget</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">StockWidget</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Stock price display with company logo, current price, and change percentage.
           </p>
@@ -1180,7 +1227,7 @@ const form = reactive({ country: 'US' })
       <div class="space-y-12">
         <!-- ApexAreaChart -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">ApexAreaChart</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">ApexAreaChart</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Area chart with gradient fill, perfect for visualizing trends over time with dark mode support.
           </p>
@@ -1227,7 +1274,7 @@ const form = reactive({ country: 'US' })
 
         <!-- ApexLineChart -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">ApexLineChart</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">ApexLineChart</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Line chart with smooth curves, ideal for tracking metrics and trends with dark mode support.
           </p>
@@ -1274,7 +1321,7 @@ const form = reactive({ country: 'US' })
 
         <!-- ApexBarChart -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">ApexBarChart</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">ApexBarChart</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Bar chart for comparing categorical data across different groups or time periods.
           </p>
@@ -1321,7 +1368,7 @@ const form = reactive({ country: 'US' })
 
         <!-- ApexDonutChart -->
         <div>
-          <h3 class="mb-2 text-lg font-semibold text-zinc-900 dark:text-white">ApexDonutChart</h3>
+          <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">ApexDonutChart</h3>
           <p class="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
             Donut chart for displaying proportional data with center total and dark mode support.
           </p>
@@ -1372,9 +1419,10 @@ const form = reactive({ country: 'US' })
 
     <!-- Note Section -->
     <section class="mb-8">
-      <div class="my-6 flex rounded-3xl p-6 bg-teal-50 dark:bg-teal-900/40 dark:ring-1 dark:ring-teal-300/10">
+      <div
+        class="my-6 flex gap-2.5 rounded-2xl border border-teal-500/20 bg-teal-50/50 p-4 leading-6 text-teal-900 dark:border-teal-500/30 dark:bg-teal-500/5 dark:text-teal-200">
         <svg aria-hidden="true" viewBox="0 0 32 32" fill="none"
-          class="h-8 w-8 flex-none [--icon-foreground:var(--color-slate-900)] [--icon-background:var(--color-white)]">
+          class="mt-1 h-8 w-8 flex-none fill-teal-500 stroke-white dark:fill-teal-200/20 dark:stroke-teal-200">
           <defs>
             <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_QS_alert"
               gradientTransform="matrix(0 21 -21 0 20 11)">
@@ -1408,15 +1456,14 @@ const form = reactive({ country: 'US' })
           </g>
         </svg>
         <div class="ml-4 flex-auto">
-          <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">Component Customization</p>
+          <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">Important: Component Architecture
+          </p>
           <p class="mt-2.5 text-sm text-teal-800 dark:text-teal-100">
-            All components are fully customizable and can be extended to fit your needs. Each component is built with
-            Vue 3
-            Composition API and supports Tailwind CSS styling. For implementation examples and advanced usage patterns,
-            check the
-            <a href="https://github.com/otatechie/guacpanel-tailwind"
-              class="font-semibold text-teal-900 underline hover:text-teal-700 dark:text-teal-100 dark:hover:text-teal-50">GuacPanel
-              repository</a> on GitHub.
+            GuacPanel components are designed to be extremely lightweight and depend only on Vue 3 and Tailwind CSS.
+            This
+            ensures maximum performance and zero bloat in your final production bundle, as each component is
+            tree-shakable
+            and optimized for modern build tools.
           </p>
         </div>
       </div>

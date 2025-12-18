@@ -85,137 +85,33 @@ onMounted(() => {
 <template>
   <div class="min-h-screen bg-[var(--color-bg)]" role="document">
     <!-- Mobile Sidebar Overlay -->
-    <div
-      v-if="isSidebarOpen && isMobile()"
-      class="fixed inset-0 z-30 bg-black/30"
-      role="dialog"
-      aria-modal="true"
-      aria-label="Mobile navigation menu"
-      aria-hidden="true"
-      @click.stop="closeSidebar"></div>
+    <div v-if="isSidebarOpen && isMobile()" class="fixed inset-0 z-30 bg-black/30" role="dialog" aria-modal="true"
+      aria-label="Mobile navigation menu" aria-hidden="true" @click.stop="closeSidebar"></div>
 
     <!-- Main Sidebar Navigation -->
-    <NavSidebarDesktop
-      data-sidebar
-      role="navigation"
-      aria-label="Main sidebar"
-      :aria-expanded="isSidebarOpen"
+    <NavSidebarDesktop data-sidebar role="navigation" aria-label="Main sidebar" :aria-expanded="isSidebarOpen"
       :aria-hidden="!isSidebarOpen"
-      class="h:[calc(100vh-4rem)] fixed top-16 left-0 z-40 w-64 bg-[var(--color-surface)] shadow-lg transition-transform duration-200"
-      :class="[isSidebarOpen ? 'translate-x-0' : '-translate-x-64']"
-      @close="closeSidebar" />
+      class="fixed bottom-0 left-0 z-40 w-64 bg-[var(--color-surface)] shadow-lg transition-transform duration-200 top-0"
+      :class="[isSidebarOpen ? 'translate-x-0' : '-translate-x-64']" :theme-state="themeState"
+      :toggle-dark-mode="toggleDarkMode" @close="closeSidebar" />
+
+    <!-- Mobile Menu Button (Floating) -->
+    <button v-if="!isSidebarOpen || !isMobile()" type="button" data-menu-button
+      class="fixed bottom-6 right-6 z-50 flex cursor-pointer items-center justify-center border-2 border-[#3a3a3a] bg-white px-3 py-2 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all hover:bg-[#3a3a3a] hover:text-white md:hidden dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-[#d4d4d4] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] dark:hover:bg-[#d4d4d4] dark:hover:text-[#3a3a3a] focus:outline-none"
+      aria-label="Toggle navigation menu" @click="toggleSidebar">
+      <span v-if="!isSidebarOpen">[MENU]</span>
+      <span v-else>[CLOSE]</span>
+    </button>
 
     <div class="flex min-h-screen flex-col">
-      <header
-        role="banner"
-        class="fixed top-0 z-40 w-full border-b border-[var(--color-border)] bg-[var(--color-surface)]">
-        <nav
-          class="flex h-16 items-center gap-4 px-4"
-          role="navigation"
-          aria-label="Primary navigation">
-          <section class="flex items-center gap-4" aria-label="Site logo and menu controls">
-            <!-- Logo -->
-            <Link
-              href="/"
-              class="flex items-center text-xl font-semibold text-[var(--color-text)]"
-              aria-label="Go to homepage">
-              <img src="/images/logo.png" class="block h-10 w-auto dark:hidden" alt="Logo" />
-              <img
-                src="/images/logo-dark.png"
-                class="hidden h-10 w-auto dark:block"
-                alt="Logo Dark" />
-            </Link>
-
-            <!-- Mobile Menu Toggle -->
-            <button
-              type="button"
-              data-menu-button
-              class="cursor-pointer rounded-lg p-2 text-[var(--color-text-muted)] hover:bg-[var(--color-surface-muted)] focus:ring-2 focus:ring-gray-200 focus:outline-none"
-              aria-label="Toggle navigation menu"
-              :aria-expanded="isSidebarOpen"
-              @click="toggleSidebar">
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-            </button>
-          </section>
-
-          <section class="flex flex-1 items-center justify-end gap-4" aria-label="Site controls">
-            <!-- Theme Toggle Button -->
-            <button
-              type="button"
-              class="cursor-pointer rounded-lg p-2 text-[var(--color-text-muted)] transition-all hover:bg-[var(--color-surface-muted)] focus:ring-2 focus:ring-gray-200 focus:outline-none"
-              aria-label="Toggle color theme"
-              @click="toggleDarkMode">
-              <svg
-                v-if="themeState.currentThemeIcon === 'sun'"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-              </svg>
-              <svg
-                v-else-if="themeState.currentThemeIcon === 'moon'"
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
-              </svg>
-              <svg
-                v-else
-                class="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
-              </svg>
-            </button>
-
-            <Link
-              href="/login"
-              class="inline-flex items-center rounded-lg bg-teal-500 px-4 py-2 text-sm font-medium text-white hover:bg-teal-600 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:outline-none"
-              aria-label="View demo">
-              Demo
-            </Link>
-          </section>
-        </nav>
-      </header>
+      <!-- Top Bar Removed as requested -->
 
       <!-- Main Content -->
-      <main
-        role="main"
-        class="flex-1 transition-all duration-200"
-        :class="['pt-16', isSidebarOpen ? 'md:ml-64 xl:mr-64' : 'md:ml-0 xl:mr-64']">
+      <main role="main" class="flex-1 transition-all duration-200"
+        :class="[isSidebarOpen ? 'md:ml-64 xl:mr-64' : 'md:ml-0 xl:mr-64']">
         <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <FlashMessage />
-          <article
-            class="prose prose-gray dark:prose-invert prose-headings:scroll-mt-20 max-w-none py-8">
+          <article class="prose prose-gray dark:prose-invert prose-headings:scroll-mt-20 max-w-none py-8">
             <slot />
           </article>
         </div>
