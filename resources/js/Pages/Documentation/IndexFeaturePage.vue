@@ -520,7 +520,7 @@ onUnmounted(() => {
 
     <div class="mx-auto max-w-4xl">
         <!-- Intro Section -->
-        <div id="introduction" class="mb-8">
+        <div id="introduction" class="mb-4 sm:mb-8">
             <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-teal-500 dark:text-teal-300">
                 Core Features
             </p>
@@ -622,11 +622,11 @@ onUnmounted(() => {
         </div>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Authentication Section -->
-        <section id="authentication" class="mb-16 scroll-mt-20">
-            <div class="mb-8">
+        <section id="authentication" class="mb-8 sm:mb-16 scroll-mt-20">
+            <div class="mb-4 sm:mb-8">
                 <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Authentication</h2>
                 <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
                     GuacPanel provides a complete authentication system built on Laravel Fortify. Choose from
@@ -823,11 +823,11 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Permissions & Roles Section -->
-        <section id="permissions-roles" class="mb-16 scroll-mt-20">
-            <div class="mb-8">
+        <section id="permissions-roles" class="mb-8 sm:mb-16 scroll-mt-20">
+            <div class="mb-4 sm:mb-8">
                 <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Permissions & Roles</h2>
                 <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
                     GuacPanel provides powerful role-based access control built on
@@ -841,11 +841,11 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Security Middleware Section -->
-        <section id="middleware" class="mb-16 scroll-mt-20">
-            <div class="mb-8">
+        <section id="middleware" class="mb-8 sm:mb-16 scroll-mt-20">
+            <div class="mb-4 sm:mb-8">
                 <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Security Middleware</h2>
                 <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
                     GuacPanel includes comprehensive security middleware to protect your application. Automatically
@@ -943,11 +943,11 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Backup System Section -->
-        <section id="backup-system" class="mb-16 scroll-mt-20">
-            <div class="mb-8">
+        <section id="backup-system" class="mb-8 sm:mb-16 scroll-mt-20">
+            <div class="mb-4 sm:mb-8">
                 <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Backup Management UI</h2>
                 <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
                     GuacPanel provides a visual interface for
@@ -1007,11 +1007,11 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- System Health Monitoring Section -->
-        <section id="system-health" class="mb-16 scroll-mt-20">
-            <div class="mb-8">
+        <section id="system-health" class="mb-8 sm:mb-16 scroll-mt-20">
+            <div class="mb-4 sm:mb-8">
                 <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">
                     System Health Monitoring
                 </h2>
@@ -1028,11 +1028,11 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Data Tables Section -->
-        <section id="data-tables" class="mb-16 scroll-mt-20">
-            <div class="mb-8">
+        <section id="data-tables" class="mb-8 sm:mb-16 scroll-mt-20">
+            <div class="mb-4 sm:mb-8">
                 <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Data Tables</h2>
                 <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
                     GuacPanel provides powerful data tables built on
@@ -1088,11 +1088,11 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Typesense Search Section -->
-        <section id="typesense-search" class="mb-16 scroll-mt-20">
-            <div class="mb-8">
+        <section id="typesense-search" class="mb-8 sm:mb-16 scroll-mt-20">
+            <div class="mb-4 sm:mb-8">
                 <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Typesense Search</h2>
                 <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
                     GuacPanel delivers instant search results that understand typos. Powered by
@@ -1188,11 +1188,11 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- File Uploads Section -->
-        <section id="file-uploads" class="mb-16 scroll-mt-20">
-            <div class="mb-8">
+        <section id="file-uploads" class="mb-8 sm:mb-16 scroll-mt-20">
+            <div class="mb-4 sm:mb-8">
                 <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">File Uploads</h2>
                 <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
                     GuacPanel includes a modern drag-and-drop file upload interface powered by
@@ -1218,11 +1218,11 @@ onUnmounted(() => {
             </div>
         </section>
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Real-time Notifications Section -->
-        <section id="realtime-notifications" class="mb-16 scroll-mt-20">
-            <div class="mb-8">
+        <section id="realtime-notifications" class="mb-8 sm:mb-16 scroll-mt-20">
+            <div class="mb-4 sm:mb-8">
                 <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Real-time Notifications
                 </h2>
                 <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
@@ -1327,7 +1327,7 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Next Steps -->
         <section id="next-steps" class="mb-8 scroll-mt-16">

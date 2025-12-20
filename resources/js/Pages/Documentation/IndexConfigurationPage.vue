@@ -38,7 +38,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 
     <div class="mx-auto max-w-4xl">
         <!-- Intro Section -->
-        <div id="introduction" class="mb-8">
+        <div id="introduction" class="mb-4 sm:mb-8">
             <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-teal-500 dark:text-teal-300">
                 Configuration
             </p>
@@ -52,10 +52,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </div>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Environment Variables Section -->
-        <section id="environment-variables" class="mb-16 scroll-mt-20">
+        <section id="environment-variables" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Environment Variables</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 GuacPanel uses Laravel's environment configuration. All settings are stored in the <code
@@ -98,10 +98,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Database Configuration Section -->
-        <section id="database-configuration" class="mb-16 scroll-mt-20">
+        <section id="database-configuration" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Database Configuration</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Configure your database connection settings for MySQL, PostgreSQL, or SQLite.
@@ -149,10 +149,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Mail Configuration Section -->
-        <section id="mail-configuration" class="mb-16 scroll-mt-20">
+        <section id="mail-configuration" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Mail Configuration</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Configure email settings for notifications, password resets, and user communications.
@@ -194,10 +194,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Authentication Settings Section -->
-        <section id="authentication-settings" class="mb-16 scroll-mt-20">
+        <section id="authentication-settings" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Authentication Settings</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Configure authentication providers and security settings.
@@ -239,10 +239,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- File Storage Section -->
-        <section id="file-storage" class="mb-16 scroll-mt-20">
+        <section id="file-storage" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">File Storage</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Configure file storage for uploads, backups, and media files.
@@ -277,10 +277,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Cache & Session Section -->
-        <section id="cache-session" class="mb-16 scroll-mt-20">
+        <section id="cache-session" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Cache & Session</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Configure caching and session storage for optimal performance.
@@ -323,7 +323,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Navigation -->
         <section id="next-steps" class="mb-8 scroll-mt-16">

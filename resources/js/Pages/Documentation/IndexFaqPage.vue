@@ -36,7 +36,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 
     <div class="mx-auto max-w-4xl">
         <!-- Intro Section -->
-        <div id="introduction" class="mb-8">
+        <div id="introduction" class="mb-4 sm:mb-8">
             <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-teal-500 dark:text-teal-300">
                 FAQ
             </p>
@@ -50,10 +50,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </div>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- General Questions Section -->
-        <section id="general" class="mb-16 scroll-mt-20">
+        <section id="general" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">General Questions</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Common questions about GuacPanel and what it offers.
@@ -99,10 +99,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Installation & Setup Section -->
-        <section id="installation" class="mb-16 scroll-mt-20">
+        <section id="installation" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Installation & Setup</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Getting started with GuacPanel installation and configuration.
@@ -137,10 +137,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Configuration Section -->
-        <section id="configuration" class="mb-16 scroll-mt-20">
+        <section id="configuration" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Configuration</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Configuring GuacPanel features and settings.
@@ -177,10 +177,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Features & Usage Section -->
-        <section id="features" class="mb-16 scroll-mt-20">
+        <section id="features" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Features & Usage</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Working with GuacPanel features and extending functionality.
@@ -224,10 +224,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Troubleshooting Section -->
-        <section id="troubleshooting" class="mb-16 scroll-mt-20">
+        <section id="troubleshooting" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Troubleshooting</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Solutions to common issues and where to get help.
@@ -273,7 +273,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Navigation -->
         <section id="next-steps" class="mb-8 scroll-mt-16">

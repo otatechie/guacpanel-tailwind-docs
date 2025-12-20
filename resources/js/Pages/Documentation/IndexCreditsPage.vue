@@ -35,7 +35,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 
     <div class="mx-auto max-w-4xl">
         <!-- Intro Section -->
-        <div id="introduction" class="mb-8">
+        <div id="introduction" class="mb-4 sm:mb-8">
             <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-teal-500 dark:text-teal-300">
                 Credits
             </p>
@@ -49,10 +49,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </div>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Core Technologies Section -->
-        <section id="core-technologies" class="mb-16 scroll-mt-20">
+        <section id="core-technologies" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-6 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Core Technologies</h2>
 
             <ul class="space-y-4 text-base text-zinc-700 dark:text-zinc-300">
@@ -124,10 +124,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Laravel Packages Section -->
-        <section id="laravel-packages" class="mb-16 scroll-mt-20">
+        <section id="laravel-packages" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-6 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Laravel Packages</h2>
 
             <ul class="space-y-4 text-base text-zinc-700 dark:text-zinc-300">
@@ -255,10 +255,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Frontend Libraries Section -->
-        <section id="frontend-libraries" class="mb-16 scroll-mt-20">
+        <section id="frontend-libraries" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-6 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Frontend Libraries</h2>
 
             <ul class="space-y-4 text-base text-zinc-700 dark:text-zinc-300">
@@ -344,10 +344,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Contributors Section -->
-        <section id="contributors" class="mb-16 scroll-mt-20">
+        <section id="contributors" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-6 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Contributors</h2>
 
             <div class="mb-6">
@@ -420,7 +420,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Navigation -->
         <section id="next-steps" class="mb-8 scroll-mt-16">

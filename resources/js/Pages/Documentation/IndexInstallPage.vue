@@ -90,7 +90,7 @@ onUnmounted(() => {
 
     <div class="mx-auto max-w-4xl">
         <!-- Intro Section -->
-        <div id="introduction" class="mb-8">
+        <div id="introduction" class="mb-4 sm:mb-8">
             <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-teal-500 dark:text-teal-300">
                 Installation
             </p>
@@ -115,10 +115,10 @@ onUnmounted(() => {
         </div>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Prerequisites Section -->
-        <section id="prerequisites" class="mb-16 scroll-mt-20">
+        <section id="prerequisites" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Prerequisites</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Ensure you have the following requirements before installing GuacPanel.
@@ -169,10 +169,10 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Installation Section -->
-        <section id="installation" class="mb-16 scroll-mt-20">
+        <section id="installation" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Installation Steps</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Follow these steps to get GuacPanel up and running on your system.
@@ -261,10 +261,10 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Database Setup Section -->
-        <section id="database-setup" class="mb-16 scroll-mt-20">
+        <section id="database-setup" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Database Setup</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Configure your database and initialize the application data.
@@ -358,10 +358,10 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Common Issues Section -->
-        <section id="common-issues" class="mb-16 scroll-mt-20">
+        <section id="common-issues" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Common Issues</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Troubleshooting guide for common installation problems.
@@ -410,7 +410,7 @@ onUnmounted(() => {
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Next Steps -->
         <section id="next-steps" class="mb-8 scroll-mt-16">

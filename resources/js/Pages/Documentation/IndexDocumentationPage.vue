@@ -51,7 +51,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
 
     <div class="mx-auto max-w-4xl">
         <!-- Intro Section -->
-        <div id="introduction" class="mb-8">
+        <div id="introduction" class="mb-4 sm:mb-8">
             <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-teal-500 dark:text-teal-300">
                 Introduction
             </p>
@@ -81,10 +81,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </div>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Why GuacPanel Section -->
-        <section id="why-guacpanel" class="mb-16 scroll-mt-20">
+        <section id="why-guacpanel" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Why GuacPanel?</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 GuacPanel is a production-ready Laravel admin panel starter kit that eliminates weeks of repetitive
@@ -121,10 +121,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Quick Start Section -->
-        <section id="quick-start" class="mb-16 scroll-mt-20">
+        <section id="quick-start" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Quick Start</h2>
             <p class="mb-4 text-base text-zinc-600 dark:text-zinc-400">
                 Get up and running with a single command. GuacPanel uses Composer to scaffold your new project.
@@ -200,10 +200,10 @@ npm install && npm run dev
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- System Requirements Section -->
-        <section id="system-requirements" class="mb-16 scroll-mt-20">
+        <section id="system-requirements" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">System Requirements</h2>
             <p class="mb-4 text-base text-zinc-600 dark:text-zinc-400">
                 Minimum stack to run GuacPanel. For the full checklist and troubleshooting, see the
@@ -246,10 +246,10 @@ npm install && npm run dev
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Core Features Section -->
-        <section id="core-features" class="mb-16 scroll-mt-20">
+        <section id="core-features" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Core Features</h2>
             <p class="mb-4 text-base text-zinc-600 dark:text-zinc-400">
                 Everything you need to build modern, secure, and scalable admin applications.
@@ -365,10 +365,10 @@ npm install && npm run dev
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Technologies Section -->
-        <section id="technologies" class="mb-16 scroll-mt-16">
+        <section id="technologies" class="mb-8 sm:mb-16 scroll-mt-16">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Tech Stack</h2>
             <p class="mb-4 text-base text-zinc-600 dark:text-zinc-400">
                 Built with modern technologies for optimal performance and developer experience.
@@ -397,11 +397,7 @@ npm install && npm run dev
                             </svg>
                         </a>
                     </h3>
-                    <p class="mb-3 text-xs text-zinc-600 dark:text-zinc-400">Backend foundation</p>
-                    <span
-                        class="inline-block rounded-full bg-zinc-100 px-2 py-1 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
-                        v12.x
-                    </span>
+                    <p class="text-xs text-zinc-600 dark:text-zinc-400">Backend foundation</p>
                 </div>
 
                 <!-- Vue.js Card -->
@@ -426,11 +422,7 @@ npm install && npm run dev
                             </svg>
                         </a>
                     </h3>
-                    <p class="mb-3 text-xs text-zinc-600 dark:text-zinc-400">UI framework</p>
-                    <span
-                        class="inline-block rounded-full bg-zinc-100 px-2 py-1 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
-                        v3.x
-                    </span>
+                    <p class="text-xs text-zinc-600 dark:text-zinc-400">UI framework</p>
                 </div>
 
                 <!-- Inertia.js Card -->
@@ -456,11 +448,7 @@ npm install && npm run dev
                             </svg>
                         </a>
                     </h3>
-                    <p class="mb-3 text-xs text-zinc-600 dark:text-zinc-400">Laravel + Vue bridge</p>
-                    <span
-                        class="inline-block rounded-full bg-zinc-100 px-2 py-1 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
-                        v2.x
-                    </span>
+                    <p class="text-xs text-zinc-600 dark:text-zinc-400">Laravel + Vue bridge</p>
                 </div>
 
                 <!-- Tailwind CSS Card -->
@@ -485,20 +473,16 @@ npm install && npm run dev
                             </svg>
                         </a>
                     </h3>
-                    <p class="mb-3 text-xs text-zinc-600 dark:text-zinc-400">Utility-first CSS</p>
-                    <span
-                        class="inline-block rounded-full bg-zinc-100 px-2 py-1 text-xs font-medium text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400">
-                        v4.x
-                    </span>
+                    <p class="text-xs text-zinc-600 dark:text-zinc-400">Utility-first CSS</p>
                 </div>
             </div>
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Community Section -->
-        <section id="community" class="mb-16 scroll-mt-20">
+        <section id="community" class="mb-8 sm:mb-16 scroll-mt-20">
             <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Community & Support</h2>
             <p class="mb-6 text-base text-zinc-600 dark:text-zinc-400">
                 Join our growing community and get help when you need it.
@@ -571,7 +555,7 @@ npm install && npm run dev
         </section>
 
         <!-- Divider -->
-        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+        <div class="my-6 sm:my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
         <!-- Getting Started Section -->
         <section id="getting-started" class="mb-8 scroll-mt-16">

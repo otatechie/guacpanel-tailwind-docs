@@ -82,8 +82,7 @@ onUnmounted(() => {
             <span
               class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-zinc-700 dark:text-zinc-200">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M13 10V3L4 14h7v7l9-11h-7z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </span>
             <p class="font-semibold text-zinc-900 dark:text-white">UI Components</p>
@@ -123,8 +122,7 @@ onUnmounted(() => {
             <span
               class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-zinc-700 dark:text-zinc-200">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M3 3v18h18M7 14l3-3 4 4 4-4" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v18h18M7 14l3-3 4 4 4-4" />
               </svg>
             </span>
             <p class="font-semibold text-zinc-900 dark:text-white">Widgets & Charts</p>
@@ -140,7 +138,7 @@ onUnmounted(() => {
     <!-- UI Components Section -->
     <section id="ui" class="mb-16 scroll-mt-20">
       <div class="mb-8">
-      <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">UI Components</h2>
+        <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">UI Components</h2>
         <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
           Essential building blocks for creating documentation pages and user interfaces. These components handle common
           UI patterns like modals, tabs, and code display.
@@ -531,7 +529,7 @@ const showModal = ref(false)
                 </tr>
               </tbody>
             </table>
-        </div>
+          </div>
 
           <CodeBlock :code="`<Datatable
   :data=&quot;rows&quot;
@@ -550,13 +548,13 @@ const showModal = ref(false)
     <!-- Navigation Components Section -->
     <section id="navigation" class="mb-16 scroll-mt-20">
       <div class="mb-8">
-      <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Navigation Components</h2>
+        <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Navigation Components</h2>
         <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
           Navigation and layout components for building application structure. Includes sidebar navigation and user
           profile
           dropdowns with permission-based access control.
         </p>
-        </div>
+      </div>
 
       <div class="space-y-12">
         <!-- NavSidebarDesktop -->
@@ -684,7 +682,7 @@ const navigationSections = [
     <!-- Form Components Section -->
     <section id="forms" class="mb-16 scroll-mt-20">
       <div class="mb-8">
-      <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Form Components</h2>
+        <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Form Components</h2>
         <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
           Form inputs with built-in validation, floating labels, and accessibility features. All components support
           v-model
@@ -797,7 +795,7 @@ const navigationSections = [
                 </tr>
               </tbody>
             </table>
-        </div>
+          </div>
 
           <CodeBlock :code="`<FormTextarea 
   v-model=&quot;form.description&quot; 
@@ -857,7 +855,7 @@ const navigationSections = [
                 </tr>
               </tbody>
             </table>
-        </div>
+          </div>
 
           <CodeBlock :code="`<script setup>
 const countries = [
