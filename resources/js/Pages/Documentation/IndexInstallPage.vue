@@ -124,42 +124,48 @@ onUnmounted(() => {
                 Ensure you have the following requirements before installing GuacPanel.
             </p>
 
-            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-                <div class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 dark:bg-gray-900">
-                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">PHP 8.2+</h3>
-                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                        Extensions: BCMath, Ctype, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML, cURL, GD/Imagick
-                    </p>
-                </div>
-
-                <div class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 dark:bg-gray-900">
-                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Node.js 18+</h3>
-                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                        Required for Vite build tool, Tailwind CSS v4, and Vue.js development.
-                    </p>
-                </div>
-
-                <div class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 dark:bg-gray-900">
-                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Composer 2.0+</h3>
-                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                        Required for Laravel 11, Spatie packages, and PHP dependencies.
-                    </p>
-                </div>
-
-                <div class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 dark:bg-gray-900">
-                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Database</h3>
-                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                        MySQL 8+ or PostgreSQL for application data storage.
-                    </p>
-                </div>
-
-                <div class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 dark:bg-gray-900">
-                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Git</h3>
-                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                        For cloning the repository and version control.
-                    </p>
-                </div>
-            </div>
+            <ul class="space-y-4 text-base text-zinc-700 dark:text-zinc-300">
+                <li class="flex items-start gap-3">
+                    <span class="text-teal-500 text-lg leading-7">•</span>
+                    <div>
+                        <strong class="font-semibold text-zinc-900 dark:text-white">PHP 8.2+</strong>
+                        <span class="text-zinc-600 dark:text-zinc-400"> - Extensions: BCMath, Ctype, JSON, Mbstring,
+                            OpenSSL, PDO, Tokenizer, XML, cURL, GD/Imagick</span>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-teal-500 text-lg leading-7">•</span>
+                    <div>
+                        <strong class="font-semibold text-zinc-900 dark:text-white">Node.js 18+</strong>
+                        <span class="text-zinc-600 dark:text-zinc-400"> - Required for Vite build tool, Tailwind CSS v4,
+                            and Vue.js development</span>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-teal-500 text-lg leading-7">•</span>
+                    <div>
+                        <strong class="font-semibold text-zinc-900 dark:text-white">Composer 2.0+</strong>
+                        <span class="text-zinc-600 dark:text-zinc-400"> - Required for Laravel 11, Spatie packages, and
+                            PHP dependencies</span>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-teal-500 text-lg leading-7">•</span>
+                    <div>
+                        <strong class="font-semibold text-zinc-900 dark:text-white">Database</strong>
+                        <span class="text-zinc-600 dark:text-zinc-400"> - MySQL 8+ or PostgreSQL for application data
+                            storage</span>
+                    </div>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-teal-500 text-lg leading-7">•</span>
+                    <div>
+                        <strong class="font-semibold text-zinc-900 dark:text-white">Git</strong>
+                        <span class="text-zinc-600 dark:text-zinc-400"> - For cloning the repository and version
+                            control</span>
+                    </div>
+                </li>
+            </ul>
         </section>
 
         <!-- Divider -->
@@ -304,7 +310,8 @@ onUnmounted(() => {
                 <div class="ml-4 flex-auto">
                     <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">Important</p>
                     <p class="mt-2.5 text-sm text-teal-800 dark:text-teal-100">
-                        Ensure your database server (MySQL or PostgreSQL) is running and accessible before running migrations.
+                        Ensure your database server (MySQL or PostgreSQL) is running and accessible before running
+                        migrations.
                     </p>
                 </div>
             </div>

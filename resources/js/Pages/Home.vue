@@ -47,7 +47,7 @@ onUnmounted(() => {
     <Head title="GuacPanel - Open Source Admin" />
     <div class="flex min-h-screen flex-col bg-white dark:bg-[#252525]">
         <header
-            class="sticky top-0 z-50 w-full border-b border-[#3a3a3a] bg-white dark:border-[#d4d4d4] dark:bg-[#252525]"
+            class="sticky top-0 z-50 w-full border-b border-[#e5e5e5] bg-white dark:border-[#3a3a3a] dark:bg-[#252525]"
             role="banner">
             <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
                 <div class="flex items-center gap-3">
@@ -55,7 +55,7 @@ onUnmounted(() => {
                     <img src="/images/logo-dark.png" class="hidden h-8 w-auto sm:h-10 dark:block" alt="Logo Dark" />
                 </div>
                 <button
-                    class="flex items-center border-2 border-[#3a3a3a] bg-white px-2 py-1 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white md:hidden dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-[#d4d4d4] dark:hover:bg-[#d4d4d4] dark:hover:text-[#3a3a3a]"
+                    class="flex items-center border border-[#3a3a3a] bg-white px-2 py-1 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white md:hidden dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-[#d4d4d4] dark:hover:bg-[#d4d4d4] dark:hover:text-[#3a3a3a]"
                     @click="mobileMenuOpen = !mobileMenuOpen" aria-label="Toggle mobile menu">
                     <span v-if="!mobileMenuOpen">[MENU]</span>
                     <span v-else>[CLOSE]</span>
@@ -73,7 +73,7 @@ onUnmounted(() => {
                 </nav>
                 <div class="hidden items-center gap-3 md:flex">
                     <a href="https://github.com/otatechie/guacpanel-tailwind" target="_blank"
-                        class="flex items-center gap-2 border-2 border-[#3a3a3a] bg-white px-3 py-2 font-mono text-xs font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-[#d4d4d4] dark:hover:bg-[#d4d4d4] dark:hover:text-[#3a3a3a]"
+                        class="flex items-center gap-2 border border-[#3a3a3a] bg-white px-3 py-2 font-mono text-xs font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-[#d4d4d4] dark:hover:bg-[#d4d4d4] dark:hover:text-[#3a3a3a]"
                         aria-label="View on GitHub">
                         <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path
@@ -85,18 +85,18 @@ onUnmounted(() => {
             </div>
             <!-- Mobile menu -->
             <div v-show="mobileMenuOpen"
-                class="border-t-2 border-[#3a3a3a] bg-white md:hidden dark:border-[#d4d4d4] dark:bg-[#252525]">
-                <div class="space-y-1 px-4 py-4">
+                class="border-t border-[#e5e5e5] bg-white md:hidden dark:border-[#3a3a3a] dark:bg-[#252525]">
+                <div class="space-y-2 px-4 py-3">
                     <a href="#features"
-                        class="block border-2 border-[#3a3a3a] bg-white px-3 py-2 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-[#d4d4d4] dark:hover:bg-[#d4d4d4] dark:hover:text-[#3a3a3a]">
+                        class="block border border-[#3a3a3a] bg-white px-3 py-2 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-[#d4d4d4] dark:hover:bg-[#d4d4d4] dark:hover:text-[#3a3a3a]">
                         [FEATURES]
                     </a>
                     <a href="/documentation"
-                        class="block border-2 border-[#3a3a3a] bg-white px-3 py-2 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-[#d4d4d4] dark:hover:bg-[#d4d4d4] dark:hover:text-[#3a3a3a]">
+                        class="block border border-[#3a3a3a] bg-white px-3 py-2 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-[#d4d4d4] dark:hover:bg-[#d4d4d4] dark:hover:text-[#3a3a3a]">
                         [DOCUMENTATION]
                     </a>
                     <a href="https://github.com/otatechie/guacpanel-tailwind" target="_blank"
-                        class="flex items-center justify-center gap-2 border-2 border-[#3a3a3a] bg-white px-3 py-2 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-[#d4d4d4] dark:hover:bg-[#d4d4d4] dark:hover:text-[#3a3a3a]">
+                        class="flex items-center justify-center gap-2 border border-[#3a3a3a] bg-white px-3 py-2 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-[#d4d4d4] dark:hover:bg-[#d4d4d4] dark:hover:text-[#3a3a3a]">
                         <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                             <path
                                 d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.237 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
@@ -108,7 +108,7 @@ onUnmounted(() => {
         </header>
 
         <section
-            class="relative flex flex-1 flex-col items-center justify-center overflow-hidden px-4 py-12 text-center sm:px-8 sm:py-16 md:px-12 md:py-20"
+            class="relative flex flex-1 flex-col items-center justify-center overflow-hidden px-4 py-10 text-center sm:px-8 sm:py-16 md:px-12 md:py-20"
             role="region" aria-labelledby="hero-heading">
             <div
                 class="absolute inset-0 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] dark:bg-[radial-gradient(#374151_1px,transparent_1px)]">
@@ -142,9 +142,9 @@ onUnmounted(() => {
                     <span class="opacity-75">Tailwind CSS 4+</span>
                 </p>
 
-                <div class="mb-16 flex flex-col justify-center gap-4 sm:flex-row">
+                <div class="mb-12 flex flex-col justify-center gap-3 sm:mb-16 sm:flex-row sm:gap-4">
                     <a href="/login"
-                        class="inline-flex w-full items-center justify-center border-2 border-[#3a3a3a] bg-[#3a3a3a] px-3 py-2.5 font-mono text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-white hover:text-[#3a3a3a] sm:w-auto sm:py-2 dark:border-[#d4d4d4] dark:bg-white dark:text-[#3a3a3a] dark:hover:bg-[#3a3a3a] dark:hover:text-white">
+                        class="inline-flex w-full items-center justify-center border border-[#3a3a3a] bg-[#3a3a3a] px-3 py-2.5 font-mono text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-white hover:text-[#3a3a3a] sm:w-auto sm:py-2 dark:border-[#d4d4d4] dark:bg-white dark:text-[#3a3a3a] dark:hover:bg-[#3a3a3a] dark:hover:text-white">
                         <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -152,7 +152,7 @@ onUnmounted(() => {
                         [VIEW DEMO]
                     </a>
                     <a href="/documentation"
-                        class="inline-flex w-full items-center justify-center border-2 border-[#3a3a3a] bg-transparent px-3 py-2.5 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white sm:w-auto sm:py-2 dark:border-[#d4d4d4] dark:text-white dark:hover:bg-white dark:hover:text-[#3a3a3a]">
+                        class="inline-flex w-full items-center justify-center border border-[#3a3a3a] bg-transparent px-3 py-2.5 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white sm:w-auto sm:py-2 dark:border-[#d4d4d4] dark:text-white dark:hover:bg-white dark:hover:text-[#3a3a3a]">
                         [DOCUMENTATION]
                         <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -160,17 +160,17 @@ onUnmounted(() => {
                     </a>
                 </div>
 
-                <div class="mx-auto w-full max-w-3xl overflow-x-auto border-2 border-[#3a3a3a] bg-gray-50 p-0 text-left font-mono text-xs sm:text-sm dark:border-[#d4d4d4] dark:bg-gray-900"
+                <div class="mx-auto w-full max-w-3xl overflow-x-auto border border-[#d4d4d4] bg-gray-50 p-0 text-left font-mono text-xs sm:text-sm dark:border-[#3a3a3a] dark:bg-[#1a1a1a]"
                     role="region" aria-label="Installation commands">
                     <div
-                        class="flex items-center justify-between border-b-2 border-[#3a3a3a] bg-gray-100 px-4 py-3 dark:border-[#d4d4d4] dark:bg-gray-800">
+                        class="flex items-center justify-between border-b border-[#d4d4d4] bg-gray-100 px-4 py-3 dark:border-[#3a3a3a] dark:bg-gray-800">
                         <div class="flex items-center gap-3">
                             <span class="text-xs font-bold text-[#3a3a3a] uppercase dark:text-white">
                                 Terminal — bash
                             </span>
                         </div>
                         <button
-                            class="border border-[#3a3a3a] bg-white px-2 py-2 font-mono text-xs font-bold tracking-wider text-[#3a3a3a] uppercase transition-all hover:bg-[#3a3a3a] hover:text-white sm:px-3 sm:py-1 dark:border-[#d4d4d4] dark:bg-gray-900 dark:text-white dark:hover:bg-white dark:hover:text-[#3a3a3a]"
+                            class="border border-[#d4d4d4] bg-white px-2 py-2 font-mono text-xs font-bold tracking-wider text-[#3a3a3a] uppercase transition-all hover:bg-[#3a3a3a] hover:text-white sm:px-3 sm:py-1 dark:border-[#3a3a3a] dark:bg-[#1a1a1a] dark:text-white dark:hover:bg-white dark:hover:text-[#3a3a3a]"
                             aria-label="Copy installation commands" @click="copyCode">
                             <svg v-if="!copied" class="mr-1 inline h-3 w-3" fill="none" stroke="currentColor"
                                 viewBox="0 0 24 24">
@@ -223,7 +223,7 @@ onUnmounted(() => {
                     </div>
 
                     <div
-                        class="border-2 border-[#3a3a3a] bg-white p-6 font-mono shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:border-[#d4d4d4] dark:bg-gray-900 dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]">
+                        class="border border-[#d4d4d4] bg-white p-4 font-mono shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:p-6 dark:border-[#3a3a3a] dark:bg-[#1a1a1a] dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)]">
                         <div class="space-y-4">
                             <div class="flex items-start">
                                 <p class="text-sm text-gray-600 dark:text-gray-400">
@@ -250,7 +250,7 @@ onUnmounted(() => {
         </section>
 
         <section id="features"
-            class="border-y border-[#3a3a3a] bg-white py-20 sm:py-24 md:py-28 dark:border-[#d4d4d4] dark:bg-[#252525]"
+            class="border-y border-[#e5e5e5] bg-white py-20 sm:py-24 md:py-28 dark:border-[#3a3a3a] dark:bg-[#252525]"
             role="region" aria-labelledby="features-heading">
             <div class="mx-auto max-w-7xl px-4">
                 <div class="mb-16 text-center">
@@ -265,7 +265,7 @@ onUnmounted(() => {
 
                 <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                     <div
-                        class="border-2 border-[#3a3a3a] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                        class="border border-[#d4d4d4] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-[#1a1a1a] dark:hover:shadow-[3px_3px_0px_0px_rgba(255,255,255,0.5)]">
                         <div class="mb-2 flex items-start">
                             <span class="mr-2 text-teal-400 dark:text-teal-400">⌾</span>
 
@@ -280,7 +280,7 @@ onUnmounted(() => {
                     </div>
 
                     <div
-                        class="border-2 border-[#3a3a3a] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                        class="border border-[#d4d4d4] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-[#1a1a1a] dark:hover:shadow-[3px_3px_0px_0px_rgba(255,255,255,0.5)]">
                         <div class="mb-2 flex items-start">
                             <span class="mr-2 text-teal-400 dark:text-teal-400">⌾</span>
 
@@ -295,7 +295,7 @@ onUnmounted(() => {
                     </div>
 
                     <div
-                        class="border-2 border-[#3a3a3a] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                        class="border border-[#d4d4d4] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-[#1a1a1a] dark:hover:shadow-[3px_3px_0px_0px_rgba(255,255,255,0.5)]">
                         <div class="mb-2 flex items-start">
                             <span class="mr-2 text-teal-400 dark:text-teal-400">⌾</span>
 
@@ -310,7 +310,7 @@ onUnmounted(() => {
                     </div>
 
                     <div
-                        class="border-2 border-[#3a3a3a] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                        class="border border-[#d4d4d4] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-[#1a1a1a] dark:hover:shadow-[3px_3px_0px_0px_rgba(255,255,255,0.5)]">
                         <div class="mb-2 flex items-start">
                             <span class="mr-2 text-teal-400 dark:text-teal-400">⌾</span>
 
@@ -325,7 +325,7 @@ onUnmounted(() => {
                     </div>
 
                     <div
-                        class="border-2 border-[#3a3a3a] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                        class="border border-[#d4d4d4] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-[#1a1a1a] dark:hover:shadow-[3px_3px_0px_0px_rgba(255,255,255,0.5)]">
                         <div class="mb-2 flex items-start">
                             <span class="mr-2 text-teal-400 dark:text-teal-400">⌾</span>
 
@@ -340,7 +340,7 @@ onUnmounted(() => {
                     </div>
 
                     <div
-                        class="border-2 border-[#3a3a3a] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                        class="border border-[#d4d4d4] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-[#1a1a1a] dark:hover:shadow-[3px_3px_0px_0px_rgba(255,255,255,0.5)]">
                         <div class="mb-2 flex items-start">
                             <span class="mr-2 text-teal-400 dark:text-teal-400">⌾</span>
 
@@ -354,7 +354,7 @@ onUnmounted(() => {
                     </div>
 
                     <div
-                        class="border-2 border-[#3a3a3a] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                        class="border border-[#d4d4d4] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-[#1a1a1a] dark:hover:shadow-[3px_3px_0px_0px_rgba(255,255,255,0.5)]">
                         <div class="mb-2 flex items-start">
                             <span class="mr-2 text-teal-400 dark:text-teal-400">⌾</span>
 
@@ -368,7 +368,7 @@ onUnmounted(() => {
                     </div>
 
                     <div
-                        class="border-2 border-[#3a3a3a] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                        class="border border-[#d4d4d4] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-[#1a1a1a] dark:hover:shadow-[3px_3px_0px_0px_rgba(255,255,255,0.5)]">
                         <div class="mb-2 flex items-start">
                             <span class="mr-2 text-teal-400 dark:text-teal-400">⌾</span>
 
@@ -383,7 +383,7 @@ onUnmounted(() => {
                     </div>
 
                     <div
-                        class="border-2 border-[#3a3a3a] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                        class="border border-[#d4d4d4] bg-white p-3 font-mono transition-transform hover:-translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:p-4 dark:border-gray-700 dark:bg-[#1a1a1a] dark:hover:shadow-[3px_3px_0px_0px_rgba(255,255,255,0.5)]">
                         <div class="mb-2 flex items-start">
                             <span class="mr-2 text-teal-400 dark:text-teal-400">⌾</span>
 
@@ -399,7 +399,7 @@ onUnmounted(() => {
             </div>
         </section>
 
-        <section class="bg-[#3a3a3a] py-28 text-white dark:bg-gray-900" role="region" aria-labelledby="cta-heading">
+        <section class="bg-[#3a3a3a] py-28 text-white dark:bg-[#1a1a1a]" role="region" aria-labelledby="cta-heading">
             <div class="mx-auto max-w-7xl px-4">
                 <div class="relative">
                     <div class="absolute inset-0 bg-[url('/grid.svg')] opacity-10"></div>
@@ -410,9 +410,9 @@ onUnmounted(() => {
                         <p class="mx-auto mb-8 max-w-2xl text-xl text-gray-400">
                             Start your next Laravel project with GuacPanel; secure, modern, and ready to use.
                         </p>
-                        <div class="flex flex-col justify-center gap-4 sm:flex-row">
+                        <div class="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
                             <a href="/login"
-                                class="inline-flex items-center border-2 border-white bg-[#3a3a3a] px-6 py-3 font-mono text-sm font-bold tracking-wider text-white uppercase transition-all hover:bg-white hover:text-[#3a3a3a] dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:hover:border-gray-400"
+                                class="inline-flex items-center border border-white bg-[#3a3a3a] px-6 py-3 font-mono text-sm font-bold tracking-wider text-white uppercase transition-all hover:bg-white hover:text-[#3a3a3a] dark:border-gray-600 dark:bg-[#1a1a1a] dark:text-gray-300 dark:hover:border-gray-400"
                                 aria-label="View demo application">
                                 <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -421,7 +421,7 @@ onUnmounted(() => {
                                 [VIEW DEMO]
                             </a>
                             <a href="/documentation"
-                                class="inline-flex items-center border-2 border-white bg-white px-6 py-3 font-mono text-sm font-bold tracking-wider text-[#3a3a3a] uppercase transition-all hover:bg-gray-200 dark:text-gray-900"
+                                class="inline-flex items-center border border-white bg-white px-6 py-3 font-mono text-sm font-bold tracking-wider text-[#3a3a3a] uppercase transition-all hover:bg-gray-200 dark:text-gray-900"
                                 aria-label="Read documentation">
                                 [DOCUMENTATION]
                                 <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -600,12 +600,12 @@ onUnmounted(() => {
             </div>
         </section>
 
-        <footer class="border-t border-[#3a3a3a] bg-white py-12 dark:border-[#d4d4d4] dark:bg-[#252525]"
+        <footer class="border-t border-[#e5e5e5] bg-white py-12 dark:border-[#3a3a3a] dark:bg-[#252525]"
             role="contentinfo">
             <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col justify-center gap-4 sm:flex-row">
+                <div class="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
                     <a href="#features"
-                        class="inline-flex w-full items-center justify-center border-2 border-[#3a3a3a] bg-white px-3 py-2.5 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white sm:w-auto sm:py-2 dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-white dark:hover:bg-white dark:hover:text-[#3a3a3a]">
+                        class="inline-flex w-full items-center justify-center border border-[#3a3a3a] bg-white px-3 py-2.5 font-mono text-sm font-bold uppercase tracking-wider text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white sm:w-auto sm:py-2 dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-white dark:hover:bg-white dark:hover:text-[#3a3a3a]">
                         <svg class="mr-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16m-7 6h7" />
@@ -614,7 +614,7 @@ onUnmounted(() => {
                     </a>
 
                     <a href="/documentation"
-                        class="inline-flex w-full items-center justify-center border-2 border-[#3a3a3a] bg-[#3a3a3a] px-3 py-2.5 font-mono text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-white hover:text-[#3a3a3a] sm:w-auto sm:py-2 dark:border-[#d4d4d4] dark:bg-white dark:text-[#3a3a3a] dark:hover:bg-[#3a3a3a] dark:hover:text-white">
+                        class="inline-flex w-full items-center justify-center border border-[#3a3a3a] bg-[#3a3a3a] px-3 py-2.5 font-mono text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-white hover:text-[#3a3a3a] sm:w-auto sm:py-2 dark:border-[#d4d4d4] dark:bg-white dark:text-[#3a3a3a] dark:hover:bg-[#3a3a3a] dark:hover:text-white">
                         [DOCUMENTATION]
                         <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -638,7 +638,7 @@ onUnmounted(() => {
         </footer>
 
         <button v-show="showBackToTop"
-            class="fixed right-4 bottom-4 z-50 border-2 border-[#3a3a3a] bg-white p-2 font-mono text-xs font-bold text-[#3a3a3a] shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] sm:right-8 sm:bottom-8 dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-white dark:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)]"
+            class="fixed right-4 bottom-4 z-50 border border-[#3a3a3a] bg-white p-2 font-mono text-xs font-bold text-[#3a3a3a] shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all hover:-translate-y-1 hover:shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] sm:right-8 sm:bottom-8 dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-white dark:shadow-[2px_2px_0px_0px_rgba(255,255,255,1)] dark:hover:shadow-[3px_3px_0px_0px_rgba(255,255,255,1)]"
             aria-label="Back to top" @click="scrollToTop">
             [^]
         </button>

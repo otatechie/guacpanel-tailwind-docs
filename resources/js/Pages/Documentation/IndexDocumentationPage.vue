@@ -92,50 +92,32 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
                 and user management.
             </p>
 
-            <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
-                <div class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 dark:bg-gray-900">
-                    <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
-                        <svg class="h-6 w-6 text-zinc-700 dark:text-zinc-200" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
+            <ul class="space-y-4 text-base text-zinc-700 dark:text-zinc-300">
+                <li class="flex items-start gap-3">
+                    <span class="text-teal-500 text-lg leading-7">•</span>
+                    <div>
+                        <strong class="font-semibold text-zinc-900 dark:text-white">Ship faster</strong>
+                        <span class="text-zinc-600 dark:text-zinc-400"> - Start from a complete admin and focus on
+                            product, not setup</span>
                     </div>
-                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Ship faster</h3>
-                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                        Start from a complete admin and focus on product.
-                    </p>
-                </div>
-
-                <div class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 dark:bg-gray-900">
-                    <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
-                        <svg class="h-6 w-6 text-zinc-700 dark:text-zinc-200" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                        </svg>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-teal-500 text-lg leading-7">•</span>
+                    <div>
+                        <strong class="font-semibold text-zinc-900 dark:text-white">Security first</strong>
+                        <span class="text-zinc-600 dark:text-zinc-400"> - Built-in 2FA, passwordless login,
+                            roles/permissions, and comprehensive audit logs</span>
                     </div>
-                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Security first</h3>
-                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                        Built-in: 2FA, passwordless, roles/permissions, audit logs.
-                    </p>
-                </div>
-
-                <div class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 dark:bg-gray-900">
-                    <div class="mb-3 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
-                        <svg class="h-6 w-6 text-zinc-700 dark:text-zinc-200" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
-                        </svg>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="text-teal-500 text-lg leading-7">•</span>
+                    <div>
+                        <strong class="font-semibold text-zinc-900 dark:text-white">Fully customizable</strong>
+                        <span class="text-zinc-600 dark:text-zinc-400"> - Swap, extend, or remove any piece to fit your
+                            stack</span>
                     </div>
-                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Fully customizable
-                    </h3>
-                    <p class="text-sm text-zinc-600 dark:text-zinc-400">
-                        Swap, extend, or remove any piece to fit your stack.
-                    </p>
-                </div>
-            </div>
+                </li>
+            </ul>
         </section>
 
         <!-- Divider -->
@@ -148,7 +130,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
                 Get up and running with a single command. GuacPanel uses Composer to scaffold your new project.
             </p>
 
-            <div class="border border-zinc-400 dark:border-zinc-600 bg-zinc-50 p-4 dark:bg-gray-900">
+            <div class="border border-zinc-400 dark:border-zinc-600 bg-zinc-50 p-4 dark:bg-[#1a1a1a]">
                 <div class="mb-2 flex items-center justify-between">
                     <span
                         class="font-mono text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">Terminal</span>
@@ -233,7 +215,7 @@ npm install && npm run dev
 
             <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
                 <div
-                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 text-sm text-zinc-700 dark:bg-gray-900 dark:text-zinc-200">
+                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 text-sm text-zinc-700 dark:bg-[#1a1a1a] dark:text-zinc-200">
                     <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Backend</h3>
                     <ul class="space-y-2">
                         <li><span class="text-teal-500">•</span> PHP 8.2+</li>
@@ -242,7 +224,7 @@ npm install && npm run dev
                     </ul>
                 </div>
                 <div
-                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 text-sm text-zinc-700 dark:bg-gray-900 dark:text-zinc-200">
+                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 text-sm text-zinc-700 dark:bg-[#1a1a1a] dark:text-zinc-200">
                     <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Frontend</h3>
                     <ul class="space-y-2">
                         <li><span class="text-teal-500">•</span> Node.js 18+</li>
@@ -251,7 +233,7 @@ npm install && npm run dev
                     </ul>
                 </div>
                 <div
-                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 text-sm text-zinc-700 dark:bg-gray-900 dark:text-zinc-200">
+                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 text-sm text-zinc-700 dark:bg-[#1a1a1a] dark:text-zinc-200">
                     <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Database</h3>
                     <ul class="space-y-2">
                         <li><span class="text-teal-500">•</span> MySQL 8.0+</li>
@@ -276,7 +258,7 @@ npm install && npm run dev
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 <!-- Feature Card -->
                 <div
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">Laravel Fortify</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Secure authentication scaffolding with 2FA support
@@ -284,7 +266,7 @@ npm install && npm run dev
                 </div>
 
                 <div
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">Passwordless Login</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Magic link authentication for seamless access
@@ -292,7 +274,7 @@ npm install && npm run dev
                 </div>
 
                 <div
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">Laravel Socialite</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Social login with Google, Facebook, GitHub, and LinkedIn
@@ -300,7 +282,7 @@ npm install && npm run dev
                 </div>
 
                 <div
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">Role & Permissions</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Spatie permissions with visual management interface
@@ -308,7 +290,7 @@ npm install && npm run dev
                 </div>
 
                 <div
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">Password Policies</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Configurable password expiry and security rules
@@ -316,7 +298,7 @@ npm install && npm run dev
                 </div>
 
                 <div
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">Login History</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Track login attempts, sessions, and device info
@@ -324,7 +306,7 @@ npm install && npm run dev
                 </div>
 
                 <div
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">Activity Auditing</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Comprehensive audit logs with Spatie Activitylog
@@ -332,7 +314,7 @@ npm install && npm run dev
                 </div>
 
                 <div
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">Users Management</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Built in Users Management with fully loaded CRUD
@@ -340,7 +322,7 @@ npm install && npm run dev
                 </div>
 
                 <div
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">TanStack Table</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Advanced data tables with sorting, filtering & pagination
@@ -348,7 +330,7 @@ npm install && npm run dev
                 </div>
 
                 <div
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">Typesense Search</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Lightning-fast typo-tolerant search engine integration
@@ -356,7 +338,7 @@ npm install && npm run dev
                 </div>
 
                 <div
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">ApexCharts</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Interactive charts and data visualizations
@@ -364,7 +346,7 @@ npm install && npm run dev
                 </div>
 
                 <div
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">FilePond Upload</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Drag & drop file uploads with preview
@@ -372,7 +354,7 @@ npm install && npm run dev
                 </div>
 
                 <div
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-4 font-mono transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <h4 class="mb-2 text-sm font-semibold text-zinc-900 dark:text-white">Spatie Backup</h4>
                     <p class="text-xs text-zinc-600 dark:text-zinc-400">
                         Automated database and file backups
@@ -395,7 +377,7 @@ npm install && npm run dev
             <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
                 <!-- Laravel Card -->
                 <div
-                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
                         <svg class="h-6 w-6 text-zinc-700 dark:text-zinc-200" fill="currentColor" viewBox="0 0 24 24">
                             <path
@@ -409,7 +391,7 @@ npm install && npm run dev
                             class="inline-flex items-center text-cyan-600 transition hover:underline dark:text-cyan-400"
                             aria-label="Laravel website">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="h-4 w-4">
+                                stroke="currentColor" class="h-3 w-3">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                             </svg>
@@ -424,7 +406,7 @@ npm install && npm run dev
 
                 <!-- Vue.js Card -->
                 <div
-                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
                         <svg class="h-6 w-6 text-zinc-700 dark:text-zinc-200" fill="currentColor" viewBox="0 0 24 24">
                             <path
@@ -438,7 +420,7 @@ npm install && npm run dev
                             class="inline-flex items-center text-cyan-600 transition hover:underline dark:text-cyan-400"
                             aria-label="Vue.js website">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="h-4 w-4">
+                                stroke="currentColor" class="h-3 w-3">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                             </svg>
@@ -453,7 +435,7 @@ npm install && npm run dev
 
                 <!-- Inertia.js Card -->
                 <div
-                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
                         <svg class="h-6 w-6 text-zinc-700 dark:text-zinc-200" viewBox="0 0 500 500" fill="currentColor"
                             aria-hidden="true">
@@ -468,7 +450,7 @@ npm install && npm run dev
                             class="inline-flex items-center text-cyan-600 transition hover:underline dark:text-cyan-400"
                             aria-label="Inertia.js website">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="h-4 w-4">
+                                stroke="currentColor" class="h-3 w-3">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                             </svg>
@@ -483,7 +465,7 @@ npm install && npm run dev
 
                 <!-- Tailwind CSS Card -->
                 <div
-                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <div class="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10">
                         <svg class="h-6 w-6 text-zinc-700 dark:text-zinc-200" fill="currentColor" viewBox="0 0 24 24">
                             <path
@@ -497,7 +479,7 @@ npm install && npm run dev
                             class="inline-flex items-center text-cyan-600 transition hover:underline dark:text-cyan-400"
                             aria-label="Tailwind CSS website">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" class="h-4 w-4">
+                                stroke="currentColor" class="h-3 w-3">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                     d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                             </svg>
@@ -525,7 +507,7 @@ npm install && npm run dev
             <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
                 <!-- GitHub -->
                 <a href="https://github.com/guacpanel/guacpanel" target="_blank" rel="noreferrer"
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <div class="mb-3 flex items-center gap-3">
                         <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-900 dark:bg-white">
                             <svg class="h-5 w-5 text-white dark:text-zinc-900" fill="currentColor" viewBox="0 0 24 24">
@@ -545,10 +527,11 @@ npm install && npm run dev
 
                 <!-- Documentation -->
                 <a href="/documentation/installation"
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <div class="mb-3 flex items-center gap-3">
-                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500">
-                            <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-900 dark:bg-white">
+                            <svg class="h-5 w-5 text-white dark:text-zinc-900" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                             </svg>
@@ -566,10 +549,11 @@ npm install && npm run dev
                 <!-- Contributing -->
                 <a href="https://github.com/guacpanel/guacpanel/blob/main/CONTRIBUTING.md" target="_blank"
                     rel="noreferrer"
-                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-gray-900 dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
+                    class="group border border-zinc-400 dark:border-zinc-600 bg-white p-5 transition-all hover:-translate-y-1 hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] dark:bg-[#1a1a1a] dark:hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.5)]">
                     <div class="mb-3 flex items-center gap-3">
-                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500">
-                            <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-900 dark:bg-white">
+                            <svg class="h-5 w-5 text-white dark:text-zinc-900" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                             </svg>

@@ -556,10 +556,10 @@ onUnmounted(() => {
             <!-- Feature Overview Grid -->
             <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div
-                    class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
+                    class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-[#1a1a1a] dark:text-zinc-200">
                     <div class="mb-2 flex items-center gap-2">
                         <span
-                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-zinc-700 dark:text-zinc-200">
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -572,10 +572,10 @@ onUnmounted(() => {
                 </div>
 
                 <div
-                    class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
+                    class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-[#1a1a1a] dark:text-zinc-200">
                     <div class="mb-2 flex items-center gap-2">
                         <span
-                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-zinc-700 dark:text-zinc-200">
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -588,10 +588,10 @@ onUnmounted(() => {
                 </div>
 
                 <div
-                    class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
+                    class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-[#1a1a1a] dark:text-zinc-200">
                     <div class="mb-2 flex items-center gap-2">
                         <span
-                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-zinc-700 dark:text-zinc-200">
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -604,10 +604,10 @@ onUnmounted(() => {
                 </div>
 
                 <div
-                    class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
+                    class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-[#1a1a1a] dark:text-zinc-200">
                     <div class="mb-2 flex items-center gap-2">
                         <span
-                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-zinc-700 dark:text-zinc-200">
                             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
                                 aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

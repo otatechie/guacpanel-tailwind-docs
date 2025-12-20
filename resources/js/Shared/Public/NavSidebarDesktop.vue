@@ -27,6 +27,10 @@ const navigationSections = ref([
         name: 'Installation',
         href: route('documentation.installation'),
       },
+      {
+        name: 'Configuration',
+        href: route('documentation.configuration'),
+      },
     ],
   },
   {
@@ -42,6 +46,19 @@ const navigationSections = ref([
       },
     ],
   },
+  {
+    title: 'Resources',
+    items: [
+      {
+        name: 'FAQ',
+        href: route('documentation.faq'),
+      },
+      {
+        name: 'Credits',
+        href: route('documentation.credits'),
+      },
+    ],
+  },
 ])
 
 const isActive = href => {
@@ -52,7 +69,7 @@ const isActive = href => {
 
 <template>
   <aside data-sidebar-content
-    class="flex h-full flex-col border-r border-[#3a3a3a] bg-white px-6 py-8 dark:border-[#d4d4d4] dark:bg-[#252525]">
+    class="flex h-full flex-col border-r border-[#e5e5e5] bg-white px-6 py-8 dark:border-[#3a3a3a] dark:bg-[#252525]">
     <div class="mb-10 flex flex-col gap-6">
       <div class="flex items-center justify-between">
         <Link href="/" class="flex items-center" aria-label="Go to homepage">
@@ -62,22 +79,16 @@ const isActive = href => {
 
         <!-- Compact Retro Theme Toggle -->
         <button type="button"
-          class="flex h-7 cursor-pointer items-center justify-center border-2 border-[#3a3a3a] bg-white px-2 font-mono text-[9px] font-bold tracking-tighter text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-[#d4d4d4] dark:hover:bg-[#d4d4d4] dark:hover:text-[#3a3a3a] focus:outline-none"
+          class="flex h-7 cursor-pointer items-center justify-center border border-[#3a3a3a] bg-white px-2 font-mono text-[9px] font-bold tracking-tighter text-[#3a3a3a] transition-all hover:bg-[#3a3a3a] hover:text-white dark:border-[#d4d4d4] dark:bg-[#252525] dark:text-[#d4d4d4] dark:hover:bg-[#d4d4d4] dark:hover:text-[#3a3a3a] focus:outline-none"
           aria-label="Toggle color theme" @click="toggleDarkMode">
           <span v-if="themeState.currentThemeIcon === 'sun'">[LIT]</span>
           <span v-else-if="themeState.currentThemeIcon === 'moon'">[DRK]</span>
           <span v-else>[SYS]</span>
         </button>
       </div>
-
-      <Link href="/login"
-        class="flex items-center justify-center border-2 border-[#3a3a3a] bg-[#3a3a3a] px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider text-white transition-all hover:bg-white hover:text-[#3a3a3a] dark:border-[#d4d4d4] dark:bg-white dark:text-[#3a3a3a] dark:hover:bg-[#3a3a3a] dark:hover:text-white focus:outline-none"
-        aria-label="View demo">
-        [VIEW DEMO]
-      </Link>
     </div>
 
-    <nav class="flex-1 space-y-8" aria-labelledby="nav-heading">
+    <nav class="flex-1 space-y-8 border-t border-[#e5e5e5] pt-6 dark:border-[#3a3a3a]" aria-labelledby="nav-heading">
       <div v-for="(section, sectionIndex) in navigationSections" :key="sectionIndex">
         <h3 class="mb-3 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
           {{ section.title }}

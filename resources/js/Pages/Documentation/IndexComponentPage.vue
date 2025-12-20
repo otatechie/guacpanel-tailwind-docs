@@ -77,10 +77,10 @@ onUnmounted(() => {
       <!-- Key components -->
       <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
         <div
-          class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
+          class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-[#1a1a1a] dark:text-zinc-200">
           <div class="mb-2 flex items-center gap-2">
             <span
-              class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+              class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-zinc-700 dark:text-zinc-200">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -91,10 +91,10 @@ onUnmounted(() => {
           <p>Modals, tabs, code blocks, and more.</p>
         </div>
         <div
-          class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
+          class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-[#1a1a1a] dark:text-zinc-200">
           <div class="mb-2 flex items-center gap-2">
             <span
-              class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+              class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-zinc-700 dark:text-zinc-200">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
@@ -105,10 +105,10 @@ onUnmounted(() => {
           <p>Inputs, textareas, and selects with validation.</p>
         </div>
         <div
-          class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
+          class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-[#1a1a1a] dark:text-zinc-200">
           <div class="mb-2 flex items-center gap-2">
             <span
-              class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+              class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-zinc-700 dark:text-zinc-200">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" />
               </svg>
@@ -118,10 +118,10 @@ onUnmounted(() => {
           <p>Sidebar and profile navigation patterns.</p>
         </div>
         <div
-          class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
+          class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-[#1a1a1a] dark:text-zinc-200">
           <div class="mb-2 flex items-center gap-2">
             <span
-              class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+              class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-zinc-700 dark:text-zinc-200">
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="M3 3v18h18M7 14l3-3 4 4 4-4" />
@@ -215,19 +215,19 @@ onUnmounted(() => {
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">code</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">code</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Code content to display</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">language</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">language</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'javascript'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Syntax highlighting language</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">showCopyButton</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">showCopyButton</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Boolean</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">false</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Show copy to clipboard button</td>
@@ -264,31 +264,31 @@ onUnmounted(() => {
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">show</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">show</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Boolean</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">false</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Controls modal visibility</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">size</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">size</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'md'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Modal size: 'sm', 'md', 'lg', 'xl'</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">#title</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">#title</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Slot</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">-</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Modal header title</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">#default</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">#default</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Slot</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">-</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Modal body content</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">#footer</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">#footer</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Slot</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">-</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Modal footer actions</td>
@@ -338,13 +338,13 @@ const showModal = ref(false)
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">modelValue</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">modelValue</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Number</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">0</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">v-model binding for active tab index</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">tabs</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">tabs</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">[]</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array of tab objects: <code>[{ name: 'Tab Name', icon:
@@ -380,26 +380,26 @@ const showModal = ref(false)
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">title</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">title</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Main title of the page</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">description</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">description</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Optional description text</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">breadcrumbs</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">breadcrumbs</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">[]</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array of breadcrumb objects: <code>[{ label: 'Home',
               href: '/' }]</code></td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">#actions</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">#actions</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Slot</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">-</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Content for action buttons/elements</td>
@@ -438,31 +438,31 @@ const showModal = ref(false)
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">title</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">title</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Card title</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">description</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">description</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Card description</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">icon</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">icon</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">SVG path for the icon</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">color</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">color</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'teal'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Color theme for the icon background</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">href</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">href</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Optional link for the card</td>
@@ -499,32 +499,32 @@ const showModal = ref(false)
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">data</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">data</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">[]</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array of data objects to display</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">columns</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">columns</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">[]</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array of column definitions: <code>[{ key: 'id', label:
               'ID' }]</code></td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">searchFields</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">searchFields</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">[]</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Fields to search within</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">emptyMessage</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">emptyMessage</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'No records found.'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Message when data is empty</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">emptyDescription</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">emptyDescription</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Description when data is empty</td>
@@ -580,7 +580,7 @@ const showModal = ref(false)
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">navigationSections</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">navigationSections</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">[]</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">
@@ -588,27 +588,27 @@ const showModal = ref(false)
                   </td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">↳ name</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">↳ name</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Required</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Display label for the navigation item</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">↳ route</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">↳ route</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Required</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Laravel route name (e.g., 'dashboard',
                     'admin.user.index')</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">↳ icon</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">↳ icon</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Required</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">SVG path element as string (use Heroicons or
                     similar)</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">↳ permission</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">↳ permission</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">-</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Permission key required to view (hides item if
@@ -616,7 +616,7 @@ const showModal = ref(false)
                     lacks permission)</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">↳ children</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">↳ children</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">-</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array of child navigation items (creates
@@ -624,7 +624,7 @@ const showModal = ref(false)
                     submenu)</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">↳ type</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">↳ type</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">-</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Set to 'divider' to render a visual separator
@@ -714,31 +714,31 @@ const navigationSections = [
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">modelValue</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">modelValue</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">v-model binding</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">label</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">label</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Floating label text</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">type</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">type</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'text'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Input type (text, email, password, etc.)</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">error</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">error</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Validation error message</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">showPasswordToggle</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">showPasswordToggle</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Boolean</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">false</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Show toggle for password visibility</td>
@@ -772,25 +772,25 @@ const navigationSections = [
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">modelValue</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">modelValue</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">v-model binding</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">label</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">label</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Floating label text</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">rows</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">rows</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Number</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">4</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Number of visible rows</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">error</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">error</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Validation error message</td>
@@ -826,31 +826,31 @@ const navigationSections = [
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">modelValue</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">modelValue</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Any</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">null</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">v-model binding</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">options</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">options</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">[]</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array of options</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">optionLabel</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">optionLabel</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'label'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Property to use as label</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">optionValue</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">optionValue</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'value'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Property to use as value</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">loading</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">loading</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Boolean</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">false</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Show loading state</td>
@@ -916,31 +916,31 @@ const form = reactive({ country: 'US' })
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">title</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">title</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Widget title</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">value</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">value</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Main value to display</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">change</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">change</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Number</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">0</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Percentage change for trend indicator</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">data</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">data</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">[]</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Array of numbers for the sparkline chart</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">color</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">color</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'teal'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Color theme for the chart</td>
@@ -974,37 +974,37 @@ const form = reactive({ country: 'US' })
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">title</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">title</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Widget title</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">value</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">value</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Number | String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">0</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Main value to display</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">trend</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">trend</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Trend direction: 'up', 'down', 'neutral'</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">change</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">change</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Number</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">0</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Percentage change for trend indicator</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">svg</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">svg</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">SVG path for the icon</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">color</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">color</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'teal'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Color theme for the widget</td>
@@ -1038,31 +1038,31 @@ const form = reactive({ country: 'US' })
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">title</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">title</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Widget title</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">value</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">value</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Number</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">0</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Current progress value</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">max</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">max</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Number</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">100</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Maximum progress value</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">description</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">description</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Optional description text</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">color</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">color</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'teal'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Color theme for the progress bar</td>
@@ -1096,37 +1096,37 @@ const form = reactive({ country: 'US' })
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">title</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">title</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Widget title</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">value</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">value</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Main value to display</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">description</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">description</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Optional description text</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">icon</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">icon</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">SVG path for the icon</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">trend</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">trend</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Trend direction: 'up', 'down', 'neutral'</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">color</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">color</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'teal'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Color theme for the icon background</td>
@@ -1160,26 +1160,26 @@ const form = reactive({ country: 'US' })
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">stock</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">stock</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Object</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400"><code>{ symbol: '', name: '', price: '', change: 0,
                   currency: '' }</code></td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Stock data object</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">src</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">src</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Image source for the stock logo</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">alt</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">alt</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Alt text for the stock logo</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">size</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">size</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'md'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Size of the stock logo: 'sm', 'md', 'lg'</td>
@@ -1229,20 +1229,20 @@ const form = reactive({ country: 'US' })
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">chartData</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">chartData</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Object</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400"><code>{ series: [], categories: [] }</code>
                   </td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Data for the chart (series and categories)</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">title</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">title</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Chart title</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">height</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">height</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'300px'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Height of the chart</td>
@@ -1276,20 +1276,20 @@ const form = reactive({ country: 'US' })
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">chartData</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">chartData</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Object</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400"><code>{ series: [], categories: [] }</code>
                   </td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Data for the chart (series and categories)</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">title</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">title</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Chart title</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">height</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">height</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">'300px'</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Height of the chart</td>
@@ -1323,14 +1323,14 @@ const form = reactive({ country: 'US' })
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">chartData</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">chartData</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Object</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400"><code>{ series: [], categories: [] }</code>
                   </td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Data for the chart (series and categories)</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">title</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">title</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Chart title</td>
@@ -1370,13 +1370,13 @@ const form = reactive({ country: 'US' })
               </thead>
               <tbody class="divide-y divide-zinc-200 dark:divide-zinc-700">
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">chartData</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">chartData</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Object</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400"><code>{ series: [], labels: [] }</code></td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Data for the chart (series and labels)</td>
                 </tr>
                 <tr>
-                  <td class="px-3 py-2 font-mono text-xs text-teal-600 dark:text-teal-400">title</td>
+                  <td class="px-3 py-2 font-mono text-xs text-zinc-700 dark:text-zinc-200">title</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">String</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">''</td>
                   <td class="px-3 py-2 text-zinc-600 dark:text-zinc-400">Chart title</td>
