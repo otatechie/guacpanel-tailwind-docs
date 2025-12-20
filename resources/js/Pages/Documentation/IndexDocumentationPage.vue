@@ -55,10 +55,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
             <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-teal-500 dark:text-teal-300">
                 Introduction
             </p>
-            <h1 class="mb-4 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-white">
+            <h1 class="mb-4 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white">
                 Getting started
             </h1>
-            <p class="text-lg leading-8 text-zinc-600 sm:text-xl dark:text-zinc-400">
+            <p class="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
                 Learn how to get GuacPanel set up in your project in under thirty minutes.
             </p>
             <div class="mt-6 flex flex-col gap-3 sm:flex-row">

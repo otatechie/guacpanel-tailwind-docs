@@ -47,7 +47,7 @@ onUnmounted(() => {
       <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-teal-500 dark:text-teal-300">
         Components
       </p>
-      <h1 class="mb-4 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-white">
+      <h1 class="mb-4 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white">
         Available Components
       </h1>
       <p class="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
@@ -78,72 +78,56 @@ onUnmounted(() => {
       <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
         <div
           class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
-          <div class="mb-2 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <span
-                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </span>
-              <p class="font-semibold text-zinc-900 dark:text-white">UI Components</p>
-            </div>
+          <div class="mb-2 flex items-center gap-2">
             <span
-              class="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-medium text-teal-700 dark:bg-teal-900/30 dark:text-teal-300">9</span>
+              class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </span>
+            <p class="font-semibold text-zinc-900 dark:text-white">UI Components</p>
           </div>
           <p>Modals, tabs, code blocks, and more.</p>
         </div>
         <div
           class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
-          <div class="mb-2 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <span
-                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                </svg>
-              </span>
-              <p class="font-semibold text-zinc-900 dark:text-white">Forms</p>
-            </div>
+          <div class="mb-2 flex items-center gap-2">
             <span
-              class="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-medium text-teal-700 dark:bg-teal-900/30 dark:text-teal-300">3</span>
+              class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+              </svg>
+            </span>
+            <p class="font-semibold text-zinc-900 dark:text-white">Forms</p>
           </div>
           <p>Inputs, textareas, and selects with validation.</p>
         </div>
         <div
           class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
-          <div class="mb-2 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <span
-                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" />
-                </svg>
-              </span>
-              <p class="font-semibold text-zinc-900 dark:text-white">Navigation</p>
-            </div>
+          <div class="mb-2 flex items-center gap-2">
             <span
-              class="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-medium text-teal-700 dark:bg-teal-900/30 dark:text-teal-300">2</span>
+              class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7h18M3 12h18M3 17h18" />
+              </svg>
+            </span>
+            <p class="font-semibold text-zinc-900 dark:text-white">Navigation</p>
           </div>
           <p>Sidebar and profile navigation patterns.</p>
         </div>
         <div
           class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
-          <div class="mb-2 flex items-center justify-between">
-            <div class="flex items-center gap-2">
-              <span
-                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 3v18h18M7 14l3-3 4 4 4-4" />
-                </svg>
-              </span>
-              <p class="font-semibold text-zinc-900 dark:text-white">Widgets & Charts</p>
-            </div>
+          <div class="mb-2 flex items-center gap-2">
             <span
-              class="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-medium text-teal-700 dark:bg-teal-900/30 dark:text-teal-300">9</span>
+              class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 3v18h18M7 14l3-3 4 4 4-4" />
+              </svg>
+            </span>
+            <p class="font-semibold text-zinc-900 dark:text-white">Widgets & Charts</p>
           </div>
           <p>Dashboard widgets and data visualizations.</p>
         </div>
@@ -156,7 +140,7 @@ onUnmounted(() => {
     <!-- UI Components Section -->
     <section id="ui" class="mb-16 scroll-mt-20">
       <div class="mb-8">
-        <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">UI Components</h2>
+      <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">UI Components</h2>
         <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
           Essential building blocks for creating documentation pages and user interfaces. These components handle common
           UI patterns like modals, tabs, and code display.
@@ -329,7 +313,7 @@ const showModal = ref(false)
 <template #footer>
       <button @click=&quot;showModal = false&quot; class=&quot;btn-secondary&quot;>Cancel</button>
       <button @click=&quot;handleConfirm&quot; class=&quot;btn-primary&quot;>Confirm</button>
-    </template>
+  </template>
 </Modal>
 </template>`" language="vue" :show-copy-button="true" />
         </div>
@@ -547,7 +531,7 @@ const showModal = ref(false)
                 </tr>
               </tbody>
             </table>
-          </div>
+        </div>
 
           <CodeBlock :code="`<Datatable
   :data=&quot;rows&quot;
@@ -566,13 +550,13 @@ const showModal = ref(false)
     <!-- Navigation Components Section -->
     <section id="navigation" class="mb-16 scroll-mt-20">
       <div class="mb-8">
-        <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Navigation Components</h2>
+      <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Navigation Components</h2>
         <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
           Navigation and layout components for building application structure. Includes sidebar navigation and user
           profile
           dropdowns with permission-based access control.
         </p>
-      </div>
+        </div>
 
       <div class="space-y-12">
         <!-- NavSidebarDesktop -->
@@ -700,7 +684,7 @@ const navigationSections = [
     <!-- Form Components Section -->
     <section id="forms" class="mb-16 scroll-mt-20">
       <div class="mb-8">
-        <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Form Components</h2>
+      <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Form Components</h2>
         <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
           Form inputs with built-in validation, floating labels, and accessibility features. All components support
           v-model
@@ -813,7 +797,7 @@ const navigationSections = [
                 </tr>
               </tbody>
             </table>
-          </div>
+        </div>
 
           <CodeBlock :code="`<FormTextarea 
   v-model=&quot;form.description&quot; 
@@ -873,7 +857,7 @@ const navigationSections = [
                 </tr>
               </tbody>
             </table>
-          </div>
+        </div>
 
           <CodeBlock :code="`<script setup>
 const countries = [

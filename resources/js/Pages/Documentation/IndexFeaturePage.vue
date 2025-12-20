@@ -459,6 +459,27 @@ TYPESENSE_PROTOCOL=http`,
     displayTitle: 'Title',              // Main display text
     displaySubtitle: 'Subtitle'         // Secondary display text
 }`,
+
+    // Laravel Reverb - Real-time Notifications
+    reverbEnv: `# Enable notifications in .env
+APP_NOTIFICATIONS_ENABLED=true
+APP_NOTIFICATIONS_IN_DEMO_MODE=true # set this to false to enable live reverb notifications.`,
+
+    installBroadcasting: `php artisan install:broadcasting`,
+
+    reverbCredentials: `# This will populate the following in your .env (you can override these as needed):
+REVERB_APP_ID=
+REVERB_APP_KEY=
+REVERB_APP_SECRET=
+REVERB_HOST="localhost"
+REVERB_PORT=8080
+REVERB_SCHEME=https
+REVERB_SERVER_HOST=0.0.0.0
+REVERB_SERVER_PORT=8080
+REVERB_TLS_CERT=
+REVERB_TLS_KEY=
+
+BROADCAST_CONNECTION=reverb`,
 }
 
 const articleLinks = [
@@ -470,6 +491,8 @@ const articleLinks = [
     { text: 'Data Tables', href: '#data-tables' },
     { text: 'Typesense Search', href: '#typesense-search' },
     { text: 'File Uploads', href: '#file-uploads' },
+    { text: 'Real-time Notifications', href: '#realtime-notifications' },
+
 ]
 
 const showBackToTop = ref(false)
@@ -501,7 +524,7 @@ onUnmounted(() => {
             <p class="mb-3 text-sm font-semibold uppercase tracking-wider text-teal-500 dark:text-teal-300">
                 Core Features
             </p>
-            <h1 class="mb-4 text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl dark:text-white">
+            <h1 class="mb-4 text-4xl font-bold tracking-tight text-zinc-900 dark:text-white">
                 System Features
             </h1>
             <p class="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
@@ -531,95 +554,69 @@ onUnmounted(() => {
             </div>
 
             <!-- Feature Overview Grid -->
-            <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div class="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div
-                    class="rounded-xl border border-zinc-200 bg-zinc-50/50 p-4 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300">
-                    <div class="mb-2 flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span
-                                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                    aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                                </svg>
-                            </span>
-                            <p class="font-bold text-zinc-900 dark:text-white">Auth & Security</p>
-                        </div>
+                    class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
+                    <div class="mb-2 flex items-center gap-2">
                         <span
-                            class="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-bold text-teal-700 dark:bg-teal-900/30 dark:text-teal-300">4
-                            Features</span>
+                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </span>
+                        <p class="font-semibold text-zinc-900 dark:text-white">Auth & Security</p>
                     </div>
-                    <p class="leading-relaxed text-zinc-600 dark:text-zinc-400">Fortify auth, magic links, social login,
-                        and
-                        security middleware.</p>
+                    <p>Fortify auth, magic links, social login, and security middleware.</p>
                 </div>
 
                 <div
-                    class="rounded-xl border border-zinc-200 bg-zinc-50/50 p-4 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300">
-                    <div class="mb-2 flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span
-                                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                    aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
-                                </svg>
-                            </span>
-                            <p class="font-bold text-zinc-900 dark:text-white">Data & Search</p>
-                        </div>
+                    class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
+                    <div class="mb-2 flex items-center gap-2">
                         <span
-                            class="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-bold text-teal-700 dark:bg-teal-900/30 dark:text-teal-300">2
-                            Features</span>
+                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                            </svg>
+                        </span>
+                        <p class="font-semibold text-zinc-900 dark:text-white">Data & Search</p>
                     </div>
-                    <p class="leading-relaxed text-zinc-600 dark:text-zinc-400">Powerful TanStack data tables and
-                        lightning-fast
-                        typo-tolerant Typesense search.</p>
+                    <p>Powerful TanStack data tables and lightning-fast typo-tolerant Typesense search.</p>
                 </div>
 
                 <div
-                    class="rounded-xl border border-zinc-200 bg-zinc-50/50 p-4 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300">
-                    <div class="mb-2 flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span
-                                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                    aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                                </svg>
-                            </span>
-                            <p class="font-bold text-zinc-900 dark:text-white">Monitoring</p>
-                        </div>
+                    class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
+                    <div class="mb-2 flex items-center gap-2">
                         <span
-                            class="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-bold text-teal-700 dark:bg-teal-900/30 dark:text-teal-300">2
-                            Features</span>
+                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </span>
+                        <p class="font-semibold text-zinc-900 dark:text-white">Monitoring</p>
                     </div>
-                    <p class="leading-relaxed text-zinc-600 dark:text-zinc-400">Real-time system health dashboard and
-                        automated
-                        background Spatie backup system.</p>
+                    <p>Real-time system health dashboard and automated background Spatie backup system.</p>
                 </div>
 
                 <div
-                    class="rounded-xl border border-zinc-200 bg-zinc-50/50 p-4 text-sm text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300">
-                    <div class="mb-2 flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <span
-                                class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-                                    aria-hidden="true">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
-                                </svg>
-                            </span>
-                            <p class="font-bold text-zinc-900 dark:text-white">Files & UI</p>
-                        </div>
+                    class="rounded-lg border border-zinc-300 bg-white p-3 text-sm text-zinc-700 dark:border-zinc-600 dark:bg-gray-900 dark:text-zinc-200">
+                    <div class="mb-2 flex items-center gap-2">
                         <span
-                            class="rounded-full bg-teal-100 px-2 py-0.5 text-xs font-bold text-teal-700 dark:bg-teal-900/30 dark:text-teal-300">Built-in</span>
+                            class="flex h-10 w-10 items-center justify-center rounded-lg bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                            </svg>
+                        </span>
+                        <p class="font-semibold text-zinc-900 dark:text-white">Files & UI</p>
                     </div>
-                    <p class="leading-relaxed text-zinc-600 dark:text-zinc-400">Modern drag-and-drop FilePond uploads
-                        and premium UI components.</p>
+                    <p>Modern drag-and-drop FilePond uploads and premium UI components.</p>
                 </div>
             </div>
         </div>
@@ -1220,6 +1217,115 @@ onUnmounted(() => {
                 </div>
             </div>
         </section>
+        <!-- Divider -->
+        <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
+
+        <!-- Real-time Notifications Section -->
+        <section id="realtime-notifications" class="mb-16 scroll-mt-20">
+            <div class="mb-8">
+                <h2 class="mb-3 text-2xl font-bold sm:text-3xl text-zinc-900 dark:text-white">Real-time Notifications
+                </h2>
+                <p class="text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
+                    GuacPanel supports real-time notifications using
+                    <a href="https://laravel.com/docs/11.x/reverb" target="_blank"
+                        class="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-300">
+                        Laravel Reverb
+                    </a>, Laravel's first-party WebSocket server. Broadcast events from your backend and receive instant
+                    updates in your Vue components - perfect for notifications, live updates, and collaborative
+                    features.
+                </p>
+
+                <!-- Alert -->
+                <div
+                    class="my-6 flex gap-2.5 rounded-2xl border border-teal-500/20 bg-teal-50/50 p-4 leading-6 text-teal-900 dark:border-teal-500/30 dark:bg-teal-500/5 dark:text-teal-200">
+                    <svg viewBox="0 0 32 32" aria-hidden="true"
+                        class="mt-1 h-8 w-8 flex-none fill-teal-500 stroke-white dark:fill-teal-200/20 dark:stroke-teal-200">
+                        <defs>
+                            <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_reverb"
+                                gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+                                <stop stop-color="#0EA5E9"></stop>
+                                <stop stop-color="#22D3EE" offset=".527"></stop>
+                                <stop stop-color="#818CF8" offset="1"></stop>
+                            </radialGradient>
+                            <radialGradient cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" id="_alert_reverb_dark"
+                                gradientTransform="matrix(0 24.5001 -19.2498 0 16 5.5)">
+                                <stop stop-color="#0EA5E9"></stop>
+                                <stop stop-color="#22D3EE" offset=".527"></stop>
+                                <stop stop-color="#818CF8" offset="1"></stop>
+                            </radialGradient>
+                        </defs>
+                        <g class="dark:hidden">
+                            <circle cx="20" cy="20" r="12" fill="url(#_alert_reverb)"></circle>
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20 24.995c0-1.855 1.094-3.501 2.427-4.792C24.61 18.087 26 15.07 26 12.231 26 7.133 21.523 3 16 3S6 7.133 6 12.23c0 2.84 1.389 5.857 3.573 7.973C10.906 21.494 12 23.14 12 24.995V27a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-2.005Z"
+                                class="fill-(--icon-background)" fill-opacity="0.5"></path>
+                            <path
+                                d="M25 12.23c0 2.536-1.254 5.303-3.269 7.255l1.391 1.436c2.354-2.28 3.878-5.547 3.878-8.69h-2ZM16 4c5.047 0 9 3.759 9 8.23h2C27 6.508 21.998 2 16 2v2Zm-9 8.23C7 7.76 10.953 4 16 4V2C10.002 2 5 6.507 5 12.23h2Zm3.269 7.255C8.254 17.533 7 14.766 7 12.23H5c0 3.143 1.523 6.41 3.877 8.69l1.392-1.436ZM13 27v-2.005h-2V27h2Zm1 1a1 1 0 0 1-1-1h-2a3 3 0 0 0 3 3v-2Zm4 0h-4v2h4v-2Zm1-1a1 1 0 0 1-1 1v2a3 3 0 0 0 3-3h-2Zm0-2.005V27h2v-2.005h-2ZM8.877 20.921C10.132 22.136 11 23.538 11 24.995h2c0-2.253-1.32-4.143-2.731-5.51L8.877 20.92Zm12.854-1.436C20.32 20.852 19 22.742 19 24.995h2c0-1.457.869-2.859 2.122-4.074l-1.391-1.436Z"
+                                class="fill-(--icon-foreground)"></path>
+                            <path
+                                d="M20 26a1 1 0 1 0 0-2v2Zm-8-2a1 1 0 1 0 0 2v-2Zm2 0h-2v2h2v-2Zm1 1V13.5h-2V25h2Zm-5-11.5v1h2v-1h-2Zm3.5 4.5h5v-2h-5v2Zm8.5-3.5v-1h-2v1h2ZM20 24h-2v2h2v-2Zm-2 0h-4v2h4v-2Zm-1-10.5V25h2V13.5h-2Zm2.5-2.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2ZM18.5 18a3.5 3.5 0 0 0 3.5-3.5h-2a1.5 1.5 0 0 1-1.5 1.5v2ZM10 14.5a3.5 3.5 0 0 0 3.5 3.5v-2a1.5 1.5 0 0 1-1.5-1.5h-2Zm2.5-3.5a2.5 2.5 0 0 0-2.5 2.5h2a.5.5 0 0 1 .5-.5v-2Zm2.5 2.5a2.5 2.5 0 0 0-2.5-2.5v2a.5.5 0 0 1 .5.5h2Z"
+                                class="fill-(--icon-foreground)"></path>
+                        </g>
+                        <g class="hidden dark:inline">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M16 2C10.002 2 5 6.507 5 12.23c0 3.144 1.523 6.411 3.877 8.691.75.727 1.363 1.52 1.734 2.353.185.415.574.726 1.028.726H12a1 1 0 0 0 1-1v-4.5a.5.5 0 0 0-.5-.5A3.5 3.5 0 0 1 9 14.5V14a3 3 0 1 1 6 0v9a1 1 0 1 0 2 0v-9a3 3 0 1 1 6 0v.5a3.5 3.5 0 0 1-3.5 3.5.5.5 0 0 0-.5.5V23a1 1 0 0 0 1 1h.36c.455 0 .844-.311 1.03-.726.37-.833.982-1.626 1.732-2.353 2.354-2.28 3.878-5.547 3.878-8.69C27 6.507 21.998 2 16 2Zm5 25a1 1 0 0 0-1-1h-8a1 1 0 0 0-1 1 3 3 0 0 0 3 3h4a3 3 0 0 0 3-3Zm-8-13v1.5a.5.5 0 0 1-.5.5 1.5 1.5 0 0 1-1.5-1.5V14a1 1 0 1 1 2 0Zm6.5 2a.5.5 0 0 1-.5-.5V14a1 1 0 1 1 2 0v.5a1.5 1.5 0 0 1-1.5 1.5Z"
+                                fill="url(#_alert_reverb_dark)"></path>
+                        </g>
+                    </svg>
+                    <div class="ml-4 flex-auto">
+                        <p class="not-prose font-display text-base text-teal-900 dark:text-teal-300">First-Party
+                            Solution</p>
+                        <p class="mt-2.5 text-sm text-teal-800 dark:text-teal-100">
+                            Laravel Reverb is a blazing-fast, scalable WebSocket server built specifically for Laravel,
+                            with no external dependencies required.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-12">
+                <!-- Installation -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Installation</h3>
+                    <p class="mb-3 text-zinc-600 dark:text-zinc-400">
+                        Install Laravel Reverb via Composer:
+                    </p>
+                    <CodeBlock code="composer require laravel/reverb" language="bash" :show-copy-button="true" />
+                </div>
+
+                <!-- Enable Notifications -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Enable Notifications
+                    </h3>
+                    <p class="mb-3 text-zinc-600 dark:text-zinc-400">
+                        First, enable notifications in your <code class="text-sm">.env</code> file:
+                    </p>
+                    <CodeBlock :code="codeExamples.reverbEnv" language="bash" :show-copy-button="true" />
+                </div>
+
+                <!-- Install Broadcasting -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Install Broadcasting
+                        + Reverb</h3>
+                    <p class="mb-3 text-zinc-600 dark:text-zinc-400">
+                        Run the install command to set up broadcasting and generate Reverb credentials:
+                    </p>
+                    <CodeBlock :code="codeExamples.installBroadcasting" language="bash" :show-copy-button="true" />
+                </div>
+
+                <!-- Environment Configuration -->
+                <div>
+                    <h3 class="mb-3 text-md font-mono font-semibold text-zinc-900 dark:text-white">Generated Credentials
+                    </h3>
+                    <p class="mb-3 text-zinc-600 dark:text-zinc-400">
+                        The install command will populate your <code class="text-sm">.env</code> file with Reverb
+                        credentials:
+                    </p>
+                    <CodeBlock :code="codeExamples.reverbCredentials" language="bash" :show-copy-button="true" />
+                </div>
+            </div>
+        </section>
+
         <!-- Divider -->
         <div class="my-12 border-t border-zinc-300 dark:border-zinc-600"></div>
 
