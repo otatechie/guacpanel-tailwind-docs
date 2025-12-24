@@ -192,45 +192,63 @@ watch(
     { deep: true }
 )`,
 
-    backendService: `// app/Services/DataTablePaginationService.php
-public function resolvePerPageWithDefaults(Request $request, string $resourceName, ?int $filteredTotal = null): int
+    backendService: `// app/Services/DataTableService.php
+// Use the process() method for a complete datatable pipeline
+public function process(Builder $query, Request $request, array $config): array
 {
-    return $this->resolvePerPage(
-        $request,
-        $resourceName,
-        self::DEFAULT_PAGE_SIZE,      // 10
-        self::ALLOWED_PAGE_SIZES,     // [10, 25, 50]
-        self::ALLOW_ALL_OPTION,       // true
-        self::MAX_ROWS_WHEN_ALL,      // 1000
-        $filteredTotal
-    );
+    if (!empty($config['searchable'])) {
+        $query = $this->applySearch($query, $request, $config['searchable']);
+    }
+
+    if (!empty($config['sortable'])) {
+        $query = $this->applySorting($query, $request, $config['sortable']);
+    }
+
+    $filteredTotal = $query->count();
+    $resourceName = $config['resource'] ?? 'items';
+    $perPage = $this->resolvePerPageWithDefaults($request, $resourceName, $filteredTotal);
+
+    $paginator = $query->paginate($perPage)->withQueryString();
+
+    if (isset($config['transform']) && is_callable($config['transform'])) {
+        $paginator->through($config['transform']);
+    }
+
+    return [
+        'data' => $paginator,
+        'filters' => $this->buildFilters($request),
+    ];
 }`,
 
     backendController: `// app/Http/Controllers/AdminUserController.php
-public function __construct(private DataTablePaginationService $pagination) {}
+public function __construct(private DataTableService $dataTable) {}
 
 public function index(Request $request)
 {
-    $perPage = $this->pagination->resolvePerPageWithDefaults($request, 'users');
-
-    $users = User::query()
-        ->with(['roles', 'permissions'])
-        ->latest()
-        ->paginate($perPage)
-        ->withQueryString()
-        ->through(function ($user) {
-            return [
+    $result = $this->dataTable->process(
+        query: User::query()->with(['roles', 'permissions'])->latest(),
+        request: $request,
+        config: [
+            'searchable' => ['name', 'email', 'roles.name'],
+            'sortable' => [
+                'name' => ['type' => 'simple'],
+                'email' => ['type' => 'simple'],
+                'created_at' => ['type' => 'simple'],
+            ],
+            'resource' => 'users',
+            'transform' => fn($user) => [
                 'id' => $user->id,
                 'name' => $user->name,
                 'email' => $user->email,
                 'roles' => $user->roles,
                 'permissions' => $user->permissions,
-            ];
-        });
+            ],
+        ]
+    );
 
     return Inertia::render('Admin/User/IndexUserPage', [
-        'users' => $users,
-        'filters' => $this->pagination->buildFilters($request),
+        'users' => $result['data'],
+        'filters' => $result['filters'],
     ]);
 }`,
 
